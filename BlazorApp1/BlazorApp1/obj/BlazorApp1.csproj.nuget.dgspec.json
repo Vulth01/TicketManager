@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Damien.Harwood\\Desktop\\Scripts\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {}
+    "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Damien.Harwood\\Desktop\\Scripts\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {
+    "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Damien.Harwood\\Desktop\\Scripts\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
+        "projectUniqueName": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
         "projectName": "BlazorApp1",
-        "projectPath": "C:\\Users\\Damien.Harwood\\Desktop\\Scripts\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
+        "projectPath": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
         "packagesPath": "C:\\Users\\Damien.Harwood\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Damien.Harwood\\Desktop\\Scripts\\BlazorApp1\\BlazorApp1\\obj\\",
+        "outputPath": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
