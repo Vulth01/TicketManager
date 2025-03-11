@@ -1,0 +1,98 @@
+﻿@page "/weather"
+@attribute [StreamRendering]
+
+<PageTitle>Weather</PageTitle>
+
+<h2>Weather</h2>
+
+<p>This component demonstrates showing data.</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+    private int currTemp;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(500);
+
+        var startDate = DateOnly.FromDateTime(DateTime.Now);
+        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = startDate.AddDays(index),
+                TemperatureC = getTemp(),
+                Summary = getSummary(currTemp)
+            }).ToArray();
+    }
+
+    private int getTemp()
+    {
+        currTemp = Random.Shared.Next(-20, 55);
+		return currTemp;
+    }
+
+    private string getSummary(int temp)
+    {
+        switch (temp)
+        {
+            case int t when (t < 0):
+                return "Freezing";
+            case int t when (t < 10):
+                return "Bracing";
+            case int t when (t < 20):
+                return "Chilly";
+            case int t when (t < 30):
+                return "Cool";
+            case int t when (t < 40):
+                return "Mild";
+            case int t when (t < 50):
+                return "Warm";
+            case int t when (t < 60):
+                return "Balmy";
+            case int t when (t < 70):
+                return "Hot";
+            case int t when (t < 80):
+                return "Sweltering";
+            default:
+                return "Scorching";
+        }
+    }
+
+
+    private class WeatherForecast
+    {
+        public DateOnly Date { get; set; }
+        public int TemperatureC { get; set; }
+        public string? Summary { get; set; }
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+}
