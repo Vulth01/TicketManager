@@ -1,7 +1,9 @@
 ﻿@page "/documentOverview"
-@inject DocumentClient Client
+@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
+@inject NavigationManager NavigationManager
 
-
+@using BlazorApp1.Models
+@using Microsoft.EntityFrameworkCore
 
 <style>
     th {
@@ -19,6 +21,7 @@ else
 {
     <table class="table table-striped table-bordered table-hover mt-4">
         <thead class="table-dark">
+        <th>Guid</th>
         <th>Id</th>
         <td>Brand</td>
         <td>Campus</td>
@@ -35,16 +38,13 @@ else
         <td>EquipmentProductNumber</td>
         <td>EquipmentSerialNumber</td>
         <td>FaultDescription</td>
-
-
-
-
         <th></th>
         </thead>
         <tbody>
             @foreach (var document in documents)
             {
                 <tr>
+                    <td>@document.guid</td>
                     <td>@document.Id</td>
                     <td>@document.Brand</td>
                     <td>@document.Campus</td>
@@ -62,28 +62,6 @@ else
                     <td>@document.EquipmentSerialNumber</td>
                     <td>@document.FaultDescription</td>
 
-                    @*
-                    <td>@document.Name</td>
-                    <td>@document.LastUpdated</td>
-                    <td>@document.Complete</td>
-					<td>@document.Type</td>
-                    <td>@document.DateCreated</td>
-					<td>@document.Customer</td>
-					<td>@document.Site</td>
-                    <td>@document.User</td>
-                    <td>@document.Summary</td>
-                    <td>@document.Status</td>
-                    <td>@document.SLATimeLeft</td>
-                    <td>@document.Priority</td>
-                    <td>@document.TimeTaken</td>
-                    <td>@document.Agent</td>
-                    <td>@document.TicketAge</td>
-					<td>@document.WorkingHours</td>
-                    <td>@document.Team</td>
-                    <td>@document.LastActionDate</td>
-                    <td>@document.Category</td>
-                    <td>@document.DateClosed</td>
-                    *@
                     <!-- EDIT + DELETE -->
                     <td>
                         <div class="d-flex">
@@ -96,7 +74,7 @@ else
                                 <i class="bi bi-trash3"></i>
                             </button>
                         </div>
-                        <DeleteDocument Document="@document" />
+                        <DeleteDocument Document="@ConvertToSummary(document)" />
                     </td>
                 </tr>
             }
@@ -104,19 +82,48 @@ else
     </table>
 }
 
-
 @code {
+    private List<DocumentDetails>? documents;
 
-    private DocumentSummary[]? documents;
-
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        documents = Client.GetDocs();
+        // Initialize the context to access the database
+        using var context = DbFactory.CreateDbContext();
+
+        // Fetch the list of documents from the database
+        documents = await context.DocumentDetails.ToListAsync();
     }
 
     private static string DocumentUrl(int id) => $"/document/{id}";
+    private string GetDeleteModalId(DocumentDetails document) => $"#{DeleteDocument.GetModalId(ConvertToSummary(document))}";
 
 
-    private string GetDeleteModalId(DocumentSummary document) => $"#{DeleteDocument.GetModalId(document)}";
+
+
+
+    private DocumentSummary ConvertToSummary(DocumentDetails document)
+    {
+        return new DocumentSummary
+            {
+                guid = document.guid,
+                Id = document.Id,
+                Brand = document.Brand,
+                Campus = document.Campus,
+                UserName = document.UserName,
+                UserEmail = document.UserEmail,
+                UserContactNumber = document.UserContactNumber,
+                PrimaryContact = document.PrimaryContact,
+                TroubleshooterName = document.TroubleshooterName,
+                TroubleshooterEmail = document.TroubleshooterEmail,
+                TroubleshooterContactNumber = document.TroubleshooterContactNumber,
+                SiteAddress = document.SiteAddress,
+                EquipmentMake = document.EquipmentMake,
+                EquipmentModel = document.EquipmentModel,
+                EquipmentProductNumber = document.EquipmentProductNumber,
+                EquipmentSerialNumber = document.EquipmentSerialNumber,
+                FaultDescription = document.FaultDescription
+            };
+    }
+
 
 }

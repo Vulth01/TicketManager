@@ -2,8 +2,10 @@
 @page "/document/{id:int}"
 @rendermode InteractiveServer
 
+@using Microsoft.EntityFrameworkCore
+@using BlazorApp1.Models
+@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
 @inject NavigationManager NavigationManager
-@inject DocumentClient DocumentClient
 
 <PageTitle>@title</PageTitle>
 
@@ -17,10 +19,11 @@ else
 {
     <div class="row">
         <div class="col-md-4">
-
             <EditForm Model="@document" FormName="editDocument" OnValidSubmit="HandleSubmit">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
+
+
                 <!--Brand-->
                 <div class="mb-3">
                     <label for="brand" class="form-label">Brand:</label>
@@ -126,38 +129,13 @@ else
                     <ValidationMessage For="() => document.FaultDescription" />
                 </div>
 
-                @*
-
-                    Name = string.Empty,
-                    Price = 0,
-                    LastUpdated = DateOnly.FromDateTime(DateTime.UtcNow),
-                    Complete = false,
-                    Brand = string.Empty,
-                    Campus = string.Empty,
-                    UserName = string.Empty,
-                    UserEmail = string.Empty,
-                    UserContactNumber = string.Empty,
-                    PrimaryContact = false,
-                    TroubleshooterName = string.Empty,
-                    TroubleshooterEmail = string.Empty,
-                    TroubleshooterContactNumber = string.Empty,
-                    SiteAddress = string.Empty,
-                    EquipmentMake = string.Empty,
-                    EquipmentModel= string.Empty,
-                    EquipmentProductNumber = string.Empty,
-                    EquipmentSerialNumber = string.Empty,
-                    FaultDescription = string.Empty
-
-                *@
-
-
-
                 <!-- Edit + Delete -->
                 <button type="submit" class="btn btn-primary">
                     Save
                 </button>
                 <a role="button" href="/documentOverview" class="btn btn-secondary">Cancel</a>
                 <div style="margin-bottom: 20%"></div>
+
 
             </EditForm>
         </div>
@@ -184,228 +162,36 @@ else
 
         if (Id is not null)
         {
-            document = DocumentClient.GetDoc(Id.Value);
+            using var context = DbFactory.CreateDbContext();
+            document = context.DocumentDetails.FirstOrDefault(d => d.Id == Id.Value);
             title = $"Edit Document: {document.Id}";
         }
         else
         {
-            document = new()
-                {
-                    Brand = string.Empty,
-                    Campus = string.Empty,
-                    UserName = string.Empty,
-                    UserEmail = string.Empty,
-                    UserContactNumber = string.Empty,
-                    PrimaryContact = false,
-                    TroubleshooterName = string.Empty,
-                    TroubleshooterEmail = string.Empty,
-                    TroubleshooterContactNumber = string.Empty,
-                    SiteAddress = string.Empty,
-                    EquipmentMake = string.Empty,
-                    EquipmentModel= string.Empty,
-                    EquipmentProductNumber = string.Empty,
-                    EquipmentSerialNumber = string.Empty,
-                    FaultDescription = string.Empty
-                
-                @*
-                    Name = string.Empty,
-                    Price = 0,
-                    LastUpdated = DateOnly.FromDateTime(DateTime.UtcNow),
-                    Complete = false,
-                    Type = string.Empty,
-					DateCreated = DateOnly.FromDateTime(DateTime.UtcNow),
-					Customer = string.Empty,
-                    Site = string.Empty,
-					User = string.Empty,
-					Summary = string.Empty,
-                    Status = string.Empty,
-                    SLATimeLeft = 0,
-                    Priority = string.Empty,
-					TimeTaken = 0,
-                    Agent = string.Empty,
-					TicketAge = 0,
-                    WorkingHours = "0",
-					Team = string.Empty,
-                    LastActionDate = DateOnly.FromDateTime(DateTime.UtcNow),
-                    Category = string.Empty,
-                    DateClosed = DateOnly.FromDateTime(DateTime.UtcNow),
-                    *@
-
-                };
-            title = "New Ticket";
+            document = new DocumentDetails();
+            title = "New Document";
         }
     }
-    private void HandleSubmit()
+
+
+    //ADD & UPDATE DOCUMENT
+    private async Task HandleSubmit()
     {
         ArgumentNullException.ThrowIfNull(document);
 
-        var editContext = new EditContext(document);
+        using var context = DbFactory.CreateDbContext();
 
         if (Id is null)
         {
-            DocumentClient.AddDocument(document);
+            context.DocumentDetails.Add(document);
         }
         else
         {
-            document.Id = Id.Value;
-            DocumentClient.UpdateDocument(document);
+            context.DocumentDetails.Update(document);
         }
+
+        await context.SaveChangesAsync();
 
         NavigationManager.NavigateTo("/documentOverview");
     }
-
-
-
 }
-
-
-
-
-
-@*
-
-<!-- Name -->
-<div class="mb-3">
-    <label for="name" class="form-label">Name:</label>
-    <InputText id="name" @bind-Value="document.Name" class="form-control" />
-    <ValidationMessage For="() => document.Name" />
-</div>
-<!-- Price -->
-<div class="mb-3">
-    <label for="price" class="form-label">Price:</label>
-    <InputNumber id="price" @bind-Value="document.Price" class="form-control" />
-    <ValidationMessage For="() => document.Price" />
-</div>
-<!-- Last Updated -->
-<div class="mb-3">
-    <label for="lastUpdated" class="form-label">Last Updated:</label>
-    <InputDate id="lastUpdated" @bind-Value="document.LastUpdated" class="form-control" />
-</div>
-
-<!-- Complete -->
-<div class="mb-3">
-    <label for="complete" class="form-label">Complete:</label>
-    <InputCheckbox id="complete" @bind-Value="document.Complete" />
-    <ValidationMessage For="() => document.Complete" />
-</div>
-
-                    
-<!-- Type -->
-<div class="mb-3">
-    <label for="type" class="form-label">Type:</label>
-    <InputText id="type" @bind-Value="document.Type" class="form-control" />
-    <ValidationMessage For="() => document.Type" />
-</div>
-
-<!-- Date Created -->
-<div class="mb-3">
-    <label for="dateCreated" class="form-label">Date Created:</label>
-	<InputDate id="dateCreated" @bind-Value="document.DateCreated" class="form-control" />
-    <ValidationMessage For="()=> document.DateCreated"/>
-</div>
-
-<!-- Customer -->
-<div class="mb-3">
-    <label for="customer" class="form-label">Customer:</label>
-    <InputText id="customer" @bind-Value="document.Customer" class="form-control" />
-    <ValidationMessage For="() => document.Customer" />
-</div>
-
-<!-- Site -->
-<div class="mb-3">
-    <label for="site" class="form-label">Site:</label>
-    <InputText id="site" @bind-Value="document.Site" class="form-control" />
-    <ValidationMessage For="() => document.Site" />
-</div>
-
-<!-- User -->
-<div class="mb-3">
-    <label for="user" class="form-label">User:</label>
-    <InputText id="user" @bind-Value="document.User" class="form-control" />
-    <ValidationMessage For="() => document.User" />
-</div>
-
-<!-- Summary -->
-<div class="mb-3">
-    <label for="summary" class="form-label">Summary:</label>
-    <InputText id="summary" @bind-Value="document.Summary" class="form-control" />
-    <ValidationMessage For="() => document.Summary" />
-</div>
-
-<!-- Status -->
-<div class="mb-3">
-    <label for="status" class="form-label">Status:</label>
-    <InputText id="status" @bind-Value="document.Status" class="form-control" />
-    <ValidationMessage For="() => document.Status" />
-</div>
-
-<!-- SLA Time Left -->
-<div class="mb-3">
-    <label for="slaTimeLeft" class="form-label">SLA Time Left:</label>
-    <InputNumber id="slaTimeLeft" @bind-Value="document.SLATimeLeft" class="form-control" />
-    <ValidationMessage For="() => document.SLATimeLeft" />
-</div>
-
-<!-- Priority -->
-<div class="mb-3">
-    <label for="priority" class="form-label">Priority:</label>
-    <InputText id="priority" @bind-Value="document.Priority" class="form-control" />
-    <ValidationMessage For="() => document.Priority" />
-</div>
-
-<!-- Time Taken -->
-<div class="mb-3">
-    <label for="timeTaken" class="form-label">Time Taken:</label>
-    <InputNumber id="timeTaken" @bind-Value="document.TimeTaken" class="form-control" />
-    <ValidationMessage For="() => document.TimeTaken" />
-</div>
-
-<!-- Agent -->
-<div class="mb-3">
-    <label for="agent" class="form-label">Agent:</label>
-    <InputText id="agent" @bind-Value="document.Agent" class="form-control" />
-    <ValidationMessage For="() => document.Agent" />
-</div>
-
-<!-- Ticket Age -->
-<div class="mb-3">
-    <label for="ticketAge" class="form-label">Ticket Age:</label>
-    <InputNumber id="ticketAge" @bind-Value="document.TicketAge" class="form-control" />
-    <ValidationMessage For="() => document.TicketAge" />
-</div>
-
-<!-- Working Hours -->
-<div class="mb-3">
-    <label for="workingHours" class="form-label">Working Hours:</label>
-	<InputText id="workingHours" @bind-Value="document.WorkingHours" class="form-control" />
-	<ValidationMessage For="()=> document.WorkingHours" />
-</div>
-
-<!-- Team -->
-<div class="mb-3">
-    <label for="team" class="form-label">Team:</label>
-    <InputText id="team" @bind-Value="document.Team" class="form-control" />
-    <ValidationMessage For="() => document.Team" />
-</div>
-
-<!-- Last Action Date -->
-<div class="mb-3">
-    <label for="lastActionDate" class="form-label">Last Action Date:</label>
-	<InputDate id="lastActionDate" @bind-Value="document.LastActionDate" class="form-control" />
-	<ValidationMessage For="()=> document.LastActionDate" />
-</div>
-
-<!-- Category -->
-<div class="mb-3">
-    <label for="category" class="form-label">Category:</label>
-    <InputText id="category" @bind-Value="document.Category" class="form-control" />
-    <ValidationMessage For="() => document.Category" />
-</div>
-
-<!-- Date Closed -->
-<div class="mb-3">
-    <label for="dateClosed" class="form-label">Date Closed:</label>
-    <InputDate id="dateClosed" @bind-Value="document.DateClosed" class="form-control" />
-    <ValidationMessage For="()=> document.DateClosed"/>
-</div>
-*@

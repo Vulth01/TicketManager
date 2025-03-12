@@ -1,0 +1,76 @@
+﻿@page "/documentdetails/details"
+@using Microsoft.EntityFrameworkCore
+@using BlazorApp1.Models
+@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Details</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h2>DocumentDetails</h2>
+    <hr />
+    @if (documentdetails is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <dl class="row">
+            <dt class="col-sm-2">guid</dt>
+            <dd class="col-sm-10">@documentdetails.guid</dd>
+            <dt class="col-sm-2">Brand</dt>
+            <dd class="col-sm-10">@documentdetails.Brand</dd>
+            <dt class="col-sm-2">Campus</dt>
+            <dd class="col-sm-10">@documentdetails.Campus</dd>
+            <dt class="col-sm-2">UserName</dt>
+            <dd class="col-sm-10">@documentdetails.UserName</dd>
+            <dt class="col-sm-2">UserEmail</dt>
+            <dd class="col-sm-10">@documentdetails.UserEmail</dd>
+            <dt class="col-sm-2">UserContactNumber</dt>
+            <dd class="col-sm-10">@documentdetails.UserContactNumber</dd>
+            <dt class="col-sm-2">PrimaryContact</dt>
+            <dd class="col-sm-10">@documentdetails.PrimaryContact</dd>
+            <dt class="col-sm-2">TroubleshooterName</dt>
+            <dd class="col-sm-10">@documentdetails.TroubleshooterName</dd>
+            <dt class="col-sm-2">TroubleshooterEmail</dt>
+            <dd class="col-sm-10">@documentdetails.TroubleshooterEmail</dd>
+            <dt class="col-sm-2">TroubleshooterContactNumber</dt>
+            <dd class="col-sm-10">@documentdetails.TroubleshooterContactNumber</dd>
+            <dt class="col-sm-2">SiteAddress</dt>
+            <dd class="col-sm-10">@documentdetails.SiteAddress</dd>
+            <dt class="col-sm-2">EquipmentMake</dt>
+            <dd class="col-sm-10">@documentdetails.EquipmentMake</dd>
+            <dt class="col-sm-2">EquipmentModel</dt>
+            <dd class="col-sm-10">@documentdetails.EquipmentModel</dd>
+            <dt class="col-sm-2">EquipmentProductNumber</dt>
+            <dd class="col-sm-10">@documentdetails.EquipmentProductNumber</dd>
+            <dt class="col-sm-2">EquipmentSerialNumber</dt>
+            <dd class="col-sm-10">@documentdetails.EquipmentSerialNumber</dd>
+            <dt class="col-sm-2">FaultDescription</dt>
+            <dd class="col-sm-10">@documentdetails.FaultDescription</dd>
+        </dl>
+        <div>
+            <a href="@($"/documentdetails/edit?id={documentdetails.Id}")">Edit</a> |
+            <a href="@($"/documentdetails")">Back to List</a>
+        </div>
+    }
+</div>
+
+@code {
+    private DocumentDetails? documentdetails;
+
+    [SupplyParameterFromQuery]
+    private int Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        documentdetails = await context.DocumentDetails.FirstOrDefaultAsync(m => m.Id == Id);
+
+        if (documentdetails is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+}
