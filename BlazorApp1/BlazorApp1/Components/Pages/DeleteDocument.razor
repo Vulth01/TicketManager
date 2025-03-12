@@ -1,4 +1,6 @@
-﻿@inject DocumentClient Client
+﻿@using Microsoft.EntityFrameworkCore
+@using BlazorApp1.Models
+@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
 @inject NavigationManager NavigationManager
 @rendermode InteractiveServer
 
@@ -10,23 +12,23 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-footer">
-                <!--CANCEL-->
+                <!-- CANCEL -->
                 <button type="button"
                         class="btn btn-secondary"
-                        data-bs-dismiss="modal">Cancel</button>
-                <!--DELETE-->
+                        data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <!-- DELETE -->
                 <button type="button"
                         class="btn btn-primary"
                         data-bs-dismiss="modal"
                         @onclick="Confirm">
                     Delete
                 </button>
-
             </div>
         </div>
     </div>
 </div>
-
 
 @code {
     [Parameter]
@@ -36,12 +38,11 @@
 
     protected override void OnParametersSet()
     {
-		if (Document is null)
-			title = "No title to delete";
+        if (Document is null)
+            title = "No title to delete";
         else
             title = $"Delete {Document?.Id}";
     }
-
 
     public static string GetModalId(DocumentSummary? document)
     {
@@ -49,10 +50,19 @@
         return $"deleteDocumentModal-{document.Id}";
     }
 
-    private void Confirm()
+    private async Task Confirm()
     {
-        Client.DeleteDocument(Document!.Id);
-        NavigationManager.Refresh();
-    }
+        if (Document is null) return;
 
+        using var context = DbFactory.CreateDbContext();
+
+        var documentToDelete = await context.DocumentDetails.FindAsync(Document.Id);
+        if (documentToDelete != null)
+        {
+            context.DocumentDetails.Remove(documentToDelete);
+            await context.SaveChangesAsync();
+        }
+
+        NavigationManager.NavigateTo("/documentOverview", true);
+    }
 }
