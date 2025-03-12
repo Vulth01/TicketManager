@@ -1,0 +1,90 @@
+﻿@page "/add-user"
+@using BlazorApp1.Models.Entities
+@using Microsoft.AspNetCore.Components.Authorization
+@inject NavigationManager NavigationManager
+@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
+@using Microsoft.EntityFrameworkCore
+
+<PageTitle>Add User</PageTitle>
+
+<AuthorizeView Roles="Administrator">
+    <Authorized Context="authContext">
+        <h3>Add New User</h3>
+
+        @if (!string.IsNullOrEmpty(successMessage))
+        {
+            <div class="alert alert-success">@successMessage</div>
+        }
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="alert alert-danger">@errorMessage</div>
+        }
+
+        <EditForm Model="@_newUserAccount" OnValidSubmit="HandleSubmit" FormName="addUserForm">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group">
+                <label for="userName">User Name:</label>
+                <InputText id="userName" @bind-Value="_newUserAccount.UserName" class="form-control" />
+                <ValidationMessage For="() => _newUserAccount.UserName" />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <InputText id="password" @bind-Value="_newUserAccount.Password" type="password" class="form-control" />
+                <ValidationMessage For="() => _newUserAccount.Password" />
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role:</label>
+                <InputText id="role" @bind-Value="_newUserAccount.Role" class="form-control" />
+                <ValidationMessage For="() => _newUserAccount.Role" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add User</button>
+            <a href="/documentOverview" class="btn btn-secondary">Cancel</a>
+        </EditForm>
+    </Authorized>
+
+    <NotAuthorized>
+        <h3>You are not authorized to view this page.</h3>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private UserAccount _newUserAccount = new UserAccount();
+    private string? successMessage;
+    private string? errorMessage;
+
+    private async Task HandleSubmit()
+    {
+        if (string.IsNullOrEmpty(_newUserAccount.Role))
+        {
+            errorMessage = "Role is required!";
+            return;
+        }
+        try
+        {
+            _newUserAccount.Password = HashPassword(_newUserAccount.Password);
+
+            using var context = DbFactory.CreateDbContext();
+            context.UserAccounts.Add(_newUserAccount);
+            await context.SaveChangesAsync();
+
+            successMessage = "User added successfully!";
+            errorMessage = null; 
+            NavigationManager.NavigateTo("/login");
+        }
+        catch (Exception ex)
+        {
+            successMessage = null; 
+            errorMessage = $"Error: {ex.Message}";
+        }
+    }
+
+    private string HashPassword(string password)
+    {
+        return password; 
+    }
+}
