@@ -1,14 +1,15 @@
-﻿<!--AddUser.razor-->
-@page "/add-user"
+﻿@page "/add-user"
 @page "/userAccount/{id:int}"
 @rendermode InteractiveServer
+
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Administrator")]
 
 @using Microsoft.EntityFrameworkCore
 @using BlazorApp1.Models.Entities
 @inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
 @inject NavigationManager NavigationManager
-
-
+@attribute [StreamRendering]
 <PageTitle>@title</PageTitle>
 
 <h3>@title</h3>

@@ -1,6 +1,10 @@
-﻿<!--Document.razor: -->
+﻿
 @page "/document"
 @page "/document/{id:int}"
+
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Administrator, User")]
+
 @rendermode InteractiveServer
 
 @using Microsoft.EntityFrameworkCore
