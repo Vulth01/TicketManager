@@ -1,14 +1,11 @@
 ﻿@page "/"
 
-@using Microsoft.AspNetCore.Authorization
 @attribute [Authorize(Roles = "Administrator, User")]
 
 <PageTitle>Home</PageTitle>
 
 
-
-
-<div class="row">
+<div class="row" style="margin-bottom: 5%">
 	<div class="col-12">
 		<div class="card">
 			<div class="card-body">
@@ -32,9 +29,8 @@
 
 
 
-
 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
-    <h1 style="margin-bottom: 100px">Blazor_App</h1>
+    <h1 style="margin-bottom: 100px">First Tech <br /> Ticket Management</h1>
     <Counter IncrementAmount="5" />
     <div style="margin-bottom: 100px;"></div>
     <Weather />

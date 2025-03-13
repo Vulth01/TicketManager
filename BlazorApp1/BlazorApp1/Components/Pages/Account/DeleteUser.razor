@@ -1,28 +1,34 @@
-﻿
-@using Microsoft.EntityFrameworkCore
-@using BlazorApp1.Models.Entities
-@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
+﻿@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
 @inject NavigationManager NavigationManager
 @rendermode InteractiveServer
+
+
+
+
+
 
 <div class="modal fade" id="@GetModalId(User)" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+            @* PROMPT *@
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">@title</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
+            @* CONFIRMATION *@
             <div class="modal-body">
                 <p>Are you sure you want to delete the user account for <strong>@User?.UserName</strong>?</p>
             </div>
+
             <div class="modal-footer">
-                <!-- CANCEL -->
+                @* CANCEL *@
                 <button type="button"
                         class="btn btn-secondary"
                         data-bs-dismiss="modal">
                     Cancel
                 </button>
-                <!-- DELETE -->
+                @* DELETE *@
                 <button type="button"
                         class="btn btn-danger"
                         data-bs-dismiss="modal"
@@ -30,9 +36,15 @@
                     Delete
                 </button>
             </div>
+
         </div>
     </div>
 </div>
+
+
+
+
+
 
 @code {
     [Parameter]
@@ -40,6 +52,7 @@
 
     private string title = string.Empty;
 
+    // TITLE
     protected override void OnParametersSet()
     {
         if (User is null)
@@ -48,12 +61,15 @@
             title = $"Delete {User?.Id}";
     }
 
+
+    // USER MODAL ID
     public static string GetModalId(UserSummary? user)
     {
         ArgumentNullException.ThrowIfNull(user);
         return $"deleteUserModal-{user.Id}";
     }
 
+    // PROCEED WITH DELETION
     private async Task Confirm()
     {
         if (User is null) return;

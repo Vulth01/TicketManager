@@ -1,5 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
-//using BlazorApp1.Clients;
 using BlazorApp1.Components;
 using BlazorApp1.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -28,8 +26,6 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 builder.Services.AddAuthorization();
 builder.Services.AddCascadingAuthenticationState();
-
-//builder.Services.AddSingleton<DocumentClient>();
 
 var app = builder.Build();
 

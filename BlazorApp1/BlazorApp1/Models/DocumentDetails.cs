@@ -1,7 +1,4 @@
-﻿
-
-//DocumentDetails.cs: 
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BlazorApp1.Models
 {
@@ -11,7 +8,7 @@ namespace BlazorApp1.Models
         public int Id { get; set; }
 
 
-        /*                  WORD-DOCUMENT-PROPERTIES            */                                                                                      //---EXAMPLES---
+        /*                  DOCUMENT-PROPERTIES            */                                                                                      //---EXAMPLES---
         [Required][StringLength(50)] public string Brand { get; set; }                                                                                  //Tertiary
         [Required][StringLength(50)] public string Campus { get; set; }                                                                                 //Rosebank College Pretoria CBD
         [Required][StringLength(50)] public string UserName { get; set; }                                                                               //Sunnyboy Rasebeka

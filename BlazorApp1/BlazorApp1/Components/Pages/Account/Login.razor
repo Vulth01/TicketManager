@@ -1,42 +1,56 @@
 ﻿@page "/login"
-
-@using BlazorApp1.Data
-@using BlazorApp1.Models.ViewModels
-@using System.Security.Claims
-@using Microsoft.AspNetCore.Authentication
-@using Microsoft.AspNetCore.Authentication.Cookies
 @inject TicketContext ticketContext
 @inject NavigationManager navigationManager
 
+
+
+
+
+
 <div class="row">
 
+	@* LOGIN FORM *@
 	<div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
 		<EditForm Model="@Model" OnValidSubmit="Authenticate" FormName="LoginForm">
-
 			<DataAnnotationsValidator/>
+
+			@* HEADER IMAGE & TEXT *@
 			<div class="mb-3 text-center flex-column">
 				<img src="/images/avatar.png" style="max-height:5rem;"/>
 				<h3>LOGIN</h3>
 			</div>
+
+			@* INPUT USERNAME *@
 			<div class="mb-3">
 				<label>User Name</label>
 				<InputText @bind-Value="Model.UserName" class="form-control" placeholder="Username" />
 				<ValidationMessage For="()=>Model.UserName"/>
 			</div>
+
+			@* INPUT PASSWORD *@
 			<div class="mb-3">
 				<label>Password</label>
 				<InputText @bind-Value="Model.Password" placeholder="Password" type="password" class="form-control" />
 				<ValidationMessage For="()=>Model.Password" />
 			</div>
+
+			@* ERROR MESSAGE *@
 			<div class="mb-3 text-center">
 				<span class="text-danger">@errorMessage</span>
 			</div>
+
+			@* LOGIN BUTTON *@
 			<div class="mb-3 d-grid gap-2">
 				<button type="submit" class="btn btn-primary">Login</button>
 			</div>
 		</EditForm>
 	</div>
 </div>
+
+
+
+
+
 
 @code {
 
@@ -48,6 +62,8 @@
 
 	private string? errorMessage;
 
+
+	// AUTHENTICATION & LOGIN
 	private async Task Authenticate()
 	{
 		var userAccount = ticketContext.UserAccounts.Where(x=> x.UserName == Model.UserName).FirstOrDefault();
