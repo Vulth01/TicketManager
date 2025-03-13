@@ -8,47 +8,58 @@
 
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="flex-column">
+
+        <!-- HOME -->
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
             </NavLink>
         </div>
 
-
+        <!-- ALL USERS -->
         <AuthorizeView Roles="Administrator,User">
             <Authorized>
+
+                <!-- DocumentOverview -->
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="documentOverview">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Documents Overview 
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;    <!--Don't look here...-->
+                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Tickets Overview
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                     </NavLink>
                 </div>
-            </Authorized>
-        </AuthorizeView>
 
-        <AuthorizeView Roles="Administrator">
-            <Authorized>
-
+                <!-- AddDocument -->
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="document">
                         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Log New Ticket
                     </NavLink>
                 </div>
 
+            </Authorized>
+        </AuthorizeView>
 
+        <!-- ADMIN ONLY -->
+        <AuthorizeView Roles="Administrator">
+            <Authorized>
+
+
+                <!-- UserOverview -->
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="userOverview">
+                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> User Overview
+                    </NavLink>
+                </div>
+
+                <!-- AddUser -->
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="add-user">
                         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Add New User
                     </NavLink>
                 </div>
-
             </Authorized>
         </AuthorizeView>
-
-
     </nav>
 </div>
-
 
 <style>
     .nav-scrollable {

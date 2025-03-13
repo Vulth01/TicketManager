@@ -2,64 +2,88 @@
 -- pressing F5 without selecting specific methods to run
 RAISEERROR('Script stopped for safety; do not proceed further!', 16, 1);
 
+
+
+--------------------------------------------------------------------------------------------------------------
+
+--										CREATE
+
+
+
 CREATE TABLE user_account (
-    id INT IDENTITY(1,1) PRIMARY KEY,  -- Use IDENTITY for auto-increment
-    user_name VARCHAR(50) NOT NULL,     -- Correct VARCHAR usage
-    password VARCHAR(255) NOT NULL,     -- Correct VARCHAR usage
-    role VARCHAR(50) NOT NULL           -- Correct VARCHAR usage
+    id INT IDENTITY(1,1) PRIMARY KEY,						-- PRIMARY KEY (INCREMENTAL)
+    user_name VARCHAR(50) NOT NULL,							-- MAXLENGTH OF USERNAME
+    password VARCHAR(255) NOT NULL,							-- MAXLENGTH OF PASSWORD
+    role VARCHAR(50) NOT NULL								-- MAXLENGTH OF ROLE
 );
 
+CREATE DATABASE CRUD;										-- CREATE THE DATABASE
 
-CREATE DATABASE CRUD;
+USE CRUD;													-- TO USE THE CREATED DATABASE
 
---Check that you are in the correct directory
-SELECT DB_NAME();
+--------------------------------------------------------------------------------------------------------------
+
+--										UPDATE
+
+
+
+ALTER TABLE dbo.DocumentDetails								-- CHANGE MAXLENGTH OF PROPERTY
+ALTER COLUMN FaultDescription NVARCHAR(200);
+
+--------------------------------------------------------------------------------------------------------------
+
+--										CREATE
+
+
+
+
+INSERT INTO dbo.user_account (user_name, password, role)	-- ADD USER TO TABLE
+VALUES ('admin1', 'pass1', 'Administrator');
+
+INSERT INTO dbo.user_account (user_name, password, role)
+VALUES ('user1', 'user1', 'User');
+
+
+
+DROP TABLE user_account;
+
+
+INSERT INTO user_account (guid, user_name, password, role)
+VALUES (NEWID(), 'admin1', 'pass1', 'Administrator');
+
+--------------------------------------------------------------------------------------------------------------
+
+--										READ
+
+
+
+SELECT DB_NAME(); 
 
 SELECT @@SERVERNAME;
 
-USE CRUD;
-
-
---View the cells in the table
 SELECT * FROM dbo.DocumentDetails;
 
 SELECT * FROM dbo.user_account;
 
 SELECT * FROM dbo.__EFMigrationsHistory;
 
-
--- View all the tables in the current database
-SELECT * 
-FROM INFORMATION_SCHEMA.TABLES
-WHERE TABLE_TYPE = 'BASE TABLE';
+SELECT * FROM dbo.user_account;
 
 
-
--- Change the MaxCharLength of property
-ALTER TABLE dbo.DocumentDetails
-ALTER COLUMN FaultDescription NVARCHAR(200);
-
--- View the properties with their datatype and MaxCharLength
-SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH
+SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH		-- VIEW PROP NAME + DATATYPE + MAXLENGTH
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'DocumentDetails';
 
 
+															
+SELECT *													-- VIEW ALL TABLES IN DATABASE
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_TYPE = 'BASE TABLE';
+
+--------------------------------------------------------------------------------------------------------------
+
+--										DELETE
 
 
 
--- Add admin to table
-INSERT INTO dbo.user_account (user_name, password, role)
-VALUES ('admin1', 'pass1', 'Administrator');
-
-SELECT * FROM dbo.user_account;
-
-
-
--- Add user to table
-INSERT INTO dbo.user_account (user_name, password, role)
-VALUES ('user1', 'user1', 'User');
-
-SELECT * FROM dbo.user_account;
-
-
+DELETE FROM dbo.user_account;

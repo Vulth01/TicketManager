@@ -1,90 +1,120 @@
-﻿@page "/add-user"
-@using BlazorApp1.Models.Entities
-@using Microsoft.AspNetCore.Components.Authorization
-@inject NavigationManager NavigationManager
-@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
+﻿<!--AddUser.razor-->
+@page "/add-user"
+@page "/userAccount/{id:int}"
+@rendermode InteractiveServer
+
 @using Microsoft.EntityFrameworkCore
+@using BlazorApp1.Models.Entities
+@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
+@inject NavigationManager NavigationManager
 
-<PageTitle>Add User</PageTitle>
 
-<AuthorizeView Roles="Administrator">
-    <Authorized Context="authContext">
-        <h3>Add New User</h3>
+<PageTitle>@title</PageTitle>
 
-        @if (!string.IsNullOrEmpty(successMessage))
-        {
-            <div class="alert alert-success">@successMessage</div>
-        }
-        @if (!string.IsNullOrEmpty(errorMessage))
-        {
-            <div class="alert alert-danger">@errorMessage</div>
-        }
+<h3>@title</h3>
 
-        <EditForm Model="@_newUserAccount" OnValidSubmit="HandleSubmit" FormName="addUserForm">
-            <DataAnnotationsValidator />
-            <ValidationSummary />
+@if (userAccount is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <EditForm Model="@userAccount" FormName="editUser" OnValidSubmit="HandleSubmit">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
 
-            <div class="form-group">
-                <label for="userName">User Name:</label>
-                <InputText id="userName" @bind-Value="_newUserAccount.UserName" class="form-control" />
-                <ValidationMessage For="() => _newUserAccount.UserName" />
-            </div>
+                <!-- User Name -->
+                <div class="mb-3">
+                    <label for="userName" class="form-label">User Name:</label>
+                    <InputText id="userName" @bind-Value="userAccount.UserName" class="form-control"/>
+                    <ValidationMessage For="() => userAccount.UserName" />
+                </div>
 
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <InputText id="password" @bind-Value="_newUserAccount.Password" type="password" class="form-control" />
-                <ValidationMessage For="() => _newUserAccount.Password" />
-            </div>
+                <!-- Password -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <InputText id="password" @bind-Value="userAccount.Password" class="form-control" type="password"/>
+                    <ValidationMessage For="() => userAccount.Password" />
+                </div>
 
-            <div class="form-group">
-                <label for="role">Role:</label>
-                <InputText id="role" @bind-Value="_newUserAccount.Role" class="form-control" />
-                <ValidationMessage For="() => _newUserAccount.Role" />
-            </div>
+                <!-- Role -->
+                <div class="mb-3">
+                    <label for="role" class="form-label">Role:</label>
+                    <InputSelect id="role" @bind-Value="userAccount.Role" class="form-control">
+                        <option value="User">User</option>
+                        <option value="Administrator">Administrator</option>
+                    </InputSelect>
+                    <ValidationMessage For="() => userAccount.Role" />
+                </div>
 
-            <button type="submit" class="btn btn-primary">Add User</button>
-            <a href="/documentOverview" class="btn btn-secondary">Cancel</a>
-        </EditForm>
-    </Authorized>
 
-    <NotAuthorized>
-        <h3>You are not authorized to view this page.</h3>
-    </NotAuthorized>
-</AuthorizeView>
+                <!-- Edit + Delete -->
+                <button type="submit" class="btn btn-primary">
+                    Save
+                </button>
+                <a role="button" href="/userOverview" class="btn btn-secondary">Cancel</a>
+                <div style="margin-bottom: 20%"></div>
+
+
+            </EditForm>
+
+        </div>
+    </div>
+}
 
 @code {
-    private UserAccount _newUserAccount = new UserAccount();
-    private string? successMessage;
-    private string? errorMessage;
+    [Parameter] 
+    public int? Id { get; set; }
 
-    private async Task HandleSubmit()
+    [SupplyParameterFromForm]
+    private UserAccount? userAccount { get; set; }
+
+    private string title = string.Empty;
+
+
+
+    protected override void OnParametersSet()
     {
-        if (string.IsNullOrEmpty(_newUserAccount.Role))
+        if(userAccount is not null)
         {
-            errorMessage = "Role is required!";
             return;
         }
-        try
-        {
-            _newUserAccount.Password = HashPassword(_newUserAccount.Password);
 
+        if(Id is not null)
+        {
             using var context = DbFactory.CreateDbContext();
-            context.UserAccounts.Add(_newUserAccount);
-            await context.SaveChangesAsync();
-
-            successMessage = "User added successfully!";
-            errorMessage = null; 
-            NavigationManager.NavigateTo("/login");
+            userAccount = context.UserAccounts.FirstOrDefault(d => d.Id == Id.Value);
+            title = $"Edit Document: {userAccount.Id}";
         }
-        catch (Exception ex)
+        else
         {
-            successMessage = null; 
-            errorMessage = $"Error: {ex.Message}";
+            userAccount = new UserAccount
+            {
+                Role = "User"
+            };
+            title = "New User";
         }
     }
 
-    private string HashPassword(string password)
+    private async Task HandleSubmit()
     {
-        return password; 
+        ArgumentNullException.ThrowIfNull(userAccount);
+
+        using var context = DbFactory.CreateDbContext();
+
+        if (Id is null)
+        {
+            context.UserAccounts.Add(userAccount);
+        }
+        else
+        {
+            context.UserAccounts.Update(userAccount);
+        }
+
+        await context.SaveChangesAsync();
+
+        NavigationManager.NavigateTo("/userOverview");
     }
 }

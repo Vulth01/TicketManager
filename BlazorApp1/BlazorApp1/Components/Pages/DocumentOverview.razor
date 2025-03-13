@@ -87,19 +87,12 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        // Initialize the context to access the database
         using var context = DbFactory.CreateDbContext();
-
-        // Fetch the list of documents from the database
         documents = await context.DocumentDetails.ToListAsync();
     }
 
     private static string DocumentUrl(int id) => $"/document/{id}";
     private string GetDeleteModalId(DocumentDetails document) => $"#{DeleteDocument.GetModalId(ConvertToSummary(document))}";
-
-
-
-
 
     private DocumentSummary ConvertToSummary(DocumentDetails document)
     {

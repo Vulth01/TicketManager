@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+
+//DocumentDetails.cs: 
+using System.ComponentModel.DataAnnotations;
 
 namespace BlazorApp1.Models
 {
@@ -26,50 +29,3 @@ namespace BlazorApp1.Models
         [Required][StringLength(200)]public string FaultDescription { get; set; }                                                                       //Laptop fan is making noise when powered on. Kindly refer to the attached clip.
     }
 }
-
-
-
-/*
-//
-[Required]
-[StringLength(50)]
-public required string Name { get; set; }
-[Range(1, 100)]
-public decimal Price { get; set; }
-public DateOnly LastUpdated { get; set; }
-public bool Complete { get; set; }
-
-
-
-//HALO-SIDED-PROPERTIES
-
-public required string Type { get; set; }
-public DateOnly DateCreated { get; set; }
-public required string Customer { get; set; }
-public required string Site { get; set; }
-public required string User { get; set; }
-
-public required string Summary { get; set; }
-
-public required string Status { get; set; }
-
-public required float SLATimeLeft { get; set; }
-
-public required string Priority { get; set; }
-
-public float TimeTaken { get; set; }
-
-public required string Agent { get; set; }
-
-public float TicketAge { get; set; }
-
-public string? WorkingHours { get; set; }
-
-public required string Team { get; set; }
-
-public DateOnly LastActionDate { get; set; }
-
-public string? Category { get; set; }
-
-public DateOnly DateClosed { get; set; }
-*/
