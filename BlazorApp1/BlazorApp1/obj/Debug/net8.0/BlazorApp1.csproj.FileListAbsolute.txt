@@ -326,4 +326,3 @@ C:\TicketManager\BlazorApp1\BlazorApp1\bin\Debug\net8.0\runtimes\browser\lib\net
 C:\TicketManager\BlazorApp1\BlazorApp1\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\TicketManager\BlazorApp1\BlazorApp1\obj\Debug\net8.0\BlazorApp1.csproj.AssemblyReference.cache
 C:\TicketManager\BlazorApp1\BlazorApp1\obj\Debug\net8.0\BlazorApp1.csproj.Up2Date
-C:\TicketManager\BlazorApp1\BlazorApp1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

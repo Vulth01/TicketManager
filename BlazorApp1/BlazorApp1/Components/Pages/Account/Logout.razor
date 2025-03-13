@@ -1,19 +1,27 @@
 ﻿@page "/logout"
-@using Microsoft.AspNetCore.Authentication
 @inject NavigationManager navigationManager
+
+
+
+
 
 
 <div class="row">
 	<div class="col-12">
 		<div class="card">
 			<div class="card-body flex-column">
+
+				@* LOGOUT HEADER IMAGE *@
 				<div class="text-center">
 					<img src="/images/logout.png" style="max-height:5rem" />
 				</div>
+
+				@* SUCCESSFUL LOGOUT MESSAGE *@
 				<div class="text-center mt-2">
 					<span class="text-danger fw-bolder">You have successfully logged out of the application.</span>
 				</div>
 
+				@* LOGIN LINK BUTTON *@
 				<div style="text-align: center">
 					<span>
 						<a class="fw-bolder" href="/login">Click here</a> to log in.
@@ -26,10 +34,15 @@
 </div>
 
 
+
+
+
+
 @code{
 	[CascadingParameter]
 	public HttpContext HttpContext { get; set; }
 
+	// LOG USER OUT
 	protected override async Task OnInitializedAsync()
 	{
 		await base.OnInitializedAsync();

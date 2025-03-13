@@ -4,12 +4,11 @@ namespace BlazorApp1.Models
 {
     public class DocumentSummary
     {
-
         public Guid guid { get; set; }
         public int Id { get; set; }
 
 
-        /*                  WORD-DOCUMENT-PROPERTIES            */                  //---EXAMPLES---
+        /*                  DOCUMENT-PROPERTIES            */                       //---EXAMPLES---
         public string Brand { get; set; }                                           //Tertiary
         public string Campus { get; set; }                                          //Rosebank College Pretoria CBD
         public string UserName { get; set; }                                        //Sunnyboy Rasebeka
@@ -25,8 +24,6 @@ namespace BlazorApp1.Models
         public string EquipmentProductNumber { get; set; }                          //6Q7Y7ES
         public string EquipmentSerialNumber { get; set; }                           //CND3131JYG
         public string FaultDescription { get; set; }                                //Laptop fan is making noise when powered on. Kindly refer to the attached clip.
-
-
 
     }
 }

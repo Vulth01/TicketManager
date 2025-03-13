@@ -1,16 +1,15 @@
 ﻿@page "/weather"
-
-@using Microsoft.AspNetCore.Authorization
+@attribute [StreamRendering]
 @attribute [Authorize(Roles = "Administrator, User")]
 
-@attribute [StreamRendering]
+
+
+
 
 
 <PageTitle>Weather</PageTitle>
-
 <h2>Weather</h2>
 
-<p>This component demonstrates showing data.</p>
 
 @if (forecasts == null)
 {
@@ -40,6 +39,11 @@ else
         </tbody>
     </table>
 }
+
+
+
+
+
 
 @code {
     private WeatherForecast[]? forecasts;

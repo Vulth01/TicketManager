@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XEFkZFVzZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Account/DeleteUser.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XERlbGV0ZVVzZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Account/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XExvZ2luLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,40 +52,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XExvZ291dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/DeleteDocument.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEZWxldGVEb2N1bWVudC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/DeleteUser.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEZWxldGVVc2VyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Document.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEb2N1bWVudC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/DocumentOverview.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEb2N1bWVudE92ZXJ2aWV3LnJhem9y
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Account/UserOverview.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XFVzZXJPdmVydmlldy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Extra/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeHRyYVxDb3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Extra/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeHRyYVxXZWF0aGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/UserOverview.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2VyT3ZlcnZpZXcucmF6b3I=
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/TicketDocument/DeleteDocument.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaWNrZXREb2N1bWVudFxEZWxldGVEb2N1bWVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/TicketDocument/Document.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaWNrZXREb2N1bWVudFxEb2N1bWVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/TicketDocument/DocumentOverview.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaWNrZXREb2N1bWVudFxEb2N1bWVudE92ZXJ2aWV3LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/TicketManager/BlazorApp1/BlazorApp1/Components/Routes.razor]
