@@ -3,40 +3,48 @@
   "WorkspaceRootPath": "C:\\TicketManager\\BlazorApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\account\\adduser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\account\\adduser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\data\\ticketcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\data\\ticketcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\document.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\document.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\useroverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\useroverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\models\\entities\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\models\\entities\\useraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\documentoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\documentoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\models\\documentdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\models\\documentdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\models\\entities\\usersummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\models\\entities\\usersummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\data\\ticketcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\data\\ticketcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\document.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\document.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\deleteuser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -47,8 +55,28 @@
       "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\deletedocument.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\models\\documentsummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\models\\documentsummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\account\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\account\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\account\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\account\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\account\\adduser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\account\\adduser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\account\\accessdenied.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\account\\accessdenied.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,8 +86,138 @@
       "DocumentGroups": [
         {
           "DockedHeight": 414,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TicketContext.cs",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Data\\TicketContext.cs",
+              "RelativeDocumentMoniker": "BlazorApp1\\Data\\TicketContext.cs",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Data\\TicketContext.cs",
+              "RelativeToolTip": "BlazorApp1\\Data\\TicketContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T12:28:45.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\App.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\App.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\App.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:28:42.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\_Imports.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\_Imports.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:28:41.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DeleteDocument.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\DeleteDocument.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\DeleteDocument.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\DeleteDocument.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\DeleteDocument.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:26:24.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:27:20.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Error.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Error.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Error.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Error.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Error.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:27:11.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DocumentOverview.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\DocumentOverview.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\DocumentOverview.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\DocumentOverview.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\DocumentOverview.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:26:41.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Document.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Document.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Document.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Document.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Document.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:26:29.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Counter.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Counter.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Counter.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Counter.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Counter.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:26:17.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Logout.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Account\\Logout.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Account\\Logout.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Account\\Logout.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Account\\Logout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:26:04.558Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -90,80 +248,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TicketContext.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Data\\TicketContext.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Data\\TicketContext.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Data\\TicketContext.cs",
-              "RelativeToolTip": "BlazorApp1\\Data\\TicketContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T09:19:17.238Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddUser.razor",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Account\\AddUser.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Account\\AddUser.razor",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Account\\AddUser.razor",
-              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Account\\AddUser.razor",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAiwF0AAAARAAAAAAAAAA==",
+              "DocumentIndex": 16,
+              "Title": "AccessDenied.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Account\\AccessDenied.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Account\\AccessDenied.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Account\\AccessDenied.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Account\\AccessDenied.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T08:39:13.449Z",
+              "WhenOpened": "2025-03-13T12:25:50.235Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserOverview.razor",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\UserOverview.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\UserOverview.razor",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\UserOverview.razor",
-              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\UserOverview.razor",
-              "ViewState": "AgIAAC4AAAAAAAAAAAApwEsAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T08:39:22.149Z",
+              "WhenOpened": "2025-03-13T12:25:47.977Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserAccount.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\Entities\\UserAccount.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Models\\Entities\\UserAccount.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\Entities\\UserAccount.cs",
-              "RelativeToolTip": "BlazorApp1\\Models\\Entities\\UserAccount.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T06:42:23.492Z",
+              "DocumentIndex": 18,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:25:46.92Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserSummary.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\Entities\\UserSummary.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Models\\Entities\\UserSummary.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\Entities\\UserSummary.cs",
-              "RelativeToolTip": "BlazorApp1\\Models\\Entities\\UserSummary.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T09:03:38.046Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "DeleteUser.razor",
               "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\DeleteUser.razor",
               "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\DeleteUser.razor",
               "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\DeleteUser.razor",
               "RelativeToolTip": "BlazorApp1\\Components\\Pages\\DeleteUser.razor",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T08:58:19.461Z",
+              "WhenOpened": "2025-03-13T12:25:37.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AddUser.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Account\\AddUser.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Account\\AddUser.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Account\\AddUser.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Account\\AddUser.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:24:00.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserOverview.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\UserOverview.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\UserOverview.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\UserOverview.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\UserOverview.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:23:55.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Weather.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Weather.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Weather.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Weather.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Weather.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:23:53.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Routes.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Routes.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:23:43.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Account\\Login.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Account\\Login.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Account\\Login.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Account\\Login.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-13T12:21:04.924Z",
               "EditorCaption": ""
             }
           ]
@@ -179,105 +376,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "efd51498-9675-47b4-96e1-7502a39b5bf3",
-        "Display": 1,
-        "X": -5,
-        "Y": 271,
-        "Width": 1476,
-        "Height": 766,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\_Imports.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Components\\_Imports.razor",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\_Imports.razor",
-              "RelativeToolTip": "BlazorApp1\\Components\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T09:44:06.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Document.razor",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Document.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\Document.razor",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\Document.razor",
-              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\Document.razor",
-              "ViewState": "AgIAAAEAAAAAAAAAAADgvx8AAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T06:49:50.125Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DocumentOverview.razor",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\DocumentOverview.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\DocumentOverview.razor",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\DocumentOverview.razor",
-              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\DocumentOverview.razor",
-              "ViewState": "AgIAAEgAAAAAAAAAAAD4v2YAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T08:39:15.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DocumentDetails.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\DocumentDetails.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Models\\DocumentDetails.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\DocumentDetails.cs",
-              "RelativeToolTip": "BlazorApp1\\Models\\DocumentDetails.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T08:39:36.223Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DocumentSummary.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\DocumentSummary.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Models\\DocumentSummary.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\DocumentSummary.cs",
-              "RelativeToolTip": "BlazorApp1\\Models\\DocumentSummary.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T09:03:29.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DeleteDocument.razor",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\DeleteDocument.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\DeleteDocument.razor",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\DeleteDocument.razor",
-              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\DeleteDocument.razor",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACsAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T08:58:24.322Z",
-              "EditorCaption": ""
             }
           ]
         }

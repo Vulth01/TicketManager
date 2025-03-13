@@ -1,5 +1,8 @@
 ﻿@page "/userOverview"
 
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Administrator")]
+
 @inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
 @inject NavigationManager NavigationManager
 
