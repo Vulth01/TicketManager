@@ -1,0 +1,120 @@
+﻿<!--AddUser.razor-->
+@page "/add-user"
+@page "/userAccount/{id:int}"
+@rendermode InteractiveServer
+
+@using Microsoft.EntityFrameworkCore
+@using BlazorApp1.Models.Entities
+@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
+@inject NavigationManager NavigationManager
+
+
+<PageTitle>@title</PageTitle>
+
+<h3>@title</h3>
+
+@if (userAccount is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <EditForm Model="@userAccount" FormName="editUser" OnValidSubmit="HandleSubmit">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <!-- User Name -->
+                <div class="mb-3">
+                    <label for="userName" class="form-label">User Name:</label>
+                    <InputText id="userName" @bind-Value="userAccount.UserName" class="form-control"/>
+                    <ValidationMessage For="() => userAccount.UserName" />
+                </div>
+
+                <!-- Password -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <InputText id="password" @bind-Value="userAccount.Password" class="form-control" type="password"/>
+                    <ValidationMessage For="() => userAccount.Password" />
+                </div>
+
+                <!-- Role -->
+                <div class="mb-3">
+                    <label for="role" class="form-label">Role:</label>
+                    <InputSelect id="role" @bind-Value="userAccount.Role" class="form-control">
+                        <option value="User">User</option>
+                        <option value="Administrator">Administrator</option>
+                    </InputSelect>
+                    <ValidationMessage For="() => userAccount.Role" />
+                </div>
+
+
+                <!-- Edit + Delete -->
+                <button type="submit" class="btn btn-primary">
+                    Save
+                </button>
+                <a role="button" href="/userOverview" class="btn btn-secondary">Cancel</a>
+                <div style="margin-bottom: 20%"></div>
+
+
+            </EditForm>
+
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] 
+    public int? Id { get; set; }
+
+    [SupplyParameterFromForm]
+    private UserAccount? userAccount { get; set; }
+
+    private string title = string.Empty;
+
+
+
+    protected override void OnParametersSet()
+    {
+        if(userAccount is not null)
+        {
+            return;
+        }
+
+        if(Id is not null)
+        {
+            using var context = DbFactory.CreateDbContext();
+            userAccount = context.UserAccounts.FirstOrDefault(d => d.Id == Id.Value);
+            title = $"Edit Document: {userAccount.Id}";
+        }
+        else
+        {
+            userAccount = new UserAccount
+            {
+                Role = "User"
+            };
+            title = "New User";
+        }
+    }
+
+    private async Task HandleSubmit()
+    {
+        ArgumentNullException.ThrowIfNull(userAccount);
+
+        using var context = DbFactory.CreateDbContext();
+
+        if (Id is null)
+        {
+            context.UserAccounts.Add(userAccount);
+        }
+        else
+        {
+            context.UserAccounts.Update(userAccount);
+        }
+
+        await context.SaveChangesAsync();
+
+        NavigationManager.NavigateTo("/userOverview");
+    }
+}

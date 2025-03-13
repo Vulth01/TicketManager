@@ -1,5 +1,12 @@
 ﻿@page "/counter"
+
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Administrator,User")]
+
 @rendermode InteractiveServer
+@inject IJSRuntime js;
+
+
 
 <PageTitle>Counter</PageTitle>
 
@@ -10,7 +17,23 @@
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 
+<AuthorizeView Roles="Administrator">
+    <Authorized>
+        <br />
+        <br />
+        <button class="btn btn-outline-primary" @onclick="DisplayGreetingAlert">Display Greeting Alert</button>
+    </Authorized>
+</AuthorizeView>
+
+
+
 @code {
+
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+
     private int currentCount = 0;
 
     [Parameter]
@@ -20,4 +43,14 @@
     {
         currentCount += IncrementAmount;
     }
+
+    private async Task DisplayGreetingAlert()
+    {
+        var authenticationState = await authenticationStateTask;
+        var message = $"Hello {authenticationState.User.Identity.Name}";
+        await js.InvokeVoidAsync("alert", message);
+
+    }
+
+
 }
