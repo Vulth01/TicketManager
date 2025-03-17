@@ -44,31 +44,23 @@ INSERT INTO dbo.user_account (user_name, password, role)
 VALUES ('user1', 'user1', 'User');
 
 
-
-DROP TABLE user_account;
-
-
-INSERT INTO user_account (guid, user_name, password, role)
-VALUES (NEWID(), 'admin1', 'pass1', 'Administrator');
+INSERT INTO user_account (guid, user_name, password, email, role)
+VALUES (NEWID(), 'admin!', 'qwer1234', 'admin@administrator.com', 'Administrator');
+SELECT * FROM dbo.user_account;
 
 --------------------------------------------------------------------------------------------------------------
 
 --										READ
 
-
-
+USE CRUD;													-- TO USE THE CREATED DATABASE
 SELECT DB_NAME(); 
-
 SELECT @@SERVERNAME;
 
-SELECT * FROM dbo.DocumentDetails;
+SELECT * FROM dbo.DocumentDetails;							-- VIEW TICKETS
 
-SELECT * FROM dbo.user_account;
+SELECT * FROM dbo.user_account;								-- VIEW USERS
 
 SELECT * FROM dbo.__EFMigrationsHistory;
-
-SELECT * FROM dbo.user_account;
-
 
 
 SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH		-- VIEW PROP NAME + DATATYPE + MAXLENGTH
@@ -86,5 +78,32 @@ WHERE TABLE_TYPE = 'BASE TABLE';
 --										DELETE
 
 
+DROP TABLE dbo.user_account
 
 DELETE FROM dbo.user_account;
+
+--------------------------------------------------------------------------------------------------------------
+
+--										RECREATE
+
+DROP TABLE dbo.user_account
+
+--(guid, user_name, password, email, role)
+CREATE TABLE dbo.user_account
+(
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    guid UNIQUEIDENTIFIER NOT NULL,
+    UserName NVARCHAR(MAX) NOT NULL,
+    password NVARCHAR(100) NOT NULL,
+    email NVARCHAR(100) NOT NULL,  
+    role NVARCHAR(20) NOT NULL     
+);
+SELECT * FROM dbo.user_account;
+
+
+
+
+INSERT INTO user_account (guid, UserName, password, email, role)
+VALUES (NEWID(), 'admin!', 'qwer1234', 'admin@administrator.com', 'Administrator');
+SELECT * FROM dbo.user_account;
+

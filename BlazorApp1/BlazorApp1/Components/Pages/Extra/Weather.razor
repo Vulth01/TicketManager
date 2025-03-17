@@ -20,20 +20,20 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th style="background-color: #666699">Date</th>
+                <th style="background-color: #7777aa">Temp. (C)</th>
+                <th style="background-color: #666699">Temp. (F)</th>
+                <th style="background-color: #7777aa">Summary</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var forecast in forecasts)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td style="background-color: #9999bb">@forecast.Date.ToShortDateString()</td>
+                    <td style="background-color: #aaaacc">@forecast.TemperatureC</td>
+                    <td style="background-color: #9999bb">@forecast.TemperatureF</td>
+                    <td style="background-color: #aaaacc">@forecast.Summary</td>
                 </tr>
             }
         </tbody>

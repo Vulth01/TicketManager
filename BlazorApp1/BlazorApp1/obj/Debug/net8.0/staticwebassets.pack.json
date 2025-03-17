@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\BlazorApp1.72xb8i838x.bundle.scp.css"
     },
     {
+      "Id": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\ADvTECH_Logo.png",
+      "PackagePath": "staticwebassets\\ADvTECH_Logo.png"
+    },
+    {
       "Id": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },

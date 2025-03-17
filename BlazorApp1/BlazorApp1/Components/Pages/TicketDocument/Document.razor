@@ -8,11 +8,11 @@
 @inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
 @inject NavigationManager NavigationManager
 
-<PageTitle>@title</PageTitle>
+<PageTitle>@_title</PageTitle>
 
-<h3>@title</h3>
+<h3>@_title</h3>
 
-@if (document is null)
+@if (_document == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -20,123 +20,133 @@ else
 {
     <div class="row">
         <div class="col-md-4">
-            <EditForm Model="@document" FormName="editDocument" OnValidSubmit="HandleSubmit">
+            <EditForm Model="@_document" FormName="editDocument" OnValidSubmit="HandleSubmitAsync">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
-
-
-                <!--Brand-->
+    @* Brand *@
+            @* OLD *@
+                @* <div class="mb-3"> *@
+                @*     <label for="brand" class="form-label">Brand:</label> *@
+                @*     <InputText id="brand" @bind-Value="_document.Brand" class="form-control" /> *@
+                @*     <ValidationMessage For="() => _document.Brand" /> *@
+                @* </div> *@
+            @* NEW *@
                 <div class="mb-3">
-                    <label for="brand" class="form-label">Brand:</label>
-                    <InputText id="brand" @bind-Value="document.Brand" class="form-control" />
-                    <ValidationMessage For="() => document.Brand" />
+                    <label for="educationLevel" class="form-label">Education Level:</label>
+                    <InputSelect id="educationLevel" @bind-Value="_document.Brand" class="form-control">
+                        <option value="Preschool">Preschool</option>
+                        <option value="Primary">Primary</option>
+                        <option value="Secondary">Secondary</option>
+                        <option value="Tertiary">Tertiary</option>
+                        <option value="Vocational">Vocational</option>
+                        <option value="Postgraduate">Postgraduate</option>
+                    </InputSelect>
                 </div>
 
-                <!-- Campus -->
+    @*  Campus *@
                 <div class="mb-3">
                     <label for="campus" class="form-label">Campus:</label>
-                    <InputText id="campus" @bind-Value="document.Campus" class="form-control" />
-                    <ValidationMessage For="() => document.Campus" />
+                    <InputText id="campus" @bind-Value="_document.Campus" class="form-control" />
+                    <ValidationMessage For="() => _document.Campus" />
                 </div>
 
-                <!-- User Name -->
+    @*  User Name *@
                 <div class="mb-3">
                     <label for="userName" class="form-label">User Name:</label>
-                    <InputText id="userName" @bind-Value="document.UserName" class="form-control" />
-                    <ValidationMessage For="() => document.UserName" />
+                    <InputText id="userName" @bind-Value="_document.UserName" class="form-control" />
+                    <ValidationMessage For="() => _document.UserName" />
                 </div>
 
-                <!-- User Email -->
+    @*  User Email *@
                 <div class="mb-3">
                     <label for="userEmail" class="form-label">User Email:</label>
-                    <InputText id="userEmail" @bind-Value="document.UserEmail" class="form-control" />
-                    <ValidationMessage For="() => document.UserEmail" />
+                    <InputText id="userEmail" @bind-Value="_document.UserEmail" class="form-control" />
+                    <ValidationMessage For="() => _document.UserEmail" />
                 </div>
 
-                <!-- User Contact Number -->
+    @*  User Contact Number *@
                 <div class="mb-3">
                     <label for="userContactNumber" class="form-label">User Contact Number:</label>
-                    <InputText id="userContactNumber" @bind-Value="document.UserContactNumber" class="form-control" />
-                    <ValidationMessage For="() => document.UserContactNumber" />
+                    <InputText id="userContactNumber" @bind-Value="_document.UserContactNumber" class="form-control" />
+                    <ValidationMessage For="() => _document.UserContactNumber" />
                 </div>
 
-                <!-- Primary Contact -->
+    @*  Primary Contact *@
                 <div class="mb-3">
                     <label for="primaryContact" class="form-label">Primary Contact:</label>
-                    <InputCheckbox id="primaryContact" @bind-Value="document.PrimaryContact" />
-                    <ValidationMessage For="() => document.PrimaryContact" />
+                    <InputCheckbox id="primaryContact" @bind-Value="_document.PrimaryContact" />
+                    <ValidationMessage For="() => _document.PrimaryContact" />
                 </div>
 
-                <!-- Troubleshooter Name -->
+    @*  Troubleshooter Name *@
                 <div class="mb-3">
                     <label for="troubleshooterName" class="form-label">Troubleshooter Name:</label>
-                    <InputText id="troubleshooterName" @bind-Value="document.TroubleshooterName" class="form-control" />
-                    <ValidationMessage For="() => document.TroubleshooterName" />
+                    <InputText id="troubleshooterName" @bind-Value="_document.TroubleshooterName" class="form-control" />
+                    <ValidationMessage For="() => _document.TroubleshooterName" />
                 </div>
 
-                <!-- Troubleshooter Email -->
+    @*  Troubleshooter Email *@
                 <div class="mb-3">
                     <label for="troubleshooterEmail" class="form-label">Troubleshooter Email:</label>
-                    <InputText id="troubleshooterEmail" @bind-Value="document.TroubleshooterEmail" class="form-control" />
-                    <ValidationMessage For="() => document.TroubleshooterEmail" />
+                    <InputText id="troubleshooterEmail" @bind-Value="_document.TroubleshooterEmail" class="form-control" />
+                    <ValidationMessage For="() => _document.TroubleshooterEmail" />
                 </div>
 
-                <!-- Troubleshooter Contact Number -->
+    @*  Troubleshooter Contact Number *@
                 <div class="mb-3">
                     <label for="troubleshooterContactNumber" class="form-label">Troubleshooter Contact Number:</label>
-                    <InputText id="troubleshooterContactNumber" @bind-Value="document.TroubleshooterContactNumber" class="form-control" />
-                    <ValidationMessage For="() => document.TroubleshooterContactNumber" />
+                    <InputText id="troubleshooterContactNumber" @bind-Value="_document.TroubleshooterContactNumber" class="form-control" />
+                    <ValidationMessage For="() => _document.TroubleshooterContactNumber" />
                 </div>
 
-                <!-- Site Address -->
+    @* Site Address *@
                 <div class="mb-3">
                     <label for="siteAddress" class="form-label">Site Address:</label>
-                    <InputText id="siteAddress" @bind-Value="document.SiteAddress" class="form-control" />
-                    <ValidationMessage For="() => document.SiteAddress" />
+                    <InputText id="siteAddress" @bind-Value="_document.SiteAddress" class="form-control" />
+                    <ValidationMessage For="() => _document.SiteAddress" />
                 </div>
 
-                <!-- Equipment Make -->
+    @* Equipment Make *@
                 <div class="mb-3">
                     <label for="equipmentMake" class="form-label">Equipment Make:</label>
-                    <InputText id="equipmentMake" @bind-Value="document.EquipmentMake" class="form-control" />
-                    <ValidationMessage For="() => document.EquipmentMake" />
+                    <InputText id="equipmentMake" @bind-Value="_document.EquipmentMake" class="form-control" />
+                    <ValidationMessage For="() => _document.EquipmentMake" />
                 </div>
 
-                <!-- Equipment Model -->
+     @* Equipment Model *@
                 <div class="mb-3">
                     <label for="equipmentModel" class="form-label">Equipment Model:</label>
-                    <InputText id="equipmentModel" @bind-Value="document.EquipmentModel" class="form-control" />
-                    <ValidationMessage For="() => document.EquipmentModel" />
+                    <InputText id="equipmentModel" @bind-Value="_document.EquipmentModel" class="form-control" />
+                    <ValidationMessage For="() => _document.EquipmentModel" />
                 </div>
 
-                <!-- Equipment Product Number -->
+    @* Equipment Product Number *@
                 <div class="mb-3">
                     <label for="equipmentProductNumber" class="form-label">Equipment Product Number:</label>
-                    <InputText id="equipmentProductNumber" @bind-Value="document.EquipmentProductNumber" class="form-control" />
-                    <ValidationMessage For="() => document.EquipmentProductNumber" />
+                    <InputText id="equipmentProductNumber" @bind-Value="_document.EquipmentProductNumber" class="form-control" />
+                    <ValidationMessage For="() => _document.EquipmentProductNumber" />
                 </div>
 
-                <!-- Equipment Serial Number -->
+    @* Equipment Serial Number *@
                 <div class="mb-3">
                     <label for="equipmentSerialNumber" class="form-label">Equipment Serial Number:</label>
-                    <InputText id="equipmentSerialNumber" @bind-Value="document.EquipmentSerialNumber" class="form-control" />
-                    <ValidationMessage For="() => document.EquipmentSerialNumber" />
+                    <InputText id="equipmentSerialNumber" @bind-Value="_document.EquipmentSerialNumber" class="form-control" />
+                    <ValidationMessage For="() => _document.EquipmentSerialNumber" />
                 </div>
 
-                <!-- Fault Description -->
+    @* Fault Description *@
                 <div class="mb-3">
                     <label for="faultDescription" class="form-label">Fault Description:</label>
-                    <InputText id="faultDescription" @bind-Value="document.FaultDescription" class="form-control" />
-                    <ValidationMessage For="() => document.FaultDescription" />
+                    <InputText id="faultDescription" @bind-Value="_document.FaultDescription" class="form-control" />
+                    <ValidationMessage For="() => _document.FaultDescription" />
                 </div>
 
-                <!-- Edit + Delete -->
-                <button type="submit" class="btn btn-primary">
-                    Save
-                </button>
-                <a role="button" href="/documentOverview" class="btn btn-secondary">Cancel</a>
-                <div style="margin-bottom: 20%"></div>
-
+    @* Edit + Delete *@
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a role="button" href="/documentOverview" class="btn btn-secondary">Cancel</a>
+                </div>
+                <div class="mb-5"></div>
 
             </EditForm>
         </div>
@@ -148,47 +158,48 @@ else
     public int? Id { get; set; }
 
     [SupplyParameterFromForm]
-    private DocumentDetails? document { get; set; }
+    private DocumentDetails? _document { get; set; }
 
-    private string title = string.Empty;
+    private string _title = string.Empty;
 
 
 
     protected override void OnParametersSet()
     {
-        if (document is not null)
+        if (_document is not null)
         {
             return;
         }
 
+
         if (Id is not null)
         {
             using var context = DbFactory.CreateDbContext();
-            document = context.DocumentDetails.FirstOrDefault(d => d.Id == Id.Value);
-            title = $"Edit Document: {document.Id}";
+            _document = context.DocumentDetails.FirstOrDefault(d => d.Id == Id.Value);
+            _title = $"Edit Document: {_document!.Id}";
         }
         else
         {
-            document = new DocumentDetails();
-            title = "New Document";
+            _document = new DocumentDetails();
+            _title = "New Document";
         }
     }
 
 
     //ADD & UPDATE DOCUMENT
-    private async Task HandleSubmit()
+    private async Task HandleSubmitAsync()
     {
-        ArgumentNullException.ThrowIfNull(document);
+        ArgumentNullException.ThrowIfNull(_document);
 
         using var context = DbFactory.CreateDbContext();
 
         if (Id is null)
         {
-            context.DocumentDetails.Add(document);
+            context.DocumentDetails.Add(_document);
         }
         else
         {
-            context.DocumentDetails.Update(document);
+            context.DocumentDetails.Update(_document);
         }
 
         await context.SaveChangesAsync();

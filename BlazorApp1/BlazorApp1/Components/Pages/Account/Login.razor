@@ -23,7 +23,7 @@
 			@* INPUT USERNAME *@
 			<div class="mb-3">
 				<label>User Name</label>
-				<InputText @bind-Value="Model.UserName" class="form-control" placeholder="Username" />
+				<InputText @bind-Value="Model.UserName" class="form-control" placeholder="Username" autofocus/>
 				<ValidationMessage For="()=>Model.UserName"/>
 			</div>
 
@@ -34,7 +34,6 @@
 				<ValidationMessage For="()=>Model.Password" />
 			</div>
 
-			@* ERROR MESSAGE *@
 			<div class="mb-3 text-center">
 				<span class="text-danger">@errorMessage</span>
 			</div>
@@ -53,22 +52,24 @@
 
 
 @code {
-
 	[CascadingParameter]
-	public HttpContext? HttpContext{ get; set; }
+	public HttpContext? HttpContext { get; set; }
 
 	[SupplyParameterFromForm]
 	public LoginViewModel Model { get; set; } = new();
 
 	private string? errorMessage;
 
-
 	// AUTHENTICATION & LOGIN
 	private async Task Authenticate()
 	{
-		var userAccount = ticketContext.UserAccounts.Where(x=> x.UserName == Model.UserName).FirstOrDefault();
+		// Check if the input is an email or a username.
+		var userAccount = ticketContext.UserAccounts
+			.Where(x => x.UserName == Model.UserName || x.Email == Model.UserName)
+			.FirstOrDefault();
 
-		if(userAccount is null || userAccount.Password != Model.Password)
+		// If invalid
+		if (userAccount is null || userAccount.Password != Model.Password)
 		{
 			errorMessage = "Invalid username or password";
 			return;
@@ -76,8 +77,8 @@
 
 		var claims = new List<Claim>
 		{
-			new Claim(ClaimTypes.Name, Model.UserName),
-			new Claim(ClaimTypes.Role, userAccount.Role)
+			new Claim(ClaimTypes.Name, userAccount.UserName),
+            new Claim(ClaimTypes.Role, userAccount.Role)
 		};
 
 		var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -85,7 +86,6 @@
 		await HttpContext.SignInAsync(principal);
 
 		navigationManager.NavigateTo("/");
-
 	}
-
 }
+
