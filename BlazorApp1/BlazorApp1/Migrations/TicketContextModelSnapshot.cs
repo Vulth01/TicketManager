@@ -108,7 +108,7 @@ namespace BlazorApp1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DocumentDetails");
+                    b.ToTable("DocumentDetails", (string)null);
                 });
 
             modelBuilder.Entity("BlazorApp1.Models.Entities.UserAccount", b =>
@@ -118,6 +118,11 @@ namespace BlazorApp1.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -138,7 +143,7 @@ namespace BlazorApp1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("user_account");
+                    b.ToTable("user_account", (string)null);
                 });
 #pragma warning restore 612, 618
         }

@@ -1,27 +1,20 @@
 ﻿@* NAVIGATION MENU *@
-
-
-
-
-
-
-<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Ticket Manager</a>
+<div class="top-row ps-3 navbar navbar-dark" style="background-color:#ffffff; height: 100px;">
+    <div class="container-fluid" style="display: flex; align-items: center;">
+        <img src="/ADvTECH_Logo.png" alt="Logo" style="height: 80px;" />
     </div>
 </div>
 
 <input type="checkbox" title="Navigation menu" class="navbar-toggler" />
 
-
 @* NAVIGATION BAR *@
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()" style="background-color: #334049">
     <nav class="flex-column">
 
         @* HOME *@
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+                <span class="bi bi-house-door-fill-nav-menu home-icon" aria-hidden="true"></span> Home
             </NavLink>
         </div>
 
@@ -33,7 +26,6 @@
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="documentOverview">
                         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Tickets Overview
-                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                     </NavLink>
                 </div>
 
@@ -50,7 +42,6 @@
         @* ADMIN ONLY *@
         <AuthorizeView Roles="Administrator">
             <Authorized>
-
 
                 @* UserOverview *@
                 <div class="nav-item px-3">
@@ -76,6 +67,22 @@
     }
 
     .nav-scrollable .nav-item {
-        white-space: nowrap;
+            white-space: nowrap;
+    }
+
+    .home-icon {
+        color: red !important;
+    }
+
+    .home-icon:hover {
+        color: #e31e27 !important;
+    }
+
+    .nav-link {
+        color: #ffffff !important;
+    }
+
+    .nav-link:hover {
+        color: #e31e27 !important;
     }
 </style>

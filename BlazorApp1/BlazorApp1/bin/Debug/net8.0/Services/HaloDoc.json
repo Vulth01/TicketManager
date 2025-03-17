@@ -1,0 +1,289 @@
+﻿/*
+  Documentation for integration of HaloPSA with Ticket Manager web application
+*/
+
+
+
+/*
+  RESOURCES:
+
+    Random reddit post: https://www.reddit.com/r/halopsa/comments/13y7ma2/has_anyone_successfully_used_the_api_to_create/?rdt=35855
+    Random github repo: https://github.com/2-click/msp-automation/blob/main/HaloPSA/Integration-SentinelOne/Start-SentinelOneThreatSyncToHalo.ps1
+  */
+
+
+
+
+/*
+
+1. API Key with Proper Permissions:
+      - API key set up with appropriate permissions (creating/updating tickets)
+
+2. HaloPSA API URL:
+      - URL for HaloPSA API instance (e.g., https://your-halo-psa-instance/api/v1).
+
+3. Access to the /tickets Endpoint:
+      - Access to the /tickets endpoint.
+      - Confirm the endpoint allows you to create or update tickets.
+
+4. Firewall/Network Access (if applicable):
+      - Verify that requests to the HaloPSA API are allowed from your network.
+
+*/
+
+
+
+
+/*
+    HALOPSA API:
+
+    Type        ||  Resource            ||  Parameters      ||  Parameter Type      ||  Data Type       ||  Description
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    GET         ||  /Actions            ||  ticket_id       ||  query               ||  string          ||  Get actions for a single ticket
+    GET         ||  /Actions/{id}       ||  id              ||  query (required)    ||  int             ||  The action ID
+    GET         ||  /Actions/{id}       ||  ticket_id       ||  query (required)    ||  int             ||  The ticket ID
+    POST        ||  /Actions/{id}       ||  ticket_id       ||  query (required)    ||  int             ||  The ticket ID
+    DELETE      ||  /Actions/{id}       ||  id              ||  query (required)    ||  int             ||  The action ID
+    DELETE      ||  /Actions/{id}       ||  ticket_id       ||  query (required)    ||  int             ||  The ticket ID
+
+    GET         ||  /Agent              ||  search          ||  query               ||  string          ||  Filter by Agents with a name, email address or telephone number like your search
+    GET         ||  /Agent              ||  role            ||  query               ||  string          ||  Filter by Agents who have a particular role. Requires an int passed as a string
+    GET         ||  /Agent/{id}         ||  id              ||  path (required)     ||  int             ||  The Agent ID
+    GET         ||  /Agent/{id}         ||  id              ||  path (required)     ||  int             ||  The Agent ID
+    DELETE      ||  /Agent/{id}         ||  id              ||  path (required)     ||  int             ||  The Agent ID
+
+    GET         ||  /Appointment        ||  showall         ||  query               ||  bool            ||  Admin override to return all appointments
+    GET         ||  /Appointment{id}    ||  id              ||  path (required)     ||  int             ||  The Appointment ID
+    DELETE      ||  /Appointment{id}    ||  id              ||  path (required)     ||  int             ||  The Appointment ID
+
+    GET         ||  /Asset              ||  search          ||  query               ||  string          ||  Filter by Assets with an asset field like your search
+    GET         ||  /Asset/{id}         ||  id              ||  path (required)     ||  int             ||  The Asset's ID
+    DELETE      ||  /Asset/{id}         ||  id              ||  path (required)     ||  int             ||  The Asset's ID
+
+    GET         ||  /Attachment         ||  ticket_id       ||  query               ||  int             ||  Returns attachments from the ticket ID specified
+    GET         ||  /Attachment/{id}    ||  id              ||  path (required)     ||  int             ||  The Attachment ID
+    DELETE      ||  /Attachment/{id}    ||  id              ||  path (required)     ||  int             ||  The Attachment ID
+
+    GET         ||  /Client             ||  page_size       ||  query               ||  int             ||  When using Pagination, the size of the page
+    GET         ||  /Client/{id}        ||  id              ||  query               ||  int             ||  The Customer's ID
+    DELETE      ||  /Client/{id}        ||  id              ||  query               ||  int             ||  The Customer's ID
+
+
+
+ */
+
+
+
+// EXAMPLE - POST "/Actions"
+/*
+  root": [                                                                    //  1 item
+        0: {                                                                  //  203 items
+          "note_html": string"string"
+          "ticket_id": int0
+          "id": int0
+          "outcome": string"string"
+          "who": string"string"
+          "who_type": int0
+          "who_imgpath": string"string"
+          "who_agentid": int0
+          "datetime": string"2019-08-02T14:35:54.437Z"
+          "note": string"string"
+          "emailbody": string"string"
+          "emailsubject": string"string"
+          "emailbody_html": string"string"
+          "actionuserdef": int0
+          "userdesc": string"string"
+          "actiondatecreated": string"2019-08-02T14:35:54.437Z"
+          "actioninvoicenumber": string"string"
+          "externalinvoicenumber": int0
+          "actionchargeamount": int0
+          "actionchargehours": int0
+          "actionnonchargeamount": int0
+          "actionnonchargehours": int0
+          "actioncontractid": int0
+          "actprocessid": int0
+          "actiontravelamount": int0
+          "actionmileageamount": int0
+          "actiontravelmileageinvoicenumber": int0
+          "actionbillingplanid": int0
+          "actioncalendarstatus": int0
+          "actionapptid": string"string"
+          "actionsmsstatus": int0
+          "timetakenadjusted": int0
+          "sitevisitunits": int0
+          "svid": int0
+          "asset_id": int0
+          "asset_site": int0
+          "lwwarrantyreported": booltrue
+          "from_mailbox_id": int0
+          "from_address_override": string"string"
+          "actionarrivaldate": string"2019-08-02T14:35:54.439Z"
+          "actioncompletiondate": string"2019-08-02T14:35:54.439Z"
+          "actiontravelstartdate": string"2019-08-02T14:35:54.439Z"
+          "actiontravelenddate": string"2019-08-02T14:35:54.439Z"
+          "actionactualresponse": int0
+          "actionslaresponsestate": string"string"
+          "actisbillable": booltrue
+          "actisreadyforprocessing": booltrue
+          "labourwarranty": booltrue
+          "actreviewed": booltrue
+          "actprocesseddate": string"2019-08-02T14:35:54.439Z"
+          "actionprepayhours": int0
+          "emailbccnew": string"string"
+          "actionuserdefineddata": string"string"
+          "emailtolistall": string"string"
+          "emaildirection": string"string"
+          "reply_direct": booltrue
+          "actioninformownerofaction": booltrue
+          "surchargeid": int0
+          "achargetotalaction": booltrue
+          "achargetotalprocessed": booltrue
+          "sendtweet": booltrue
+          "tweetsent": booltrue
+          "tweetfrom": string"string"
+          "twitterid": int0
+          "sendtofb": booltrue
+          "senttofb": booltrue
+          "facebookid": string"string"
+          "facebookname": string"string"
+          "calloutcomenum": int0
+          "actionresponsedate": string"2019-08-02T14:35:54.440Z"
+          "actiontargetresponsedate": string"2019-08-02T14:35:54.440Z"
+          "pagerdutysendstatus": int0
+          "mailentryid": string"string"
+          "replytoaddress": string"string"
+          "actsapuuid": string"string"
+          "whowith": string"string"
+          "chatid": int0
+          "dynamicsactionid": string"string"
+          "actionby_agent_id": int0
+          "actionby_user_id": int0
+          "action_appointment_id": int0
+          "new_tickettype": int0
+          "new_priority": int0
+          "new_category1": string"string"
+          "new_category2": string"string"
+          "new_category3": string"string"
+          "new_category4": string"string"
+          "new_estimate": int0
+          "new_impact": int0
+          "new_urgency": int0
+          "new_matched_rule_id": int0
+          "new_firsttimefix": booltrue
+          "new_team": string"string"
+          "new_agent": int0
+          "new_slastatus": int0
+          "new_fixbydate": string"2019-08-02T14:35:54.443Z"
+          "new_followupdate": string"2019-08-02T14:35:54.443Z"
+          "new_deadlinedate": string"2019-08-02T14:35:54.443Z"
+          "new_deadlinenotificationhours": int0
+          "new_startdate": string"2019-08-02T14:35:54.443Z"
+          "new_starttime": string"string"
+          "new_targetdate": string"2019-08-02T14:35:54.443Z"
+          "new_targettime": string"string"
+          "new_oppcontactname": string"string"
+          "new_oppcompanyname": string"string"
+          "new_oppemailaddress": string"string"
+          "new_oppcustomertitle": string"string"
+          "new_opptel": string"string"
+          "new_oppcountry": string"string"
+          "new_opptype": string"string"
+          "new_opphear": string"string"
+          "new_oppvalue": int0
+          "new_oppconversionprobability": int0
+          "new_oppprofit": int0
+          "new_oppcurrentsystem": string"string"
+          "new_oppcompetitors": string"string"
+          "new_opptrialdate": string"2019-08-02T14:35:54.443Z"
+          "new_oppdemodate": string"2019-08-02T14:35:54.443Z"
+          "new_oppdiscountdate": string"2019-08-02T14:35:54.443Z"
+          "new_oppattemptsmade": int0
+          "new_oppconverteddate": string"2019-08-02T14:35:54.444Z"
+          "new_oppproductchosen": string"string"
+          "new_oppreason": string"string"
+          "new_opptimezonename": string"string"
+          "new_oppclosurecategory": int0
+          "new_oppdontaddtomailinglist": booltrue
+          "new_approvalprocess": int0
+          "new_approvalprocess_agent_id": int0
+          "new_approvalprocess_user_id": int0
+          "new_approvalprocess_users": [ ... ]                                //  1 item
+          "new_approvalprocess_email": string"string"
+          "new_approvalprocess_cab_id": int0
+          "new_approvalprocess_cab": [ ... ]                                  //  1 item
+          "new_product_id": int0
+          "new_component_id": int0
+          "new_version_id": int0
+          "new_ticket": { ... }                                               //  354 items
+          "new_appointment": { ... }                                          //  87 items
+          "new_matched_kb_id": int0
+          "new_linkedticket_template_id": int0
+          "new_supplier_id": int0
+          "new_supplier_ref": string"string"
+          "new_supplier_contract_id": int0
+          "new_supplier_priority_id": int0
+          "new_supplier_response_date": string"2019-08-02T14:35:54.555Z"
+          "new_supplier_fix_date": string"2019-08-02T14:35:54.555Z"
+          "new_linkedticket_status": int0
+          "emailtemplate_id": int0
+          "create_article": booltrue
+          "sendemail": booltrue
+          "action_showpreview": booltrue
+          "setnotetoemailbody": booltrue
+          "action_isresponse": booltrue
+          "attachments": [ ... ]                                              //  1 item
+          "outcome_details": { ... }                                          //  78 items
+          "update_children": booltrue
+          "update_parent": booltrue
+          "signature_customer": string"string"
+          "signature_customer_name": string"string"
+          "signature_agent": string"string"
+          "signature_agent_name": string"string"
+          "follow": booltrue
+          "appointment_id": int0
+          "appointment_complete_status": int0
+          "add_followup_appointment": booltrue
+          "add_followup_task": booltrue
+          "_appointment_force": booltrue
+          "appointment_update": { ... }                                       //  87 items
+          "third_party_product_id": string"string"
+          "_forcereassign": booltrue
+          "_agent01_ok": booltrue
+          "_agent02_ok": booltrue
+          "_canupdate": booltrue
+          "dont_do_rules": booltrue
+          "_includeticketinresponse": booltrue
+          "ticket": { ... }                                                   //  354 items
+          "_warning": string"string"
+          "outcome_id": int0
+          "action_systemid": int0
+          "dateemailed": string"2019-08-02T14:35:54.576Z"
+          "timetaken": int0
+          "nonbilltime": int0
+          "traveltime": int0
+          "mileage": int0
+          "chargerate": int0
+          "hiddenfromuser": booltrue
+          "important": booltrue
+          "old_status": int0
+          "new_status": int0
+          "new_status_name": string"string"
+          "emailfrom": string"string"
+          "emailtonew": string"string"
+          "emailto": string"string"
+          "emailccnew": string"string"
+          "emailcc": string"string"
+          "emailbcc": string"string"
+          "emailsubjectnew": string"string"
+          "colour": string"string"
+          "attachment_count": int0
+          "unread": int0
+          "actionby_application_id": string"string"
+          "attachment_list": { ... }                                          //  6 items
+          "customfields": [ ... ]                                             //  1 item
+        }
+      ]
+
+*/
+
+

@@ -37,8 +37,15 @@ else
                 @* PASSWORD *@
                 <div class="mb-3">
                     <label for="password" class="form-label">Password:</label>
-                    <InputText id="password" @bind-Value="userAccount.Password" class="form-control" type="password"/>
+                    <InputText id="password" @bind-Value="userAccount.Password" class="form-control" type="password" />
                     <ValidationMessage For="() => userAccount.Password" />
+                </div>
+
+                @* EMAIL *@
+                <div class="mb-3">
+                    <label for="EMAIL" class="form-label">Email:</label>
+                    <InputText id="email" @bind-Value="userAccount.Email" class="form-control" type="email" />
+                    <ValidationMessage For="() => userAccount.Email" />
                 </div>
 
                 @* ROLE *@

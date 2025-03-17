@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bbThWcevAcx1d6MDeCrkmhRYUYvH2V9WrcI9uRmPE7w=",
+  "Hash": "MozDFwVnpnA5umi4lSvDKWPAW8mfH9MsxZfbypWa5AA=",
   "Source": "BlazorApp1",
   "BasePath": "_content/BlazorApp1",
   "Mode": "Default",
@@ -57,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\ADvTECH_Logo.png",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "BasePath": "_content/BlazorApp1",
+      "RelativePath": "ADvTECH_Logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "abxf0sig4o",
+      "Integrity": "mpnTk4eHNiO5xn1F1ZMxO3TOkvx5jAtQnhHuhUULwPc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ADvTECH_Logo.png"
     },
     {
       "Identity": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\app.css",
@@ -261,6 +282,88 @@
       ]
     },
     {
+      "Route": "ADvTECH_Logo.abxf0sig4o.png",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\ADvTECH_Logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16274"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mpnTk4eHNiO5xn1F1ZMxO3TOkvx5jAtQnhHuhUULwPc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 17 Mar 2025 11:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "abxf0sig4o"
+        },
+        {
+          "Name": "label",
+          "Value": "ADvTECH_Logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mpnTk4eHNiO5xn1F1ZMxO3TOkvx5jAtQnhHuhUULwPc="
+        }
+      ]
+    },
+    {
+      "Route": "ADvTECH_Logo.png",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\ADvTECH_Logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16274"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mpnTk4eHNiO5xn1F1ZMxO3TOkvx5jAtQnhHuhUULwPc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 17 Mar 2025 11:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mpnTk4eHNiO5xn1F1ZMxO3TOkvx5jAtQnhHuhUULwPc="
+        }
+      ]
+    },
+    {
       "Route": "app.css",
       "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\app.css",
       "Selectors": [],
@@ -283,7 +386,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Mar 2025 06:50:13 GMT"
+          "Value": "Mon, 17 Mar 2025 07:52:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -320,7 +423,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 11 Mar 2025 06:50:13 GMT"
+          "Value": "Mon, 17 Mar 2025 07:52:15 GMT"
         },
         {
           "Name": "Cache-Control",

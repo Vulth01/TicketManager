@@ -5,11 +5,12 @@
 <PageTitle>Home</PageTitle>
 
 
-<div class="row" style="margin-bottom: 5%">
+<div class="row" style="margin-bottom: 5%; background-color: #ffffff">
 	<div class="col-12">
 		<div class="card">
-			<div class="card-body">
+			<div class="card-body" style="background-color: #ffffff; color: #000000">
 
+				@* USER LOGIN HEADER *@
 				<AuthorizeView>
 					<NotAuthorized>
 						<span>
@@ -29,9 +30,16 @@
 
 
 
-<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
-    <h1 style="margin-bottom: 100px">First Tech <br /> Ticket Management</h1>
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; 
+			text-align: center; background-color: #ffffff">
+	@* BODY HEADER *@
+    <h1 style="margin-bottom: 100px">ADvTECH<br />Ticket Management</h1>
+
+	@* COUNTER COMPONENT *@
     <Counter IncrementAmount="5" />
     <div style="margin-bottom: 100px;"></div>
+
+	@* WEATHER COMPONENT *@
     <Weather />
+
 </div>

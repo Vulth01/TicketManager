@@ -18,6 +18,9 @@ public class UserAccount
     [MaxLength(100)]
     public string Password { get; set; }
 
+    [MaxLength(100)]
+    public string Email { get; set; }
+
     [MaxLength(20)]
     public string Role { get; set; }
 

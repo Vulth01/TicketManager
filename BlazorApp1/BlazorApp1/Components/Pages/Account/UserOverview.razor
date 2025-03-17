@@ -27,9 +27,10 @@ else
     <table class="table table-striped table-bordered table-hover mt-4">
         @* TABLE FIELD HEADERS *@
         <thead class="table-dark">
-            <th>Guid</th>
+            <th width="350">Guid</th>
             <th>Id</th>
             <th>User Name</th>
+            <th>Email</th>
             <th>Role</th>
             <th></th>
         </thead>
@@ -41,23 +42,28 @@ else
                 @* FIELDS *@
                 <tr>
                     @* USER PROPERTIES *@
-                    <td>@user.guid</td>
-                    <td>@user.Id</td>
-                    <td>@user.UserName</td>
-                    <td>@user.Role</td>
+                    <td style="background-color: #9999bb">@user.guid</td>
+                    <td style="background-color: #bbbbdd">@user.Id</td>
+                    <td style="background-color: #9999bb">@user.UserName</td>
+                    <td style="background-color: #bbbbdd">@user.Email</td>
+                    <td style="background-color: #9999bb">@user.Role</td>
+
                     @* USER MODIFICATION *@
-                    <td>
+                    <td style="background-color: #bbbbdd">
                         <div class="d-flex">
+
                             @* EDIT BUTTON *@
                             <a class="btn btn-secondary me-2" role="button" href="@UserUrl(user.Id)">
                                 <i class="bi bi-pencil"></i>
                             </a>
+
                             @* DELETE BUTTON *@
                             <button class="btn btn-danger"
                                     data-bs-toggle="modal"
                                     data-bs-target="@GetDeleteModalId(user)">
                                 <i class="bi bi-trash3"></i>
                             </button>
+
                         </div>
                         <DeleteUser User="@ConvertToSummary(user)" />
                     </td>
@@ -67,11 +73,6 @@ else
         </tbody>
     </table>
 }
-
-
-
-
-
 
 @code {
     private List<UserAccount>? userAccounts;
