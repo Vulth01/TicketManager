@@ -1,0 +1,170 @@
+﻿@page "/add-ticket/{template}"
+
+@attribute [Authorize(Roles = "Administrator, User")]
+
+@rendermode InteractiveServer
+
+@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>@title</PageTitle>
+
+<h3>@title</h3>
+
+@if (ticket == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <EditForm Model="@ticket" FormName="editTicket" OnValidSubmit="HandleSubmitAsync">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                @* COMMON FIELDS *@
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">User Name:</label>
+                    <InputText id="name" @bind-Value="ticket.Username" class="form-control" />
+                    <ValidationMessage For="() => ticket.Username" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="userContactNo" class="form-label">User Contact Number:</label>
+                    <InputText id="userContactNo" @bind-Value="ticket.UserContactNo" class="form-control" />
+                    <ValidationMessage For="() => ticket.UserContactNo" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="userEmail" class="form-label">User Email:</label>
+                    <InputText id="userEmail" @bind-Value="ticket.UserEmail" class="form-control" />
+                    <ValidationMessage For="() => ticket.UserEmail" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="siteAddress" class="form-label">Site Address:</label>
+                    <InputText id="siteAddress" @bind-Value="ticket.SiteAddress" class="form-control" />
+                    <ValidationMessage For="() => ticket.SiteAddress" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="make" class="form-label">Make:</label>
+                    <InputText id="make" @bind-Value="ticket.Make" class="form-control" />
+                    <ValidationMessage For="() => ticket.Make" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="model" class="form-label">Model:</label>
+                    <InputText id="model" @bind-Value="ticket.Model" class="form-control" />
+                    <ValidationMessage For="() => ticket.Model" />
+                </div>
+
+
+                @* Conditional Fields Based on Template Selection *@
+                @if (Template == "Template1")
+                {
+                    <div class="mb-3">
+                        <label for="number" class="form-label">Number:</label>
+                        <InputText id="number" @bind-Value="ticket.Number" class="form-control" />
+                        <ValidationMessage For="() => ticket.Number" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="desktopSerial" class="form-label">Desktop Serial Number:</label>
+                        <InputText id="desktopSerial" @bind-Value="ticket.DesktopSerial" class="form-control" />
+                        <ValidationMessage For="() => ticket.DesktopSerial" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description of the Issue:</label>
+                        <InputText id="description" @bind-Value="ticket.Description" class="form-control" />
+                        <ValidationMessage For="() => ticket.Description" />
+                    </div>
+                }
+                else if (Template == "Template2")
+                {
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <InputText id="email" @bind-Value="ticket.Email" class="form-control" />
+                        <ValidationMessage For="() => ticket.Email" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="laptopSerial" class="form-label">Laptop Serial Number:</label>
+                        <InputText id="laptopSerial" @bind-Value="ticket.LaptopSerial" class="form-control" />
+                        <ValidationMessage For="() => ticket.LaptopSerial" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="laptopMake" class="form-label">Laptop Make:</label>
+                        <InputText id="laptopMake" @bind-Value="ticket.LaptopMake" class="form-control" />
+                        <ValidationMessage For="() => ticket.LaptopMake" />
+                    </div>
+                }
+
+                @* Save and Cancel Buttons *@
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a role="button" href="/select-template" class="btn btn-secondary">Cancel</a>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string Template { get; set; }
+
+    [Parameter]
+    public int? Id { get; set; }
+
+    [SupplyParameterFromForm]
+    private Ticket? ticket { get; set; }
+    private string title = "New Ticket";
+
+    protected override void OnParametersSet()
+    {
+        if (ticket is not null)
+        {
+            return;
+        }
+
+        if (Id is not null)
+        {
+            using var context = DbFactory.CreateDbContext();
+            ticket = context.Tickets.FirstOrDefault(d => d.Id == Id.Value);
+            title = $"Edit Document: {ticket!.Id}";
+        }
+        else
+        {
+            ticket = new Ticket();
+            ticket.TicketType = Template;
+        }
+        title = "New ticket (" + Template + ")";
+    }
+
+    protected override void OnInitialized()
+    {
+    }
+
+    private async Task HandleSubmitAsync()
+    {
+        ArgumentNullException.ThrowIfNull(ticket);
+
+        using var context = DbFactory.CreateDbContext();
+
+        if (ticket.Id == 0) // New ticket
+        {
+            context.Tickets.Add(ticket);
+        }
+        else // Update ticket
+        {
+            context.Tickets.Update(ticket);
+        }
+
+        await context.SaveChangesAsync();
+
+        NavigationManager.NavigateTo("/ticketOverview");
+    }
+}

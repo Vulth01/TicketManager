@@ -5,37 +5,46 @@
         <NavMenu />
     </div>
 
+
+
     @* MAIN PAGE HEADER *@
     <main>
         <div class="top-row px-4" style="background-color: #ffffff; height: 100px; display: flex; align-items: center; justify-content: flex-start;">
+
+
+            @* DROPDOWN *@
             <div class="dropdown">
+                @* HOVER BUTTON *@
                 <a href="#" class="dropdown-toggle">
                     About Us <span class="icon icon-angle-down"></span>
                 </a>
-                <ul style="background-color: gray"  class="dropdown-menu">
-                    <li><a href="https://www.advtech.co.za/advtech-short-video" class="dropdown-item">About ADvTECH</a></li>
-                    <li><a href="https://www.advtech.co.za/academic-excellence" class="dropdown-item">Academic excellence</a></li>
-                    <li><a href="https://www.advtech.co.za/advtech-timeline" class="dropdown-item">ADvTECH timeline</a></li>
-                    <li class="dropdown-submenu">
-                        <a href="#" class="dropdown-item">Education brands <span class="icon icon-angle-right"></span></a>
-                        <ul style="background-color: slategray" class="dropdown-submenu-menu">
-                            <li><a href="https://www.advtech.co.za/schools-division" class="dropdown-item">Schools division</a></li>
-                            <li><a href="https://www.advtech.co.za/advtech-international" class="dropdown-item">ADvTECH International</a></li>
-                            <li><a href="https://www.advtech.co.za/tertiary-division" class="dropdown-item">Tertiary division</a></li>
+
+                @* ITEMS *@
+                <ul style="background-color: slategray" class="dropdown-menu">
+                    <li><a href="https://www.advtech.co.za/advtech-short-video" class="dropdown-item" style="margin-left: 0px;">About ADvTECH</a></li>
+                    <li><a href="https://www.advtech.co.za/academic-excellence" class="dropdown-item" style="margin-left: 0px;">Academic excellence</a></li>
+                    <li><a href="https://www.advtech.co.za/advtech-timeline" class="dropdown-item" style="margin-left: 0px;">ADvTECH timeline</a></li>
+
+                    @* SUB-MENU *@
+                    <li class="dropdown-submenu" style="margin-left: 0px;">
+
+                        <a href="" class="dropdown-item" style="margin-left: 0px;">Education brands <span class="icon icon-angle-right"></span></a>
+                        @* SUB-MENU MENU *@
+                        <ul style="background-color: #888888; margin-left: 0px;" class="dropdown-submenu-menu">
+                            <li><a href="https://www.advtech.co.za/schools-division" class="dropdown-item" style="margin-left: 0px;">Schools division</a></li>
+                            <li><a href="https://www.advtech.co.za/advtech-international" class="dropdown-item" style="margin-left: 0px;">ADvTECH International</a></li>
+                            <li><a href="https://www.advtech.co.za/tertiary-division" class="dropdown-item" style="margin-left: 0px;">Tertiary division</a></li>
                         </ul>
                     </li>
-                    <li><a href="https://www.advtech.co.za/Resourcing_brands" class="dropdown-item">Resourcing brands</a></li>
-                    <li><a href="https://www.advtech.co.za/africa-brochure" class="dropdown-item">ADvTECH International</a></li>
-                    <li><a href="https://www.advtech.co.za/strategy" class="dropdown-item">Ambition and Strategy</a></li>
-                    <li><a href="https://www.advtech.co.za/purpose-and-values" class="dropdown-item">Purpose and values</a></li>
-                    <li><a href="https://www.advtech.co.za/our-footprint" class="dropdown-item">Our footprint</a></li>
-                    <li><a href="https://www.advtech.co.za/newpageae5ba413" class="dropdown-item">CSI and bursaries</a></li>
+
+                    <li><a href="https://www.advtech.co.za/Resourcing_brands" class="dropdown-item" style="margin-left: 0px;">Resourcing brands</a></li>
+                    <li><a href="https://www.advtech.co.za/africa-brochure" class="dropdown-item" style="margin-left: 0px;">ADvTECH International</a></li>
+                    <li><a href="https://www.advtech.co.za/strategy" class="dropdown-item" style="margin-left: 0px;">Ambition and Strategy</a></li>
+                    <li><a href="https://www.advtech.co.za/purpose-and-values" class="dropdown-item" style="margin-left: 0px;">Purpose and values</a></li>
+                    <li><a href="https://www.advtech.co.za/our-footprint" class="dropdown-item" style="margin-left: 0px;">Our footprint</a></li>
+                    <li><a href="https://www.advtech.co.za/newpageae5ba413" class="dropdown-item" style="margin-left: 0px;">CSI and bursaries</a></li>
                 </ul>
             </div>
-
-
-
-            <a href="https://www.firsttech.digital/" target="_blank" style="color: #000000; margin-right: 20px;">About Us</a>
 
             <AuthorizeView>
                 <NotAuthorized>
@@ -64,6 +73,11 @@
 
 <style>
 
+    .dropdown-item {
+        margin-left: 0px;
+    }
+
+
     .dropdown {
         position: relative;
         display: inline-block;
@@ -76,39 +90,40 @@
         display: inline-flex;
         align-items: center;
     }
-
     .dropdown-menu {
         display: none;
         position: absolute;
-        background-color: #ffffff;
+        background-color: blue;
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         list-style-type: none;
         padding: 0;
         margin: 0;
         width: 250px;
         z-index: 100;
+        top: 100%;
+        left: 0;
     }
 
-    .dropdown-menu .dropdown-item {
-        padding: 10px;
-        color: #000;
-        text-decoration: none;
-        display: block;
-    }
+        .dropdown-menu .dropdown-item {
+            padding: 10px;
+            color: #000;
+            text-decoration: none;
+            display: block;
+        }
 
-    .dropdown-menu .dropdown-item:hover {
-        background-color: #f1f1f1;
-    }
+            .dropdown-menu .dropdown-item:hover {
+                background-color: lightcoral;
+            }
 
     .dropdown-submenu-menu {
         display: none;
         position: absolute;
-        left: 100%; 
-        top: 0; 
+        left: 100%;
+        top: 0;
         padding: 0;
         list-style-type: none;
-        min-width: 160px;  
-        width: 300px; 
+        min-width: 160px;
+        width: 300px;
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     }
 
@@ -120,7 +135,7 @@
         display: block;
     }
 
-    .icon-angle-down, .icon-angle-right {
+    .icon-angle-down {
         margin-left: 5px;
     }
 
@@ -133,4 +148,11 @@
         top: 0;
         left: 100%;
     }
+
+
+    .dropdown-item {
+        margin-left: 0px;
+    }
+
+
 </style>

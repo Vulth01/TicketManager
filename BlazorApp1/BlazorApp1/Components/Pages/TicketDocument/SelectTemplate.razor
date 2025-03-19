@@ -1,0 +1,45 @@
+﻿@page "/select-template"
+@inject NavigationManager NavigationManager
+@attribute [Authorize(Roles = "Administrator, User")]
+
+<PageTitle>Select Template</PageTitle>
+
+<h3 style="margin-bottom: 1%">Select Ticket Template</h3>
+
+@* NAVIGATION BAR *@
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="d-flex flex-column">
+
+        @* ALL USERS *@
+        <AuthorizeView Roles="Administrator,User">
+            <Authorized>
+
+                @* TEMPLATE 1 BUTTON *@
+                <div class="mb-3">
+                    <a class="btn btn-primary" href="add-ticket/Template1">
+                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Template 1
+                    </a>
+                </div>
+
+                @* Spacer between buttons *@
+                <div style="background-color: #ffffff; height: 10px;"></div>
+
+                @* TEMPLATE 2 BUTTON *@
+                <div class="mb-3">
+                    <a class="btn btn-primary" href="add-ticket/Template2">
+                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Template 2
+                    </a>
+                </div>
+
+            </Authorized>
+        </AuthorizeView>
+
+        @* ADMIN ONLY *@
+        <AuthorizeView Roles="Administrator">
+            <Authorized>
+                @* NONE YET *@
+            </Authorized>
+        </AuthorizeView>
+
+    </nav>
+</div>

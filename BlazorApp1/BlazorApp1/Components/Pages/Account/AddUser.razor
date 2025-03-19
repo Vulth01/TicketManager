@@ -7,10 +7,6 @@
 @attribute [Authorize(Roles = "Administrator")]
 
 
-
-
-
-
 <PageTitle>@title</PageTitle>
 
 <h3>@title</h3>
@@ -83,29 +79,34 @@ else
     private string title = string.Empty;
 
 
-
     protected override void OnParametersSet()
     {
-        if(userAccount is not null)
-        {
-            return;
-        }
+        if (userAccount != null) return;                                            // Skip if already set
 
-        if(Id is not null)
+        if (Id != null)                                                             // Check if we have an Id for editing
         {
             using var context = DbFactory.CreateDbContext();
             userAccount = context.UserAccounts.FirstOrDefault(d => d.Id == Id.Value);
-            title = $"Edit Document: {userAccount?.Id}";
+
+            if (userAccount != null)
+            {
+                title = $"Edit User: {userAccount.UserName}";
+            }
+            else
+            {
+                title = "User Not Found";
+            }
         }
-        else
+        else                                                                        // If no Id, it's a new user
         {
             userAccount = new UserAccount
-            {
-                Role = "User"
-            };
+                {
+                    Role = "User"
+                };
             title = "New User";
         }
     }
+
 
     private async Task HandleSubmit()
     {

@@ -12,7 +12,13 @@ public class TicketContext : DbContext
     }
 
     public DbSet<BlazorApp1.Models.DocumentDetails> DocumentDetails { get; set; } = default!;
+
+    public DbSet<BlazorApp1.Models.TicketTemplate2_Details> TicketTemplate2_Details { get; set; } = default!;
+
+    public DbSet<BlazorApp1.Models.Ticket> Tickets { get; set; } = default!;
+
     public DbSet<UserAccount> UserAccounts { get; set; } = default!;
+
 
 
 } 

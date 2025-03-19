@@ -48,6 +48,77 @@ INSERT INTO user_account (guid, user_name, password, email, role)
 VALUES (NEWID(), 'admin!', 'qwer1234', 'admin@administrator.com', 'Administrator');
 SELECT * FROM dbo.user_account;
 
+
+INSERT INTO TicketTemplate2_Details 
+    (TicketGuid, CompanyName, CompanyTelNo, PrimeReporter, PrimeReporterContact, PrimeReporterEmail, 
+     PurchaseOrderNumber, Username, UserContactNo, UserEmail, SiteAddress, Make, Model, 
+     ProductID, SerialNumber, UnderWarranty, WarrantyPackNumber, FaultDescription, PhysicalDamage)
+VALUES 
+    (NEWID(), 
+     'Vega School', 
+     '021 461 8089', 
+     'Orrin Wilson', 
+     '074 546 4722', 
+     'owilson@vegaschool.com', 
+     'PO123456', 
+     'Owilson', 
+     '074 546 4722', 
+     'owilson@vegaschool.com', 
+     '130 Strand Street, De Waterkant, Cape Town', 
+     'HP', 
+     '255 G9', 
+     '6Q7Y7ES#ACQ', 
+     'CND2331YWD', 
+     1,  
+     'WP123456', 
+     'The laptop hinge is flexing when opening the lid, causing the screen bezel to detach from its groove.', 
+     0); 
+SELECT * FROM TicketTemplate2_Details;
+
+
+
+INSERT INTO dbo.Tickets
+    (TicketGuid, CompanyName, CompanyTelNo, PrimeReporter, PrimeReporterContact, PrimeReporterEmail,
+     PurchaseOrderNumber, Username, UserContactNo, UserEmail, SiteAddress, Make, Model, 
+     ProductID, SerialNumber, UnderWarranty, WarrantyPackNumber, FaultDescription, PhysicalDamage, 
+     Campus, PrimaryContact, TroubleshooterName, TroubleshooterEmail, TroubleshooterContactNumber, 
+     EquipmentMake, EquipmentModel, EquipmentProductNumber, EquipmentSerialNumber, TicketType)
+VALUES
+    (NEWID(), 
+     'Vega School', 
+     '021 461 8089', 
+     'Orrin Wilson', 
+     '074 546 4722', 
+     'owilson@vegaschool.com', 
+     'PO123456', 
+     'Owilson', 
+     '074 546 4722', 
+     'owilson@vegaschool.com', 
+     '130 Strand Street, De Waterkant, Cape Town', 
+     'HP', 
+     '255 G9', 
+     '6Q7Y7ES#ACQ', 
+     'CND2331YWD', 
+     1,  
+     'WP123456', 
+     'The laptop hinge is flexing when opening the lid, causing the screen bezel to detach from its groove.', 
+     0,
+     'Rosebank College',  -- Example Campus
+     1,  -- PrimaryContact: True
+     'Sunnyboy Rasebeka',  -- Troubleshooter Name
+     'srasebeka@rosebankcollege.co.za',  -- Troubleshooter Email
+     '0123207270',  -- Troubleshooter Contact Number
+     'HP',  -- Equipment Make
+     '255 G9',  -- Equipment Model
+     '6Q7Y7ES',  -- Equipment Product Number
+     'CND3131JYG',  -- Equipment Serial Number
+     'Template2'  -- Ticket Type (assuming this is for a Template2 ticket)
+);
+
+SELECT * FROM dbo.Tickets;
+
+
+
 --------------------------------------------------------------------------------------------------------------
 
 --										READ
@@ -57,6 +128,10 @@ SELECT DB_NAME();
 SELECT @@SERVERNAME;
 
 SELECT * FROM dbo.DocumentDetails;							-- VIEW TICKETS
+
+SELECT * FROM dbo.TicketTemplate2_Details
+
+SELECT * FROM dbo.Tickets
 
 SELECT * FROM dbo.user_account;								-- VIEW USERS
 
