@@ -1,0 +1,178 @@
+﻿@page "/ticketOverview"
+@inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
+@inject NavigationManager NavigationManager
+@attribute [Authorize(Roles = "Administrator, User")]
+
+<style>
+    th {
+        white-space: nowrap;
+    }
+</style>
+
+<h1>Ticket Overview</h1>
+
+@if (tickets is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @* TABLE OVERVIEW *@
+    <table class="table table-striped table-bordered table-hover mt-4">
+        @* TABLE FIELD HEADERS *@
+        <thead class="table-dark">
+        <th>Guid</th>
+        <th>Id</th>
+        <th>Ticket Type</th>
+        <th>Company Name</th>
+        <th>Company Tel No</th>
+        <th>Prime Reporter</th>
+        <th>Prime Reporter Contact</th>
+        <th>Prime Reporter Email</th>
+        <th>Purchase Order Number</th>
+        <th>Username</th>
+        <th>User Contact No</th>
+        <th>User Email</th>
+        <th>Site Address</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Product ID</th>
+        <th>Serial Number</th>
+        <th>Under Warranty</th>
+        <th>Warranty Pack Number</th>
+        <th>Fault Description</th>
+        <th>Physical Damage</th>
+        <th>Campus</th>
+        <th>Primary Contact</th>
+        <th>Troubleshooter Name</th>
+        <th>Troubleshooter Email</th>
+        <th>Troubleshooter Contact Number</th>
+        <th>Equipment Make</th>
+        <th>Equipment Model</th>
+        <th>Equipment Product Number</th>
+        <th>Equipment Serial Number</th>
+        <th>Number</th>
+        <th>Desktop Serial</th>
+        <th>Description</th>
+        <th>Email</th>
+        <th>Laptop Serial</th>
+        <th>Laptop Make</th>
+        </thead>
+
+        @* DISPLAY ALL TICKETS IN TABLE *@
+        <tbody>
+            @foreach (var ticket in tickets)
+            {
+                <tr>
+                    <td>@ticket.TicketGuid</td>
+                    <td>@ticket.Id</td>
+                    <td>@ticket.TicketType</td>
+                    <td>@ticket.CompanyName</td>
+                    <td>@ticket.CompanyTelNo</td>
+                    <td>@ticket.PrimeReporter</td>
+                    <td>@ticket.PrimeReporterContact</td>
+                    <td>@ticket.PrimeReporterEmail</td>
+                    <td>@ticket.PurchaseOrderNumber</td>
+                    <td>@ticket.Username</td>
+                    <td>@ticket.UserContactNo</td>
+                    <td>@ticket.UserEmail</td>
+                    <td>@ticket.SiteAddress</td>
+                    <td>@ticket.Make</td>
+                    <td>@ticket.Model</td>
+                    <td>@ticket.ProductID</td>
+                    <td>@ticket.SerialNumber</td>
+                    <td>@ticket.UnderWarranty</td>
+                    <td>@ticket.WarrantyPackNumber</td>
+                    <td>@ticket.FaultDescription</td>
+                    <td>@ticket.PhysicalDamage</td>
+                    <td>@ticket.Campus</td>
+                    <td>@ticket.PrimaryContact</td>
+                    <td>@ticket.TroubleshooterName</td>
+                    <td>@ticket.TroubleshooterEmail</td>
+                    <td>@ticket.TroubleshooterContactNumber</td>
+                    <td>@ticket.EquipmentMake</td>
+                    <td>@ticket.EquipmentModel</td>
+                    <td>@ticket.EquipmentProductNumber</td>
+                    <td>@ticket.EquipmentSerialNumber</td>
+                    <td>@ticket.Number</td>
+                    <td>@ticket.DesktopSerial</td>
+                    <td>@ticket.Description</td>
+                    <td>@ticket.Email</td>
+                    <td>@ticket.LaptopSerial</td>
+                    <td>@ticket.LaptopMake</td>
+                    <td>
+                        <div class="d-flex">
+                            @* EDIT *@
+                            <a class="btn btn-secondary me-2" role="button" href="@TicketUrl(ticket.Id)">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            @* DELETE *@
+                            <button class="btn btn-danger"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="@GetDeleteModalId(ticket)">
+                                <i class="bi bi-trash3"></i>
+                            </button>
+                        </div>
+                        <DeleteTicket Ticket="@ConvertToSummary(ticket)" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Ticket>? tickets;
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        tickets = await context.Tickets.ToListAsync();
+    }
+
+    private static string TicketUrl(int id) => $"/ticket/{id}";
+    private string GetDeleteModalId(Ticket ticket) => $"#{DeleteTicket.GetModalId(ConvertToSummary(ticket))}";
+
+    private TicketSummary ConvertToSummary(Ticket ticket)
+    {
+        return new TicketSummary
+            {
+                Id = ticket.Id,
+                TicketGuid = ticket.TicketGuid,
+                CompanyName = ticket.CompanyName,
+                TicketType = ticket.TicketType,
+                Username = ticket.Username,
+                UserEmail = ticket.UserEmail,
+                UserContactNo = ticket.UserContactNo,
+                PrimaryContact = ticket.PrimaryContact,
+                TroubleshooterName = ticket.TroubleshooterName,
+                TroubleshooterEmail = ticket.TroubleshooterEmail,
+                TroubleshooterContactNumber = ticket.TroubleshooterContactNumber,
+                SiteAddress = ticket.SiteAddress,
+                Make = ticket.Make,
+                Model = ticket.Model,
+                FaultDescription = ticket.FaultDescription,
+                CompanyTelNo = ticket.CompanyTelNo,
+                PrimeReporter = ticket.PrimeReporter,
+                PrimeReporterContact = ticket.PrimeReporterContact,
+                PrimeReporterEmail = ticket.PrimeReporterEmail,
+                PurchaseOrderNumber = ticket.PurchaseOrderNumber,
+                ProductID = ticket.ProductID,
+                SerialNumber = ticket.SerialNumber,
+                UnderWarranty = ticket.UnderWarranty,
+                WarrantyPackNumber = ticket.WarrantyPackNumber,
+                PhysicalDamage = ticket.PhysicalDamage,
+                Campus = ticket.Campus,
+                EquipmentMake = ticket.EquipmentMake,
+                EquipmentModel = ticket.EquipmentModel,
+                EquipmentProductNumber = ticket.EquipmentProductNumber,
+                EquipmentSerialNumber = ticket.EquipmentSerialNumber,
+                Number = ticket.Number,
+                DesktopSerial = ticket.DesktopSerial,
+                Description = ticket.Description,
+                Email = ticket.Email,
+                LaptopSerial = ticket.LaptopSerial,
+                LaptopMake = ticket.LaptopMake
+            };
+    }
+}
