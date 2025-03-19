@@ -103,6 +103,26 @@ else
                         <ValidationMessage For="() => ticket.LaptopMake" />
                     </div>
                 }
+                else if (Template == "Template3")
+                {
+                    <div class="mb-3">
+                        <label for="Template3Field1" class="form-label">Template3Field1:</label>
+                        <InputText id="Template3Field1" @bind-Value="ticket.Template3Field1" class="form-control" />
+                        <ValidationMessage For="() => ticket.Template3Field1" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Template3Field2" class="form-label">Template3Field2:</label>
+                        <InputText id="Template3Field2" @bind-Value="ticket.Template3Field2" class="form-control" />
+                        <ValidationMessage For="() => ticket.Template3Field2" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Template3Field3" class="form-label">Template3Field3:</label>
+                        <InputText id="Template3Field3" @bind-Value="ticket.Template3Field3" class="form-control" />
+                        <ValidationMessage For="() => ticket.Template3Field3" />
+                    </div>
+                }
 
                 @* Save and Cancel Buttons *@
                 <button type="submit" class="btn btn-primary">Save</button>
