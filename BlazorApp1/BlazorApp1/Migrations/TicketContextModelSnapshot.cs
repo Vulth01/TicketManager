@@ -154,90 +154,42 @@ namespace BlazorApp1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Campus")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CompanyName")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("CompanyTelNo")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DesktopSerial")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EquipmentMake")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EquipmentModel")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EquipmentProductNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EquipmentSerialNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FaultDescription")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<string>("DesktopSerial")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("LaptopMake")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("LaptopSerial")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Make")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Model")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Number")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhysicalDamage")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("PrimaryContact")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("PrimeReporter")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("PrimeReporterContact")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("PrimeReporterEmail")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("ProductID")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("PurchaseOrderNumber")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("SerialNumber")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("SiteAddress")
+                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
@@ -248,31 +200,18 @@ namespace BlazorApp1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TroubleshooterContactNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TroubleshooterEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TroubleshooterName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("UnderWarranty")
-                        .HasColumnType("bit");
-
                     b.Property<string>("UserContactNo")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("UserEmail")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Username")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("WarrantyPackNumber")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 

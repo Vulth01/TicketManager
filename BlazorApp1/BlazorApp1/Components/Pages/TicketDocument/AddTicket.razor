@@ -1,13 +1,11 @@
 ﻿@page "/add-ticket/{template}"
 
-
 @attribute [Authorize(Roles = "Administrator, User")]
 
 @rendermode InteractiveServer
 
 @inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
 @inject NavigationManager NavigationManager
-
 
 <PageTitle>@title</PageTitle>
 
@@ -25,11 +23,44 @@ else
                 <DataAnnotationsValidator />
                 <ValidationSummary />
 
+                @* COMMON FIELDS *@
+
                 <div class="mb-3">
                     <label for="name" class="form-label">User Name:</label>
                     <InputText id="name" @bind-Value="ticket.Username" class="form-control" />
                     <ValidationMessage For="() => ticket.Username" />
                 </div>
+
+                <div class="mb-3">
+                    <label for="userContactNo" class="form-label">User Contact Number:</label>
+                    <InputText id="userContactNo" @bind-Value="ticket.UserContactNo" class="form-control" />
+                    <ValidationMessage For="() => ticket.UserContactNo" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="userEmail" class="form-label">User Email:</label>
+                    <InputText id="userEmail" @bind-Value="ticket.UserEmail" class="form-control" />
+                    <ValidationMessage For="() => ticket.UserEmail" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="siteAddress" class="form-label">Site Address:</label>
+                    <InputText id="siteAddress" @bind-Value="ticket.SiteAddress" class="form-control" />
+                    <ValidationMessage For="() => ticket.SiteAddress" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="make" class="form-label">Make:</label>
+                    <InputText id="make" @bind-Value="ticket.Make" class="form-control" />
+                    <ValidationMessage For="() => ticket.Make" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="model" class="form-label">Model:</label>
+                    <InputText id="model" @bind-Value="ticket.Model" class="form-control" />
+                    <ValidationMessage For="() => ticket.Model" />
+                </div>
+
 
                 @* Conditional Fields Based on Template Selection *@
                 @if (Template == "Template1")
@@ -71,20 +102,7 @@ else
                         <InputText id="laptopMake" @bind-Value="ticket.LaptopMake" class="form-control" />
                         <ValidationMessage For="() => ticket.LaptopMake" />
                     </div>
-
-                    <div class="mb-3">
-                        <label for="campus" class="form-label">Campus (Optional):</label>
-                        <InputText id="campus" @bind-Value="ticket.Campus" class="form-control" />
-                        <ValidationMessage For="() => ticket.Campus" />
-                    </div>
                 }
-
-                @* Common Fields *@
-                <div class="mb-3">
-                    <label for="faultDescription" class="form-label">Fault Description:</label>
-                    <InputText id="faultDescription" @bind-Value="ticket.FaultDescription" class="form-control" />
-                    <ValidationMessage For="() => ticket.FaultDescription" />
-                </div>
 
                 @* Save and Cancel Buttons *@
                 <button type="submit" class="btn btn-primary">Save</button>
@@ -112,9 +130,8 @@ else
             return;
         }
 
-        if(Id is not null)
+        if (Id is not null)
         {
-
             using var context = DbFactory.CreateDbContext();
             ticket = context.Tickets.FirstOrDefault(d => d.Id == Id.Value);
             title = $"Edit Document: {ticket!.Id}";
@@ -123,7 +140,6 @@ else
         {
             ticket = new Ticket();
             ticket.TicketType = Template;
-
         }
         title = "New ticket (" + Template + ")";
     }
@@ -134,7 +150,6 @@ else
 
     private async Task HandleSubmitAsync()
     {
-
         ArgumentNullException.ThrowIfNull(ticket);
 
         using var context = DbFactory.CreateDbContext();
