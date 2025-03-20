@@ -1,11 +1,11 @@
 ﻿@page "/add-ticket/{template}"
-
+@using System.Net.Mail
 @attribute [Authorize(Roles = "Administrator, User")]
-
 @rendermode InteractiveServer
 
 @inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
 @inject NavigationManager NavigationManager
+@inject IConfiguration Configuration
 
 <PageTitle>@title</PageTitle>
 
@@ -23,7 +23,7 @@ else
                 <DataAnnotationsValidator />
                 <ValidationSummary />
 
-                @* COMMON FIELDS *@
+                <!-- COMMON FIELDS -->
 
                 <div class="mb-3">
                     <label for="name" class="form-label">User Name:</label>
@@ -61,8 +61,13 @@ else
                     <ValidationMessage For="() => ticket.Model" />
                 </div>
 
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description of the Issue:</label>
+                    <InputText id="description" @bind-Value="ticket.Description" class="form-control" />
+                    <ValidationMessage For="() => ticket.Description" />
+                </div>
 
-                @* Conditional Fields Based on Template Selection *@
+                <!-- CONDITIONAL FIELDS BASED ON TEMPLATE SELECTION -->
                 @if (Template == "Template1")
                 {
                     <div class="mb-3">
@@ -75,12 +80,6 @@ else
                         <label for="desktopSerial" class="form-label">Desktop Serial Number:</label>
                         <InputText id="desktopSerial" @bind-Value="ticket.DesktopSerial" class="form-control" />
                         <ValidationMessage For="() => ticket.DesktopSerial" />
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Description of the Issue:</label>
-                        <InputText id="description" @bind-Value="ticket.Description" class="form-control" />
-                        <ValidationMessage For="() => ticket.Description" />
                     </div>
                 }
                 else if (Template == "Template2")
@@ -124,7 +123,6 @@ else
                     </div>
                 }
 
-                @* Save and Cancel Buttons *@
                 <button type="submit" class="btn btn-primary">Save</button>
                 <a role="button" href="/select-template" class="btn btn-secondary">Cancel</a>
             </EditForm>
@@ -164,10 +162,6 @@ else
         title = "New ticket (" + Template + ")";
     }
 
-    protected override void OnInitialized()
-    {
-    }
-
     private async Task HandleSubmitAsync()
     {
         ArgumentNullException.ThrowIfNull(ticket);
@@ -185,6 +179,42 @@ else
 
         await context.SaveChangesAsync();
 
+        SendMail();
         NavigationManager.NavigateTo("/ticketOverview");
+    }
+
+    private string Message { get; set; } = "-";
+
+    private void SendMail()
+    {
+        try
+        {
+            var emailAddress = Configuration["EmailSettings:EmailAddress"];
+            var password = Configuration["EmailSettings:Password"];
+
+            using (MailMessage mail = new MailMessage())
+            {
+                mail.From = new MailAddress(emailAddress);
+                mail.To.Add("Damien.Harwood@ftechkzn.co.za");
+                mail.Subject = "New Ticket ID: " + ticket.Id;
+                mail.Body = "Ticket Description: " + ticket.Description + 
+                            "<br>User's Name: " + ticket.Username + 
+                            "<br>Site: " + ticket.SiteAddress + 
+                            "<br><br> This ticket is brought to you.";
+                mail.IsBodyHtml = true;
+
+                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    smtp.Credentials = new System.Net.NetworkCredential(emailAddress, password);
+                    smtp.EnableSsl = true;
+                    smtp.Send(mail);
+                    Message = "Mail Sent";
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Message = ex.Message;
+        }
     }
 }
