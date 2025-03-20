@@ -327,3 +327,8 @@ C:\TicketManager\BlazorApp1\BlazorApp1\bin\Debug\net8.0\runtimes\win\lib\net7.0\
 C:\TicketManager\BlazorApp1\BlazorApp1\obj\Debug\net8.0\BlazorApp1.csproj.AssemblyReference.cache
 C:\TicketManager\BlazorApp1\BlazorApp1\obj\Debug\net8.0\BlazorApp1.csproj.Up2Date
 C:\TicketManager\BlazorApp1\BlazorApp1\bin\Debug\net8.0\Services\HaloDoc.json
+C:\TicketManager\BlazorApp1\BlazorApp1\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\TicketManager\BlazorApp1\BlazorApp1\bin\Debug\net8.0\MailKit.dll
+C:\TicketManager\BlazorApp1\BlazorApp1\bin\Debug\net8.0\MimeKit.dll
+C:\TicketManager\BlazorApp1\BlazorApp1\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\TicketManager\BlazorApp1\BlazorApp1\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

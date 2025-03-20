@@ -3,52 +3,36 @@
   "WorkspaceRootPath": "C:\\TicketManager\\BlazorApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\models\\ticketsummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\models\\ticketsummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\ticketdocument\\selecttemplate.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\ticketdocument\\selecttemplate.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\ticketdocument\\addticket.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\ticketdocument\\addticket.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\data\\ticketcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\data\\ticketcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\models\\documentsummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\models\\documentsummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\models\\tickettemplate2_details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\models\\tickettemplate2_details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\ticketdocument\\ticketoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\ticketdocument\\ticketoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\models\\documentdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\models\\documentdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\ticketdocument\\document.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\ticketdocument\\document.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\ticketdocument\\documentoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\ticketdocument\\documentoverview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\services\\halopsaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\services\\halopsaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\ticketdocument\\addticket.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\ticketdocument\\addticket.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\pages\\ticketdocument\\document.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\pages\\ticketdocument\\document.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|c:\\ticketmanager\\blazorapp1\\blazorapp1\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEAB782A-9660-46E2-8866-63ECCC969020}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,54 +78,80 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TicketOverview.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\TicketOverview.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\TicketDocument\\TicketOverview.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\TicketOverview.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\TicketDocument\\TicketOverview.razor",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAE0AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T13:58:23.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DocumentOverview.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\DocumentOverview.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\TicketDocument\\DocumentOverview.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\DocumentOverview.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\TicketDocument\\DocumentOverview.razor",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T13:58:04.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "TicketContext.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Data\\TicketContext.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Data\\TicketContext.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Data\\TicketContext.cs",
-              "RelativeToolTip": "BlazorApp1\\Data\\TicketContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T13:13:57.386Z",
+              "Title": "Document.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\Document.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\TicketDocument\\Document.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\Document.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\TicketDocument\\Document.razor",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T13:57:57.22Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "DocumentSummary.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\DocumentSummary.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Models\\DocumentSummary.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\DocumentSummary.cs",
-              "RelativeToolTip": "BlazorApp1\\Models\\DocumentSummary.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Program.cs",
+              "RelativeDocumentMoniker": "BlazorApp1\\Program.cs",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Program.cs",
+              "RelativeToolTip": "BlazorApp1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T13:13:53.708Z",
+              "WhenOpened": "2025-03-20T13:53:08.135Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "TicketTemplate2_Details.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\TicketTemplate2_Details.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Models\\TicketTemplate2_Details.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\TicketTemplate2_Details.cs",
-              "RelativeToolTip": "BlazorApp1\\Models\\TicketTemplate2_Details.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T13:11:23.592Z",
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Components\\_Imports.razor",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\_Imports.razor",
+              "RelativeToolTip": "BlazorApp1\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T13:15:35.758Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Ticket.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\Ticket.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Models\\Ticket.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\Ticket.cs",
-              "RelativeToolTip": "BlazorApp1\\Models\\Ticket.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAEUAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:21:16.564Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\appsettings.json",
+              "RelativeDocumentMoniker": "BlazorApp1\\appsettings.json",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\appsettings.json",
+              "RelativeToolTip": "BlazorApp1\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-20T13:11:08.02Z",
               "EditorCaption": ""
             },
             {
@@ -152,96 +162,23 @@
               "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\TicketDocument\\AddTicket.razor",
               "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\AddTicket.razor",
               "RelativeToolTip": "BlazorApp1\\Components\\Pages\\TicketDocument\\AddTicket.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T12:16:45.59Z",
+              "WhenOpened": "2025-03-20T06:03:57.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "TicketOverview.razor",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\TicketOverview.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\TicketDocument\\TicketOverview.razor",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\TicketOverview.razor",
-              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\TicketDocument\\TicketOverview.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T12:16:30.368Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DocumentOverview.razor",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\DocumentOverview.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\TicketDocument\\DocumentOverview.razor",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\DocumentOverview.razor",
-              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\TicketDocument\\DocumentOverview.razor",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAIwHgAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T12:03:22.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "HaloPSAService.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Services\\HaloPSAService.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Services\\HaloPSAService.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Services\\HaloPSAService.cs",
-              "RelativeToolTip": "BlazorApp1\\Services\\HaloPSAService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAqAAAAAAAAAA==",
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\Ticket.cs",
+              "RelativeDocumentMoniker": "BlazorApp1\\Models\\Ticket.cs",
+              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\Ticket.cs",
+              "RelativeToolTip": "BlazorApp1\\Models\\Ticket.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwFEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:03:17.51Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TicketSummary.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\TicketSummary.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Models\\TicketSummary.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\TicketSummary.cs",
-              "RelativeToolTip": "BlazorApp1\\Models\\TicketSummary.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:02:29.247Z",
+              "WhenOpened": "2025-03-19T14:11:46.734Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SelectTemplate.razor",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\SelectTemplate.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\TicketDocument\\SelectTemplate.razor",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\SelectTemplate.razor",
-              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\TicketDocument\\SelectTemplate.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T12:00:18.6Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Document.razor",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\Document.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Components\\Pages\\TicketDocument\\Document.razor",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Components\\Pages\\TicketDocument\\Document.razor",
-              "RelativeToolTip": "BlazorApp1\\Components\\Pages\\TicketDocument\\Document.razor",
-              "ViewState": "AgIAABkAAAAAAAAAAAAIwD8AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T10:10:27.59Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DocumentDetails.cs",
-              "DocumentMoniker": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\DocumentDetails.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Models\\DocumentDetails.cs",
-              "ToolTip": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\Models\\DocumentDetails.cs",
-              "RelativeToolTip": "BlazorApp1\\Models\\DocumentDetails.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T10:05:56.787Z"
             }
           ]
         },

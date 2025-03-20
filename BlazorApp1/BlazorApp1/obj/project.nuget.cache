@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Z+toonrGAiw=",
+  "dgSpecHash": "bm6ifdPSOSY=",
   "success": true,
   "projectFilePath": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
@@ -56,6 +57,7 @@
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\mailkit\\4.11.0\\mailkit.4.11.0.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.11\\microsoft.aspnetcore.authorization.8.0.11.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.11\\microsoft.aspnetcore.components.8.0.11.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.11\\microsoft.aspnetcore.components.analyzers.8.0.11.nupkg.sha512",
@@ -125,6 +127,7 @@
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.utils\\8.0.7\\microsoft.visualstudio.web.codegeneration.utils.8.0.7.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\8.0.7\\microsoft.visualstudio.web.codegenerators.mvc.8.0.7.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\mimekit\\4.11.0\\mimekit.4.11.0.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\nuget.common\\6.11.0\\nuget.common.6.11.0.nupkg.sha512",
@@ -162,7 +165,7 @@
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.runtime.caching\\6.0.0\\system.runtime.caching.6.0.0.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.security.cryptography.cng\\5.0.0\\system.security.cryptography.cng.5.0.0.nupkg.sha512",
-    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.security.cryptography.pkcs\\6.0.4\\system.security.cryptography.pkcs.6.0.4.nupkg.sha512",
+    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.1\\system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.security.cryptography.protecteddata\\7.0.0\\system.security.cryptography.protecteddata.7.0.0.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.security.permissions\\7.0.0\\system.security.permissions.7.0.0.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
@@ -174,10 +177,10 @@
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
-    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.14\\microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512",
-    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.14\\microsoft.netcore.app.host.win-x64.8.0.14.nupkg.sha512",
+    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.14\\microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
-    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512"
+    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.14\\microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.14\\microsoft.netcore.app.host.win-x64.8.0.14.nupkg.sha512"
   ],
   "logs": []
 }

@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllersWithViews();
+
 builder.Services.AddDbContextFactory<TicketContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TicketContext")
                          ?? throw new InvalidOperationException("Connection string 'TicketContext' not found.")));
