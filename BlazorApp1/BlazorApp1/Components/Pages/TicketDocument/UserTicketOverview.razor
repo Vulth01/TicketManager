@@ -1,7 +1,8 @@
-﻿@page "/ticketOverview"
+﻿@page "/userTicketOverview"
 @inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
 @inject NavigationManager NavigationManager
-@attribute [Authorize(Roles = "Administrator")]
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@attribute [Authorize(Roles = "Administrator, User")]
 
 <style>
     th {
@@ -9,7 +10,7 @@
     }
 </style>
 
-<PageTitle>Ticket Overview</PageTitle>
+<PageTitle>@currentUsername</PageTitle>
 <h1>Ticket Overview</h1>
 
 @if (tickets is null)
@@ -18,10 +19,13 @@
 }
 else
 {
+    <h2>Current Username: @currentUsername</h2>
+
     @* TABLE OVERVIEW *@
     <table class="table table-striped table-bordered table-hover mt-4">
         @* TABLE FIELD HEADERS *@
         <thead class="table-dark">
+
             @* COMMON *@
             <th>Guid</th>
             <th>Id</th>
@@ -31,15 +35,15 @@ else
             <th>User Email</th>
             <th>Site Address</th>
             <th>Description</th>
-            @* LAPTOP TEMPLATE *@
+                @* LAPTOP TEMPLATE *@
             <th>Laptop Serial</th>
             <th>Laptop Make</th>
             <th>Laptop Model</th>
-            @* PRINTER TEMPLATE *@
+                @* PRINTER TEMPLATE *@
             <th>Printer Serial</th>
             <th>Printer Make</th>
             <th>Printer Model</th>
-            @* TEMPLATE 3 *@
+                @* TEMPLATE 3 *@
             <th>Template3Field1</th>
             <th>Template3Field2</th>
             <th>Template3Field3</th>
@@ -79,21 +83,17 @@ else
                         <div class="d-flex">
                             @* EDIT *@
                             <a class="btn btn-secondary me-2" role="button" 
-                                href="@TicketUrl(ticket.Id)">
+                            href="@TicketUrl(ticket.Id)">
                                 <i class="bi bi-pencil"></i>
                             </a>
                             @* DELETE *@
                             <button class="btn btn-danger" style="background-color:#FF6565; border-color: #FF5050"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="@GetDeleteModalId(ticket)">
+                            data-bs-toggle="modal"
+                            data-bs-target="@GetDeleteModalId(ticket)">
                                 <i class="bi bi-trash3"></i>
                             </button>
                         </div>
                         <DeleteTicket Ticket="@ConvertToSummary(ticket)" />
-
-
-
-
                     </td>
                 </tr>
             }
@@ -103,11 +103,19 @@ else
 
 @code {
     private List<Ticket>? tickets;
+    private string? currentUsername;
 
     protected override async Task OnInitializedAsync()
     {
+        // Get the current user identity from AuthenticationState
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        currentUsername = authState.User.Identity.Name;
         using var context = DbFactory.CreateDbContext();
-        tickets = await context.Tickets.ToListAsync();
+
+        // Fetch tickets where the username matches the current logged-in user
+        tickets = await context.Tickets
+            .Where(t => t.Username == currentUsername)
+            .ToListAsync();
     }
 
     private static string TicketUrl(int id) => $"/ticket/{id}";
@@ -117,7 +125,7 @@ else
     {
         return new TicketSummary
             {
-                //COMMON FIELDS
+            //COMMON FIELDS
                 Id = ticket.Id,
                 TicketGuid = ticket.TicketGuid,
                 TicketType = ticket.TicketType,
@@ -126,20 +134,20 @@ else
                 UserContactNo = ticket.UserContactNo,
                 SiteAddress = ticket.SiteAddress,
 
-                //LAPTOP REPAIR
+            //LAPTOP REPAIR
                 LaptopSerial = ticket.LaptopSerial,
                 LaptopMake = ticket.LaptopMake,
                 LaptopModel = ticket.LaptopModel,
 
-                //PRINTER REPAIR
+            //PRINTER REPAIR
                 PrinterSerial = ticket.PrinterSerial,
-				PrinterMake = ticket.PrinterMake,
+                PrinterMake = ticket.PrinterMake,
                 PrinterModel = ticket.PrinterModel,
 
-                //TEMPLATE 3
-				Template3Field1 = ticket.Template3Field1,
-				Template3Field2 = ticket.Template3Field2,
-				Template3Field3 = ticket.Template3Field3
+            //TEMPLATE 3
+                Template3Field1 = ticket.Template3Field1,
+                Template3Field2 = ticket.Template3Field2,
+                Template3Field3 = ticket.Template3Field3
 
 
             };

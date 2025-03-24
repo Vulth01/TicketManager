@@ -176,12 +176,12 @@ else
         {
             using var context = DbFactory.CreateDbContext();
             _document = context.DocumentDetails.FirstOrDefault(d => d.Id == Id.Value);
-            _title = $"Edit Document: {_document!.Id}";
+            _title = $"ADvTECH Group | Edit Document: {_document!.Id}";
         }
         else
         {
             _document = new DocumentDetails();
-            _title = "New Document";
+            _title = "ADvTECH Group | New Document";
         }
     }
 

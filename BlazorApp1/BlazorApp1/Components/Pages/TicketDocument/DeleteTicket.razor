@@ -37,9 +37,9 @@
     protected override void OnParametersSet()
     {
         if (Ticket is null)
-            title = "No ticket to delete";
+            title = "ADvTECH Group | No ticket to delete";
         else
-            title = $"Delete Ticket {Ticket?.Id}";
+            title = $"ADvTECH Group | Delete Ticket {Ticket?.Id}";
     }
 
     public static string GetModalId(TicketSummary? ticket)
@@ -61,6 +61,6 @@
             await context.SaveChangesAsync();
         }
 
-        NavigationManager.NavigateTo("/ticketOverview", true);
+        NavigationManager.NavigateTo("/userTicketOverview", true);
     }
 }
