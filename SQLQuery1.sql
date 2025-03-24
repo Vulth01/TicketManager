@@ -182,6 +182,6 @@ SELECT * FROM dbo.user_account;
 
 
 INSERT INTO user_account (guid, UserName, password, email, role)
-VALUES (NEWID(), 'admin!', 'qwer1234', 'admin@administrator.com', 'Administrator');
+VALUES (NEWID(), 'admin!', 'qwer1234', 'admin@advtech.co.za', 'Administrator');
 SELECT * FROM dbo.user_account;
 
