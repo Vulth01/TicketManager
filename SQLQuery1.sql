@@ -155,6 +155,8 @@ WHERE TABLE_TYPE = 'BASE TABLE';
 
 DROP TABLE dbo.user_account
 
+
+DELETE FROM dbo.Tickets;
 DELETE FROM dbo.user_account;
 
 --------------------------------------------------------------------------------------------------------------
@@ -162,6 +164,7 @@ DELETE FROM dbo.user_account;
 --										RECREATE
 
 DROP TABLE dbo.user_account
+DROP TABLE dbo.Tickets
 
 --(guid, user_name, password, email, role)
 CREATE TABLE dbo.user_account

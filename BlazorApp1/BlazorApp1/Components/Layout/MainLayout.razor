@@ -28,7 +28,7 @@
                     @* SUB-MENU *@
                     <li class="dropdown-submenu" style="margin-left: 0px;">
 
-                        <a href="" class="dropdown-item" style="margin-left: 0px;">Education brands <span class="icon icon-angle-right"></span></a>
+                        <a href="" class="dropdown-item" style="margin-left: 0px;">Education brands » <span class="icon icon-angle-right"></span></a>
                         @* SUB-MENU MENU *@
                         <ul style="background-color: #888888; margin-left: 0px;" class="dropdown-submenu-menu">
                             <li><a href="https://www.advtech.co.za/schools-division" class="dropdown-item" style="margin-left: 0px;">Schools division</a></li>
@@ -90,29 +90,38 @@
         display: inline-flex;
         align-items: center;
     }
+    .dropdown-toggle:hover{
+            color: #000;
+            text-decoration: none !important;
+        }
+
+
     .dropdown-menu {
         display: none;
         position: absolute;
-        background-color: blue;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.0);
         list-style-type: none;
         padding: 0;
         margin: 0;
-        width: 250px;
+        width: 150px;
         z-index: 100;
         top: 100%;
         left: 0;
     }
 
         .dropdown-menu .dropdown-item {
-            padding: 10px;
-            color: #000;
-            text-decoration: none;
+            padding: 6px;
+            color: #22428b;
+            background-color: #ffffff;
+            font-size: 14px;
+            text-decoration: none !important; 
             display: block;
         }
 
             .dropdown-menu .dropdown-item:hover {
-                background-color: lightcoral;
+                background-color: red;
+                color: white;
+                text-decoration: none !important; 
             }
 
     .dropdown-submenu-menu {

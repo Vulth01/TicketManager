@@ -2,7 +2,7 @@
 @inject NavigationManager NavigationManager
 @attribute [Authorize(Roles = "Administrator, User")]
 
-<PageTitle>Select Template</PageTitle>
+<PageTitle>ADvTECH Group | Select Template</PageTitle>
 
 <h3 style="margin-bottom: 1%">Select Ticket Template</h3>
 
@@ -13,11 +13,13 @@
         @* ALL USERS *@
         <AuthorizeView Roles="Administrator,User">
             <Authorized>
+                @* Spacer between buttons *@
+                <div style="background-color: #ffffff; height: 20px;"></div>
 
                 @* TEMPLATE 1 BUTTON *@
                 <div class="mb-3">
-                    <a style="background-color: #334049; border-color: #334049" class="btn btn-primary" href="add-ticket/Template1">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Template 1
+                    <a class="btn btn-primary template-button" href="add-ticket/LaptopRepair">
+                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Laptop
                     </a>
                 </div>
 
@@ -26,8 +28,8 @@
 
                 @* TEMPLATE 2 BUTTON *@
                 <div class="mb-3">
-                    <a style="background-color: #334049; border-color: #334049" class="btn btn-primary" href="add-ticket/Template2">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Template 2
+                    <a class="btn btn-primary template-button" href="add-ticket/PrinterRepair">
+                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Printer
                     </a>
                 </div>
 
@@ -36,10 +38,13 @@
 
                 @* TEMPLATE 3 BUTTON *@
                 <div class="mb-3">
-                    <a style="background-color: #334049; border-color: #334049" class="btn btn-primary" href="add-ticket/Template3">
+                    <a class="btn btn-primary template-button" href="add-ticket/Template3">
                         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Template 3
                     </a>
                 </div>
+
+                @* Spacer between buttons *@
+                <div style="background-color: #ffffff; height: 10px;"></div>
 
             </Authorized>
         </AuthorizeView>
@@ -53,3 +58,20 @@
 
     </nav>
 </div>
+
+<style>
+    .template-button {
+        background-color: #334049;
+        border-color: #334049;
+    }
+
+        .template-button:hover {
+            background-color: #263030;
+            border-color: #263030; 
+        }
+</style>
+
+@code
+{
+
+}
