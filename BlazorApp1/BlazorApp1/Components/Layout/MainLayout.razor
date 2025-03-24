@@ -1,67 +1,248 @@
 ﻿@inherits LayoutComponentBase
 
+<div class="top-bar" style="background-color: #334049; color: white; padding: 10px; text-align:center; font-variant: small-caps; font:600; ">
+    ticket manager
+</div>
+
+
+
+<div class="top-row ps-3 navbar navbar-dark" style="background-color:#ffffff; height: 100px;">
+    <div class="container-fluid" style="display: flex; align-items: center; justify-content: flex-start; width: 100%;">
+
+        @* LOGO *@
+        <a href="/">
+            <img src="/ADvTECH_Logo.png" alt="Logo" style="height: 80px;" />
+        </a>
+
+        @* ABOUT US DROPDOWN *@
+        <div class="dropdown" style="margin-left: 20px;">
+            <a href="#" class="dropdown-toggle">
+                About Us <span class="icon icon-angle-down"></span>
+            </a>
+            <ul style="background-color: slategray;margin-left: 25px; width: 100%" class="dropdown-menu">
+                <li><a href="https://www.advtech.co.za/advtech-short-video" class="dropdown-item">                      About ADvTECH</a></li>
+                <li><a href="https://www.advtech.co.za/academic-excellence" class="dropdown-item">                      Academic excellence</a></li>
+                <li><a href="https://www.advtech.co.za/advtech-timeline" class="dropdown-item">                         ADvTECH timeline</a></li>
+
+                @* EDUCATION BRANDS *@
+                <li class="dropdown-submenu">
+                    <a href="#" class="dropdown-item">Education brands &nbsp » <span class="icon icon-angle-right"></span></a>
+                    <ul style="background-color: #888888;" class="dropdown-submenu-menu">
+                        <li><a href="https://www.advtech.co.za/schools-division" class="dropdown-item">                 Schools division</a></li>
+                        <li><a href="https://www.advtech.co.za/advtech-international" class="dropdown-item">            ADvTECH International</a></li>
+                        <li><a href="https://www.advtech.co.za/tertiary-division" class="dropdown-item">                Tertiary division</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.advtech.co.za/Resourcing_brands" class="dropdown-item">                        Resourcing brands</a></li>
+                <li><a href="https://www.advtech.co.za/africa-brochure" class="dropdown-item">                          ADvTECH International</a></li>
+                <li><a href="https://www.advtech.co.za/strategy" class="dropdown-item">                                 Ambition and Strategy</a></li>
+                <li><a href="https://www.advtech.co.za/purpose-and-values" class="dropdown-item">                       Purpose and values</a></li>
+                <li><a href="https://www.advtech.co.za/our-footprint" class="dropdown-item">                            Our footprint</a></li>
+                <li><a href="https://www.advtech.co.za/newpageae5ba413" class="dropdown-item">                          CSI and bursaries</a></li>
+            </ul>
+        </div>
+
+        @* INVESTOR RELATIONS CENTRE DROPDOWN *@
+        <div class="dropdown" style="margin-left: 20px;">
+            @* HEADER *@
+            <a href="#" class="dropdown-toggle">
+                Investor Relations Centre <span class="icon icon-angle-down"></span>
+            </a>
+
+            <ul style="background-color: slategray; margin-left: 25px; width: 100%" class="dropdown-menu">
+
+                @* FINANCIAL RESULTS *@
+                <li class="dropdown-submenu">
+                    <a href="https://www.advtech.co.za/financial-results" class="dropdown-item">                        Financial Results &nbsp » <span class="icon icon-angle-right"></span></a>
+                    <ul style="background-color: #888888;" class="dropdown-submenu-menu">
+                        <li><a href="https://www.advtech.co.za/financial-results-archive" class="dropdown-item">        Annual Integrated Reports Archive</a></li>
+                        <li><a href="https://www.advtech.co.za/financial-results#FY2023" class="dropdown-item">         FY2023</a></li>
+                        <li><a href="https://www.advtech.co.za/financial-results#FY2022" class="dropdown-item">         FY2022</a></li>
+                        <li><a href="https://www.advtech.co.za/financial-results#1273187184" class="dropdown-item">     FY2021</a></li>
+                        <li><a href="https://www.advtech.co.za/financial-results#FY2020" class="dropdown-item">         FY2020</a></li>
+                    </ul>
+                </li>
+                @* ANALYST PRESENTATIONS *@
+                <li class="dropdown-submenu">
+                    <a href="https://www.advtech.co.za/financial-results" class="dropdown-item">                        Analyst Presentations &nbsp » <span class="icon icon-angle-right"></span></a>
+                    <ul style="background-color: #888888;" class="dropdown-submenu-menu">
+                        <li><a href="https://www.advtech.co.za/final-results" class="dropdown-item">                    Final Results</a></li>
+                        <li><a href="https://www.advtech.co.za/interim-results" class="dropdown-item">                  Interim Results</a></li>
+                        <li><a href="https://www.advtech.co.za/Strategy-Day-November-2024-presentation" 
+                            class="dropdown-item">                                                                      ADvTECH Strategy Day - 26 November 2024 - Presentation</a></li>
+                        <li><a href="https://www.advtech.co.za/archived-presentations" class="dropdown-item">           Archived Presentations</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="https://www.advtech.co.za/copy-of-esg-strategy" class="dropdown-item">                     ESG Strategy</a></li>
+                <li><a href="https://www.advtech.co.za/2023-annual-integrated-report" class="dropdown-item">            2023 Annual Integrated Report</a></li>
+                <li><a href="https://www.advtech.co.za/2023-sustainability-report" class="dropdown-item">               2023 Sustainability Report</a></li>
+                <li><a href="https://www.advtech.co.za/ADvTECHvideos" class="dropdown-item">                            ADvTECH Videos</a></li>
+                <li><a href="https://www.advtech.co.za/ADvTECHvideos" class="dropdown-item">                            5 Year Review</a></li>
+                <li><a href="https://www.advtech.co.za/sens" class="dropdown-item">SENS</a></li>
+                <li><a href="https://www.advtech.co.za/shareholder-diary" class="dropdown-item">                        Shareholder Diary</a></li>
+                <li><a href="https://www.advtech.co.za/annual-general-meeting" class="dropdown-item">                   Annual General Meeting</a></li>
+                <li><a href="https://www.advtech.co.za/analyst-coverage" class="dropdown-item">                         Analyst Coverage</a></li>
+
+                @* SHARE PRICE *@
+                <li class="dropdown-submenu">
+                    <a href="https://www.advtech.co.za/share-price" class="dropdown-item">                              Share Price &nbsp »<span class="icon icon-angle-right"></span></a>
+                    <ul style="background-color: #888888;" class="dropdown-submenu-menu">
+                        <li><a href="https://www.advtech.co.za/interactive-share-statistics" class="dropdown-item">     Interactive Share Statistics</a></li>
+                        <li><a href="https://www.advtech.co.za/share-price-calculator" class="dropdown-item">           Share Price Calculator</a></li>
+                    </ul>
+                </li>
+
+
+                <li><a href="https://www.advtech.co.za/transfer-secretaries" class="dropdown-item">                     Transfer Secretaries</a></li>
+
+                @* INVESTOR CONTACT *@
+                <li class="dropdown-submenu">
+                    <a href="https://www.advtech.co.za/investor-contact" class="dropdown-item">                         Investor Contact &nbsp »<span class="icon icon-angle-right"></span></a>
+                    <ul style="background-color: #888888;" class="dropdown-submenu-menu">
+                        <li><a href="https://www.advtech.co.za/newpage" class="dropdown-item">                          Register for investor SENS & share price alerts</a></li>
+                        <li><a href="https://www.advtech.co.za/register-for-the-vault-alerts" 
+                            class="dropdown-item">                                                                      Register for the Vault alerts</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div>
+
+
+        @* GOVERNANCE *@
+        <div class="dropdown" style="margin-left: 20px;">
+            <a href="https://www.advtech.co.za/#" class="dropdown-toggle">
+                Governance<span class="icon icon-angle-down"></span>
+            </a>
+            <ul style="background-color: slategray; margin-left: 25px; width: 200%" class="dropdown-menu">
+                <li><a href="https://www.advtech.co.za/copy-of-annual-general-meeting" class="dropdown-item">           Annual General Meeting</a></li>
+                <li><a href="https://www.advtech.co.za/board-of-directors" class="dropdown-item">                       Board of Directors</a></li>
+                <li><a href="https://www.advtech.co.za/leadership-structures" class="dropdown-item">                    Leadership Structures</a></li>
+                <li><a href="https://www.advtech.co.za/company-secretary" class="dropdown-item">                        Company Secretary</a></li>
+                <li><a href="https://www.advtech.co.za/compliance-governance" class="dropdown-item">                    Corporate Governance</a></li>
+                <li><a href="https://www.advtech.co.za/king-iv-report" class="dropdown-item">                           King IV Application Register</a></li>
+                <li><a href="https://www.advtech.co.za/audit-committee-report" class="dropdown-item">                   Audit & Risk Committee Report</a></li>
+                <li><a href="https://www.advtech.co.za/remuneration-report" class="dropdown-item">                      Remuneration Committee Report</a></li>
+                <li><a href="https://www.advtech.co.za/tsec-report" class="dropdown-item">                              TSEC Report</a></li>
+                <li><a href="https://www.advtech.co.za/esg-strategy" class="dropdown-item">                             ESG Strategy</a></li>
+                <li><a href="https://www.advtech.co.za/annual-integrated-report" class="dropdown-item">                 2023 Annual Integrated Report</a></li>
+                <li><a href="https://www.advtech.co.za/2023-sustainability-reportb9439dc6" class="dropdown-item">       2023 Sustainability Report</a></li>
+            </ul>
+        </div>
+
+
+
+        
+        @* MEDIA *@
+        <div class="dropdown" style="margin-left: 20px;">
+            <a href="https://www.advtech.co.za/#" class="dropdown-toggle">
+                Media <span class="icon icon-angle-down"></span>
+            </a>
+            <ul style="background-color: slategray;margin-left: 25px; width: 100%" class="dropdown-menu">
+                <li><a href="https://www.advtech.co.za/Blog" class="dropdown-item">                                         ADvTECH in the News</a></li>
+                <li><a href="https://www.advtech.co.za/press-releases" class="dropdown-item">                               SENS Announcements</a></li>
+            </ul>
+        </div>
+
+
+
+        @* CONTACTS *@
+        <div class="dropdown" style="margin-left: 20px;">
+            <a href="https://www.advtech.co.za/#" class="dropdown-toggle">
+                Contacts <span class="icon icon-angle-down"></span>
+            </a>
+            <ul style="background-color: slategray;margin-left: 25px; width: 200%" class="dropdown-menu">
+                <li><a href="https://www.advtech.co.za/contact-us" class="dropdown-item">                               Contacts</a></li>
+                <li><a href="https://www.advtech.co.za/contact-us#StudentInformationServices" class="dropdown-item">    Student Information Services</a></li>
+                <li><a href="https://www.advtech.co.za/contact-us#AccountQueries" class="dropdown-item">                Account Queries</a></li>
+                <li><a href="https://www.advtech.co.za/contact-us#OnlinePlatform" class="dropdown-item">                Academic Portal</a></li>
+                <li><a href="https://www.advtech.co.za/contact-us#FindUs" class="dropdown-item">                        Contact Us</a></li>
+                <li><a href="https://www.advtech.co.za/copy-of-csi-and-bursaries" class="dropdown-item">                CSI & Bursaries</a></li>
+            </ul>
+        </div>
+
+
+
+        @* CAREERS *@
+        <div class="dropdown" style="margin-left: 20px;">
+            <a href="https://www.advtech.co.za/#" class="dropdown-toggle">
+                Careers <span class="icon icon-angle-down"></span>
+            </a>
+
+            <ul style="background-color: slategray;margin-left: 25px; width: 100%" class="dropdown-menu">
+                @* ADvTECH CAREERS *@
+                <li class="dropdown-submenu">
+                    <a href="https://www.advtech.co.za/careers" class="dropdown-item">ADvTECH Careers &nbsp » <span class="icon icon-angle-right"></span></a>
+                    <ul style="background-color: #888888;" class="dropdown-submenu-menu">
+                        <li><a href="https://www.advtech.co.za/careers/advtech-schools-careers" class="dropdown-item">      ADvTECH Schools Careers</a></li>
+                        <li><a href="https://www.advtech.co.za/careers/tertiary" class="dropdown-item">                     ADvTECH Tertiary Careers</a></li>
+                        <li><a href="https://www.advtech.co.za/advtech-resourcing-careers" class="dropdown-item">           ADvTECH Resourcing Careers</a></li>
+                        <li><a href="https://advtech.simplify.hr/" class="dropdown-item">                                   ADvTECH Support Office Careers</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+        @* ABOUT US DROPDOWN *@
+        <div class="dropdown" style="margin-left: 20px;">
+            <a href="#" class="dropdown-toggle">
+                About Us <span class="icon icon-angle-down"></span>
+            </a>
+            <ul style="background-color: slategray;margin-left: 25px; width: 100%" class="dropdown-menu">
+                <li><a href="https://www.advtech.co.za/advtech-short-video" class="dropdown-item">                          About ADvTECH</a></li>
+                <li><a href="https://www.advtech.co.za/academic-excellence" class="dropdown-item">                          Academic excellence</a></li>
+                <li><a href="https://www.advtech.co.za/advtech-timeline" class="dropdown-item">                             ADvTECH timeline</a></li>
+
+                @* EDUCATION BRANDS *@
+                <li class="dropdown-submenu">
+                    <a href="#" class="dropdown-item">Education brands &nbsp » <span class="icon icon-angle-right"></span></a>
+                    <ul style="background-color: #888888;" class="dropdown-submenu-menu">
+                        <li><a href="https://www.advtech.co.za/schools-division" class="dropdown-item">                     Schools division</a></li>
+                        <li><a href="https://www.advtech.co.za/advtech-international" class="dropdown-item">                ADvTECH International</a></li>
+                        <li><a href="https://www.advtech.co.za/tertiary-division" class="dropdown-item">                    Tertiary division</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.advtech.co.za/Resourcing_brands" class="dropdown-item">                            Resourcing brands</a></li>
+                <li><a href="https://www.advtech.co.za/africa-brochure" class="dropdown-item">                              ADvTECH International</a></li>
+                <li><a href="https://www.advtech.co.za/strategy" class="dropdown-item">                                     Ambition and Strategy</a></li>
+                <li><a href="https://www.advtech.co.za/purpose-and-values" class="dropdown-item">                           Purpose and values</a></li>
+                <li><a href="https://www.advtech.co.za/our-footprint" class="dropdown-item">                                Our footprint</a></li>
+                <li><a href="https://www.advtech.co.za/newpageae5ba413" class="dropdown-item">                              CSI and bursaries</a></li>
+            </ul>
+        </div>
+
+
+        <div style="margin-left: 20px;"/>
+        @* LOGIN / LOGOUT *@
+        <AuthorizeView>
+            <NotAuthorized>
+                <a href="/login" style="color: #000000; margin-left: 20px;">Login</a>
+            </NotAuthorized>
+            <Authorized>
+                <a href="/logout" style="color: #000000; margin-left: 20px;">Logout</a>
+            </Authorized>
+        </AuthorizeView>
+
+    </div>
+</div>
+
 <div class="page" style="background-color: #ffffff">
     <div class="sidebar">
         <NavMenu />
     </div>
 
-
-
-    @* MAIN PAGE HEADER *@
     <main>
-        <div class="top-row px-4" style="background-color: #ffffff; height: 100px; display: flex; align-items: center; justify-content: flex-start;">
-
-
-            @* DROPDOWN *@
-            <div class="dropdown">
-                @* HOVER BUTTON *@
-                <a href="#" class="dropdown-toggle">
-                    About Us <span class="icon icon-angle-down"></span>
-                </a>
-
-                @* ITEMS *@
-                <ul style="background-color: slategray" class="dropdown-menu">
-                    <li><a href="https://www.advtech.co.za/advtech-short-video" class="dropdown-item" style="margin-left: 0px;">About ADvTECH</a></li>
-                    <li><a href="https://www.advtech.co.za/academic-excellence" class="dropdown-item" style="margin-left: 0px;">Academic excellence</a></li>
-                    <li><a href="https://www.advtech.co.za/advtech-timeline" class="dropdown-item" style="margin-left: 0px;">ADvTECH timeline</a></li>
-
-                    @* SUB-MENU *@
-                    <li class="dropdown-submenu" style="margin-left: 0px;">
-
-                        <a href="" class="dropdown-item" style="margin-left: 0px;">Education brands » <span class="icon icon-angle-right"></span></a>
-                        @* SUB-MENU MENU *@
-                        <ul style="background-color: #888888; margin-left: 0px;" class="dropdown-submenu-menu">
-                            <li><a href="https://www.advtech.co.za/schools-division" class="dropdown-item" style="margin-left: 0px;">Schools division</a></li>
-                            <li><a href="https://www.advtech.co.za/advtech-international" class="dropdown-item" style="margin-left: 0px;">ADvTECH International</a></li>
-                            <li><a href="https://www.advtech.co.za/tertiary-division" class="dropdown-item" style="margin-left: 0px;">Tertiary division</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="https://www.advtech.co.za/Resourcing_brands" class="dropdown-item" style="margin-left: 0px;">Resourcing brands</a></li>
-                    <li><a href="https://www.advtech.co.za/africa-brochure" class="dropdown-item" style="margin-left: 0px;">ADvTECH International</a></li>
-                    <li><a href="https://www.advtech.co.za/strategy" class="dropdown-item" style="margin-left: 0px;">Ambition and Strategy</a></li>
-                    <li><a href="https://www.advtech.co.za/purpose-and-values" class="dropdown-item" style="margin-left: 0px;">Purpose and values</a></li>
-                    <li><a href="https://www.advtech.co.za/our-footprint" class="dropdown-item" style="margin-left: 0px;">Our footprint</a></li>
-                    <li><a href="https://www.advtech.co.za/newpageae5ba413" class="dropdown-item" style="margin-left: 0px;">CSI and bursaries</a></li>
-                </ul>
-            </div>
-
-            <AuthorizeView>
-                <NotAuthorized>
-                    <a href="/login" style="color: #000000; margin-right: 20px;">Login</a>
-                </NotAuthorized>
-                <Authorized>
-                    <a href="/logout" style="color: #000000;">Logout</a>
-                </Authorized>
-            </AuthorizeView>
-        </div>
-
         <article class="content px-4">
             @Body
         </article>
     </main>
 </div>
-
 
 <div id="blazor-error-ui">
     An unhandled error has occurred.
@@ -71,12 +252,20 @@
 
 
 
+
+
+
+
+
+
+@* ===================== STYLES ===================== *@
+
+
+
 <style>
-
     .dropdown-item {
-        margin-left: 0px;
+        margin-left: 0px !important;
     }
-
 
     .dropdown {
         position: relative;
@@ -90,11 +279,11 @@
         display: inline-flex;
         align-items: center;
     }
-    .dropdown-toggle:hover{
+
+        .dropdown-toggle:hover {
             color: #000;
             text-decoration: none !important;
         }
-
 
     .dropdown-menu {
         display: none;
@@ -114,14 +303,14 @@
             color: #22428b;
             background-color: #ffffff;
             font-size: 14px;
-            text-decoration: none !important; 
+            text-decoration: none !important;
             display: block;
         }
 
             .dropdown-menu .dropdown-item:hover {
                 background-color: red;
                 color: white;
-                text-decoration: none !important; 
+                text-decoration: none !important;
             }
 
     .dropdown-submenu-menu {
@@ -152,16 +341,12 @@
         position: relative;
     }
 
-    .dropdown-submenu-menu
-    .dropdown-submenu:hover {
+    .dropdown-submenu-menu .dropdown-submenu:hover {
         top: 0;
         left: 100%;
     }
 
-
     .dropdown-item {
         margin-left: 0px;
     }
-
-
 </style>
