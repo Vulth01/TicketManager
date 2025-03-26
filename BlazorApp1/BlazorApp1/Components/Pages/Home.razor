@@ -5,11 +5,10 @@
 <PageTitle>Home</PageTitle>
 
 
-<div class="row" style="margin-bottom: 5%; background-color: #ffffff">
+<div class="row" style="margin-bottom: 2%; background-color: #ffffff">
 	<div class="col-12">
 		<div class="card">
 			<div class="card-body" style="background-color: #ffffff; color: #000000">
-
 				@* USER LOGIN HEADER *@
 				<AuthorizeView>
 					<NotAuthorized>
@@ -32,8 +31,11 @@
 
 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; 
 			text-align: center; background-color: #ffffff">
+
 	@* BODY HEADER *@
-	<h1 style="font-weight:600; background-color: #ffffff; color:#22428b; margin-bottom: 100px">ADvTECH<br />TICKET MANAGEMENT</h1>
+	@* <h1 style="font-weight:600; background-color: #ffffff; color:#22428b; margin-bottom: 100px">ADvTECH<br />TICKET MANAGEMENT</h1> *@
+
+	<UserTicketOverview/>
 
 	@* COUNTER COMPONENT *@
     @* <Counter IncrementAmount="5" /> *@

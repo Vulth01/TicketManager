@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2p23DHKdWxhVp/grH+MkQpaBkMOpsE0hgBRc52flUaY=",
+  "Hash": "yXz0T0xO7IEiB0reAu/russXbSicg0EwBIe81Pzbt5o=",
   "Source": "BlazorApp1",
   "BasePath": "_content/BlazorApp1",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "BlazorApp1\\wwwroot",
       "Source": "BlazorApp1",
-      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp1.styles.css",
+      "Identity": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp1.styles.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "BlazorApp1#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -35,13 +35,13 @@
       "Integrity": "ABFbobo5LShQjJWTAAEQCtUZNy2CiF2ImNPDNgXtioM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp1.styles.css"
+      "OriginalItemSpec": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp1.styles.css"
     },
     {
-      "Identity": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css",
+      "Identity": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "BlazorApp1#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -56,13 +56,34 @@
       "Integrity": "H0yk2f3SKVI6BzyDxugrSmp2TQwR1fd/2rrOvmD2jFA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css"
+      "OriginalItemSpec": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css"
     },
     {
-      "Identity": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\ADvTECH_Logo.png",
+      "Identity": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\ADvTECH_Logo_Grey.svg",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\",
+      "BasePath": "_content/BlazorApp1",
+      "RelativePath": "ADvTECH_Logo_Grey#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6aleqwpay5",
+      "Integrity": "Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ADvTECH_Logo_Grey.svg"
+    },
+    {
+      "Identity": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\ADvTECH_Logo.png",
+      "SourceId": "BlazorApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "ADvTECH_Logo#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -80,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\ADvTECH_Logo.png"
     },
     {
-      "Identity": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\app.css",
+      "Identity": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\app.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "app#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -101,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "bootstrap/bootstrap.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -122,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "bootstrap/bootstrap.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -143,10 +164,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\favicon.png",
+      "Identity": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\favicon.png",
       "SourceId": "BlazorApp1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\",
+      "ContentRoot": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\",
       "BasePath": "_content/BlazorApp1",
       "RelativePath": "favicon#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -282,8 +303,90 @@
       ]
     },
     {
+      "Route": "ADvTECH_Logo_Grey.6aleqwpay5.svg",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\ADvTECH_Logo_Grey.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3990"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 10:17:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6aleqwpay5"
+        },
+        {
+          "Name": "label",
+          "Value": "ADvTECH_Logo_Grey.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI="
+        }
+      ]
+    },
+    {
+      "Route": "ADvTECH_Logo_Grey.svg",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\ADvTECH_Logo_Grey.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3990"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 10:17:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI="
+        }
+      ]
+    },
+    {
       "Route": "ADvTECH_Logo.abxf0sig4o.png",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\ADvTECH_Logo.png",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\ADvTECH_Logo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -328,7 +431,7 @@
     },
     {
       "Route": "ADvTECH_Logo.png",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\ADvTECH_Logo.png",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\ADvTECH_Logo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -365,7 +468,7 @@
     },
     {
       "Route": "app.css",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\app.css",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -402,7 +505,7 @@
     },
     {
       "Route": "app.da95v2qkru.css",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\app.css",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -447,7 +550,7 @@
     },
     {
       "Route": "BlazorApp1.72xb8i838x.bundle.scp.css",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -492,7 +595,7 @@
     },
     {
       "Route": "BlazorApp1.bundle.scp.css",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorApp1.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -529,7 +632,7 @@
     },
     {
       "Route": "BlazorApp1.kbyxxdd4yz.styles.css",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp1.styles.css",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp1.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -578,7 +681,7 @@
     },
     {
       "Route": "BlazorApp1.styles.css",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp1.styles.css",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorApp1.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -619,7 +722,7 @@
     },
     {
       "Route": "bootstrap/bootstrap.min.bpk8xqwxhs.css",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\bootstrap\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -664,7 +767,7 @@
     },
     {
       "Route": "bootstrap/bootstrap.min.css",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\bootstrap\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -701,7 +804,7 @@
     },
     {
       "Route": "bootstrap/bootstrap.min.css.8inm30yfxf.map",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -746,7 +849,7 @@
     },
     {
       "Route": "bootstrap/bootstrap.min.css.map",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -783,7 +886,7 @@
     },
     {
       "Route": "favicon.ifv42okdf2.png",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\favicon.png",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\favicon.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -828,7 +931,7 @@
     },
     {
       "Route": "favicon.png",
-      "AssetFile": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\wwwroot\\favicon.png",
+      "AssetFile": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\wwwroot\\favicon.png",
       "Selectors": [],
       "ResponseHeaders": [
         {

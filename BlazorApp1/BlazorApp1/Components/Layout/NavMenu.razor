@@ -4,7 +4,7 @@
 <input type="checkbox" title="Navigation menu" class="navbar-toggler" />
 
 @* NAVIGATION BAR *@
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()" style="background-color: #334049">
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()" style="background-color: #22428b; height: 100%">
     <nav class="flex-column">
 
         @* HOME *@
@@ -36,7 +36,7 @@
                 @* TicketOverview *@
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="ticketOverview">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> All Ticket Overview
+                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> All Ticket Overview 
                     </NavLink>
                 </div>
 
@@ -82,28 +82,40 @@
     </nav>
 </div>
 
+
+
+
+@* ===================== STYLES ===================== *@
+
 <style>
     .nav-scrollable {
         min-width: max-content;
     }
 
-    .nav-scrollable .nav-item {
+        .nav-scrollable .nav-item {
             white-space: nowrap;
-    }
+        }
 
     .home-icon {
         color: red !important;
     }
 
-    .home-icon:hover {
+        .home-icon:hover {
             color: #f5454d !important;
-    }
+        }
 
     .nav-link {
+        padding-left: 5px;
         color: #ffffff !important;
     }
 
-    .nav-link:hover {
-            color: #f5454d !important;
+        .nav-link:hover {
+            background-color: #c32d32bb !important;
+        }
+
+
+    .nav-link{
+        width: 220px !important;
     }
+
 </style>

@@ -26,9 +26,7 @@ else
                 <DataAnnotationsValidator />
                 <ValidationSummary />
 
-                <!-- COMMON FIELDS -->
-
-
+                @* COMMON FIELDS *@
                 <div class="mb-3">
                     <label for="userContactNo" class="form-label">User Contact Number:</label>
                     <InputText id="userContactNo" @bind-Value="ticket.UserContactNo" class="form-control" />
@@ -125,6 +123,16 @@ else
         </div>
     </div>
 }
+
+
+
+
+
+
+
+
+
+
 
 @code {
     [Parameter]

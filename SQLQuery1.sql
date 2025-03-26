@@ -44,9 +44,42 @@ INSERT INTO dbo.user_account (user_name, password, role)
 VALUES ('user1', 'user1', 'User');
 
 
-INSERT INTO user_account (guid, user_name, password, email, role)
-VALUES (NEWID(), 'admin!', 'qwer1234', 'admin@administrator.com', 'Administrator');
+INSERT INTO user_account (guid, UserName, password, email, role)
+VALUES (NEWID(), 'admin!', 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'admin@administrator.com', 'Administrator');
 SELECT * FROM dbo.user_account;
+
+
+ALTER TABLE dbo.user_account
+ALTER COLUMN password VARCHAR(64);  -- Adjust based on the hash length
+
+
+
+
+INSERT INTO user_account (guid, UserName, password, email, role, Salt)
+VALUES (
+    NEWID(),
+    'admin!', 
+    'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 
+    'admin@administrator.com',
+    'Administrator', 
+    CAST('f08ad607-7f58-4b95-b34b-d01a4e476d85' AS UNIQUEIDENTIFIER) 
+);
+
+
+
+ALTER TABLE user_account
+ADD Salt VARBINARY(64);  -- Adjust the size based on the size of your salt
+
+
+
+
+
+DELETE FROM dbo.user_account
+WHERE role = 'Administrator' 
+AND id != 26;
+SELECT * FROM dbo.user_account;
+
+
 
 
 INSERT INTO TicketTemplate2_Details 

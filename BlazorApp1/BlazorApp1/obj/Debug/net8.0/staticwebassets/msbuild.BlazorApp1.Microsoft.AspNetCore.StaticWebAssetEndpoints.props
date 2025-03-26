@@ -12,6 +12,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-mpnTk4eHNiO5xn1F1ZMxO3TOkvx5jAtQnhHuhUULwPc="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"16274"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022mpnTk4eHNiO5xn1F1ZMxO3TOkvx5jAtQnhHuhUULwPc=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Mar 2025 14:03:17 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/BlazorApp1/ADvTECH_Logo_Grey.6aleqwpay5.svg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ADvTECH_Logo_Grey.svg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6aleqwpay5"},{"Name":"integrity","Value":"sha256-Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI="},{"Name":"label","Value":"_content/BlazorApp1/ADvTECH_Logo_Grey.svg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3990"},{"Name":"Content-Type","Value":"image/svg\u002Bxml"},{"Name":"ETag","Value":"\u0022Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 10:17:47 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/BlazorApp1/ADvTECH_Logo_Grey.svg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\ADvTECH_Logo_Grey.svg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"3990"},{"Name":"Content-Type","Value":"image/svg\u002Bxml"},{"Name":"ETag","Value":"\u0022Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 10:17:47 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/BlazorApp1/app.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
