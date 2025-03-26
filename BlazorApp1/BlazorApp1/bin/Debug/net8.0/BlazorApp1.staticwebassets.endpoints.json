@@ -85,6 +85,88 @@
       ]
     },
     {
+      "Route": "ADvTECH_Logo_Grey.6aleqwpay5.svg",
+      "AssetFile": "ADvTECH_Logo_Grey.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3990"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 10:17:47 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6aleqwpay5"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI="
+        },
+        {
+          "Name": "label",
+          "Value": "ADvTECH_Logo_Grey.svg"
+        }
+      ]
+    },
+    {
+      "Route": "ADvTECH_Logo_Grey.svg",
+      "AssetFile": "ADvTECH_Logo_Grey.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3990"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 10:17:47 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Pk1G3OQl7BFAtvypPEY/0FS77wSONJbGkgKkvCmlgKI="
+        }
+      ]
+    },
+    {
       "Route": "BlazorApp1.kbyxxdd4yz.styles.css",
       "AssetFile": "BlazorApp1.styles.css",
       "Selectors": [],

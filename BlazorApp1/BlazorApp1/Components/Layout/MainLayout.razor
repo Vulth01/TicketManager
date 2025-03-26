@@ -1,17 +1,43 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="top-bar" style="background-color: #334049; color: white; padding: 10px; text-align:center; font-variant: small-caps; font:600; ">
-    ticket manager
+
+@* TOP BAR *@
+<div class="top-bar"
+     style="background-color: #334049; color: white; padding: 10px; text-align:center; font-variant: small-caps; font:600; width: auto;">
+    <div class="container-fluid" style="display: flex; align-items: center; justify-content: flex-start; width: 100%;">
+        
+        @* SOCIAL ICONS *@
+        <div class="social-icons" style="margin-right: auto;">
+            <a href="https://facebook.com/advtechgroup" target="_blank" aria-label="Facebook" style="margin-left: 10px; color: #ffffff">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/advtechgroup" target="_blank" aria-label="Twitter" style="margin-left: 10px; color: #ffffff">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/43706" target="_blank" aria-label="LinkedIn" style="margin-left: 10px; color: #ffffff">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+
+        @* MAIL *@
+        <div class="social-icons" style="margin-left: auto; font-size: 11px">
+            <a href="mailto:info@advtech.co.za" target="_blank" aria-label="Mail" style="margin-right: 10px; color: white">
+                <i class="fa-solid fa-envelope"></i> 
+            </a>
+            info@advtech.co.za
+        </div>
+
+    </div>
 </div>
 
 
-
-<div class="top-row ps-3 navbar navbar-dark" style="background-color:#ffffff; height: 100px;">
+@* HEADER *@
+<div class="top-row ps-3 navbar navbar-dark" style="background-color:#ffffff; height: 80px; width: 100%;">
     <div class="container-fluid" style="display: flex; align-items: center; justify-content: flex-start; width: 100%;">
 
         @* LOGO *@
         <a href="/">
-            <img src="/ADvTECH_Logo.png" alt="Logo" style="height: 80px;" />
+            <img src="/ADvTECH_Logo.png" alt="Logo" style="height: 60px;" />
         </a>
 
         @* ABOUT US DROPDOWN *@
@@ -44,7 +70,6 @@
 
         @* INVESTOR RELATIONS CENTRE DROPDOWN *@
         <div class="dropdown" style="margin-left: 20px;">
-            @* HEADER *@
             <a href="#" class="dropdown-toggle">
                 Investor Relations Centre <span class="icon icon-angle-down"></span>
             </a>
@@ -110,7 +135,6 @@
             </ul>
         </div>
 
-
         @* GOVERNANCE *@
         <div class="dropdown" style="margin-left: 20px;">
             <a href="https://www.advtech.co.za/#" class="dropdown-toggle">
@@ -132,9 +156,6 @@
             </ul>
         </div>
 
-
-
-        
         @* MEDIA *@
         <div class="dropdown" style="margin-left: 20px;">
             <a href="https://www.advtech.co.za/#" class="dropdown-toggle">
@@ -145,8 +166,6 @@
                 <li><a href="https://www.advtech.co.za/press-releases" class="dropdown-item">                               SENS Announcements</a></li>
             </ul>
         </div>
-
-
 
         @* CONTACTS *@
         <div class="dropdown" style="margin-left: 20px;">
@@ -162,8 +181,6 @@
                 <li><a href="https://www.advtech.co.za/copy-of-csi-and-bursaries" class="dropdown-item">                CSI & Bursaries</a></li>
             </ul>
         </div>
-
-
 
         @* CAREERS *@
         <div class="dropdown" style="margin-left: 20px;">
@@ -185,39 +202,6 @@
             </ul>
         </div>
 
-
-
-
-
-        @* ABOUT US DROPDOWN *@
-        <div class="dropdown" style="margin-left: 20px;">
-            <a href="#" class="dropdown-toggle">
-                About Us <span class="icon icon-angle-down"></span>
-            </a>
-            <ul style="background-color: slategray;margin-left: 25px; width: 100%" class="dropdown-menu">
-                <li><a href="https://www.advtech.co.za/advtech-short-video" class="dropdown-item">                          About ADvTECH</a></li>
-                <li><a href="https://www.advtech.co.za/academic-excellence" class="dropdown-item">                          Academic excellence</a></li>
-                <li><a href="https://www.advtech.co.za/advtech-timeline" class="dropdown-item">                             ADvTECH timeline</a></li>
-
-                @* EDUCATION BRANDS *@
-                <li class="dropdown-submenu">
-                    <a href="#" class="dropdown-item">Education brands &nbsp » <span class="icon icon-angle-right"></span></a>
-                    <ul style="background-color: #888888;" class="dropdown-submenu-menu">
-                        <li><a href="https://www.advtech.co.za/schools-division" class="dropdown-item">                     Schools division</a></li>
-                        <li><a href="https://www.advtech.co.za/advtech-international" class="dropdown-item">                ADvTECH International</a></li>
-                        <li><a href="https://www.advtech.co.za/tertiary-division" class="dropdown-item">                    Tertiary division</a></li>
-                    </ul>
-                </li>
-                <li><a href="https://www.advtech.co.za/Resourcing_brands" class="dropdown-item">                            Resourcing brands</a></li>
-                <li><a href="https://www.advtech.co.za/africa-brochure" class="dropdown-item">                              ADvTECH International</a></li>
-                <li><a href="https://www.advtech.co.za/strategy" class="dropdown-item">                                     Ambition and Strategy</a></li>
-                <li><a href="https://www.advtech.co.za/purpose-and-values" class="dropdown-item">                           Purpose and values</a></li>
-                <li><a href="https://www.advtech.co.za/our-footprint" class="dropdown-item">                                Our footprint</a></li>
-                <li><a href="https://www.advtech.co.za/newpageae5ba413" class="dropdown-item">                              CSI and bursaries</a></li>
-            </ul>
-        </div>
-
-
         <div style="margin-left: 20px;"/>
         @* LOGIN / LOGOUT *@
         <AuthorizeView>
@@ -229,9 +213,23 @@
             </Authorized>
         </AuthorizeView>
 
+        @* SOCIAL ICONS *@
+        <div class="social-icons" style="margin-left: auto;">
+            <a href="https://facebook.com/advtechgroup" target="_blank" aria-label="Facebook" style="margin-left: 10px; color: #1d408b">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/advtechgroup" target="_blank" aria-label="Twitter" style="margin-left: 10px; color: #1d408b">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/43706" target="_blank" aria-label="LinkedIn" style="margin-left: 10px; color: #1d408b">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
     </div>
 </div>
 
+
+@* SIDEBAR *@
 <div class="page" style="background-color: #ffffff">
     <div class="sidebar">
         <NavMenu />
@@ -244,6 +242,7 @@
     </main>
 </div>
 
+@* ERROR *@
 <div id="blazor-error-ui">
     An unhandled error has occurred.
     <a href="" class="reload">Reload</a>
@@ -251,21 +250,58 @@
 </div>
 
 
+@* FOOTER *@
+<div class="footer-container">
+    @* LOGO *@
+    <div class="logo-footer">
+        <a href="/">
+            <img src="/ADvTECH_Logo_Grey.svg" alt="Logo" style="height: 60px;" />
+        </a>
+    </div>
 
 
-
+    @* SOCIAL ICONS *@
+    <div class="social-footer">
+        <a class="social-footer-item" href="https://facebook.com/advtechgroup" target="_blank" aria-label="Facebook" style="margin-left: 10px; color: #ffffff">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="social-footer-item" href="https://twitter.com/advtechgroup" target="_blank" aria-label="Twitter" style="margin-left: 10px; color: #ffffff">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a class="social-footer-item" href="https://www.linkedin.com/company/43706" target="_blank" aria-label="LinkedIn" style="margin-left: 10px; color: #ffffff">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+    
+    @* MENU BACK *@
+    <div class="menu-bar">
+        <a href="https://www.advtech.co.za/" class="menu-item">Home</a>
+        <a href="https://www.advtech.co.za/disclaimer" class="menu-item">Disclaimer</a>
+        <a href="https://www.advtech.co.za/advtech-terms-and-conditions" class="menu-item">Terms & Conditions</a>
+        <a href="https://www.advtech.co.za/newpage616c1189" class="menu-item">PO Terms & Conditions: Schools Division</a>
+        <a href="https://www.advtech.co.za/paia" class="menu-item">PAIA</a>
+        <a href="https://www.advtech.co.za/privacy-notice" class="menu-item">Privacy Notice</a>
+        <a href="https://www.advtech.co.za/code-of-conduct-business-ethics" class="menu-item" style="display: inline-block !important">Code of Conduct Business Ethics</a>
+    </div>
+    
+    @* COPYRIGHT *@
+    <div class="copyright">
+        © 2025 Copyright | ADvTECH Group Ltd
+    </div>
+</div>
 
 
 
 
 @* ===================== STYLES ===================== *@
-
-
-
 <style>
-    .dropdown-item {
-        margin-left: 0px !important;
+
+    /* =============== DROPDOWN ===============*/
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
     }
+
 
     .dropdown {
         position: relative;
@@ -284,6 +320,9 @@
             color: #000;
             text-decoration: none !important;
         }
+
+
+    /* DROPDOWN MENU */
 
     .dropdown-menu {
         display: none;
@@ -308,10 +347,26 @@
         }
 
             .dropdown-menu .dropdown-item:hover {
-                background-color: red;
+                background-color: #c32d32ff;
                 color: white;
                 text-decoration: none !important;
             }
+
+
+    .icon-angle-down {
+        margin-left: 5px;
+    }
+
+    
+    /* DROPDOWN-SUBMENU */
+    
+    .dropdown-submenu {
+        position: relative;
+    }
+
+        .dropdown-submenu:hover .dropdown-submenu-menu {
+            display: block;
+        }
 
     .dropdown-submenu-menu {
         display: none;
@@ -325,28 +380,94 @@
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     }
 
-    .dropdown-submenu:hover .dropdown-submenu-menu {
-        display: block;
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-
-    .icon-angle-down {
-        margin-left: 5px;
-    }
-
-    .dropdown-submenu {
-        position: relative;
-    }
-
     .dropdown-submenu-menu .dropdown-submenu:hover {
         top: 0;
         left: 100%;
     }
 
+
+    /* DROPDOWN-ITEM */
+
     .dropdown-item {
-        margin-left: 0px;
+        margin-left: 0px !important;
     }
+
+
+    /* =============== FOOTER SECTION =============== */
+    .footer-container {
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 0; 
+        margin-top: auto; 
+    }
+
+    /* FOOTER LOGO */
+    .logo-footer {
+        background-color: #334049;
+        color: #888888;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 10px;
+    }
+
+    /* FOOTER SOCIAL */
+
+    .social-footer{
+        text-align: center;
+    }
+
+    .social-footer-item {
+        margin-left: 10px;
+        color: #ffffff;
+        transition: transform 0.3s ease;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+    }
+
+        .social-footer-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-footer-item i {
+            font-size: 20px;
+        }
+
+
+
+
+    /* FOOTER MENU BAR */
+    .menu-bar {
+        background-color: #334049;
+        color: #888888;
+        text-align: center;
+        padding: 10px 0; 
+        font-size: 12px;
+    }
+
+    .menu-item {
+        color: #ffffff;
+        margin-left: 15px;
+        font-weight: 400;
+        text-decoration: none;
+    }
+
+        .menu-item:hover {
+            text-decoration: underline !important;
+        }
+
+    /* FOOTER COPYRIGHT */
+    .copyright {
+        background-color: #ffffff;
+        color: #555555;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 10px;
+    }
+
+
 </style>

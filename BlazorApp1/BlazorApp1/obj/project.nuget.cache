@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bm6ifdPSOSY=",
+  "dgSpecHash": "bi9wEVaEqmg=",
   "success": true,
-  "projectFilePath": "C:\\TicketManager\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
+  "projectFilePath": "C:\\TicketManager\\BlazorApp1\\blazorapp1\\BlazorApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
@@ -177,8 +177,8 @@
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
-    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.14\\microsoft.netcore.app.ref.8.0.14.nupkg.sha512",
+    "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.14\\microsoft.windowsdesktop.app.ref.8.0.14.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.14\\microsoft.aspnetcore.app.ref.8.0.14.nupkg.sha512",
     "C:\\Users\\Damien.Harwood\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.14\\microsoft.netcore.app.host.win-x64.8.0.14.nupkg.sha512"
   ],

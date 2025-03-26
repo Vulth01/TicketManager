@@ -18,20 +18,20 @@ namespace BlazorApp1.Services
         }
 
         // Create or Update a ticket in HaloPSA
-        public async Task<bool> CreateOrUpdateTicketAsync(DocumentDetails document)
+        public async Task<bool> CreateOrUpdateTicketAsync(TicketSummary document)
         {
             var ticketData = new
             {
-                title = document.FaultDescription,
-                description = $"Fault Description: {document.FaultDescription}, Site Address: {document.SiteAddress}",
-                priority = "Normal",                                                                        // Adjust this as needed
-                customer_name = document.UserName,
-                customer_email = document.UserEmail,
-                customer_contact = document.UserContactNumber,
-                equipment_make = document.EquipmentMake,
-                equipment_model = document.EquipmentModel,
-                serial_number = document.EquipmentSerialNumber,
-                product_number = document.EquipmentProductNumber,
+                //title = document.FaultDescription,
+                //description = $"Fault Description: {document.FaultDescription}, Site Address: {document.SiteAddress}",
+                //priority = "Normal",                                                                        // Adjust this as needed
+                //customer_name = document.UserName,
+                //customer_email = document.UserEmail,
+                //customer_contact = document.UserContactNumber,
+                //equipment_make = document.EquipmentMake,
+                //equipment_model = document.EquipmentModel,
+                //serial_number = document.EquipmentSerialNumber,
+                //product_number = document.EquipmentProductNumber,
             };
 
             var json = JsonConvert.SerializeObject(ticketData);
