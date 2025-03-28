@@ -17,97 +17,97 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlazorApp1
 build_property.RootNamespace = BlazorApp1
-build_property.ProjectDir = C:\TicketManager\BlazorApp1\blazorapp1\
+build_property.ProjectDir = C:\TicketManager\BlazorApp1\BlazorApp1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\TicketManager\BlazorApp1\blazorapp1
+build_property.MSBuildProjectDirectory = C:\TicketManager\BlazorApp1\BlazorApp1
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/App.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/Account/AccessDenied.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Account/AccessDenied.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XEFjY2Vzc0RlbmllZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/Account/AddUser.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Account/AddUser.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XEFkZFVzZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/Account/DeleteUser.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Account/DeleteUser.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XERlbGV0ZVVzZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/Account/Login.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Account/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XExvZ2luLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/Account/Logout.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Account/Logout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XExvZ291dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/Account/UserOverview.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Account/UserOverview.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XFVzZXJPdmVydmlldy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/Error.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/Extra/Counter.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Extra/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeHRyYVxDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/Extra/Weather.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Extra/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeHRyYVxXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/Home.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/TicketDocument/AddTicket.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/TicketDocument/AddTicket.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaWNrZXREb2N1bWVudFxBZGRUaWNrZXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/TicketDocument/Component.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/TicketDocument/Component.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaWNrZXREb2N1bWVudFxDb21wb25lbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/TicketDocument/DeleteTicket.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/TicketDocument/DeleteTicket.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaWNrZXREb2N1bWVudFxEZWxldGVUaWNrZXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/TicketDocument/SelectTemplate.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/TicketDocument/SelectTemplate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaWNrZXREb2N1bWVudFxTZWxlY3RUZW1wbGF0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/TicketDocument/TicketOverview.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/TicketDocument/TicketOverview.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaWNrZXREb2N1bWVudFxUaWNrZXRPdmVydmlldy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Pages/TicketDocument/UserTicketOverview.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Pages/TicketDocument/UserTicketOverview.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaWNrZXREb2N1bWVudFxVc2VyVGlja2V0T3ZlcnZpZXcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Routes.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/_Imports.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Layout/MainLayout.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-j65y7q72mt
 
-[C:/TicketManager/BlazorApp1/blazorapp1/Components/Layout/NavMenu.razor]
+[C:/TicketManager/BlazorApp1/BlazorApp1/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-5bndfk4shp

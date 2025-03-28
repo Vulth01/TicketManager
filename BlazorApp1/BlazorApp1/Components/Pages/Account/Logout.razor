@@ -27,7 +27,7 @@
 						<a class="fw-bolder" href="/login">Click here</a> to log in.
 					</span>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
@@ -38,7 +38,7 @@
 
 
 
-@code{
+@code {
 	[CascadingParameter]
 	public HttpContext HttpContext { get; set; }
 
@@ -46,7 +46,7 @@
 	protected override async Task OnInitializedAsync()
 	{
 		await base.OnInitializedAsync();
-		if(HttpContext.User.Identity.IsAuthenticated)
+		if (HttpContext.User.Identity!.IsAuthenticated)
 		{
 			await HttpContext.SignOutAsync();
 			navigationManager.NavigateTo("/logout", true);

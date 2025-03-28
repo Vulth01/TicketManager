@@ -85,6 +85,170 @@
       ]
     },
     {
+      "Route": "ADvTECH_Logo_Circle.b08i7ir1m4.webp",
+      "AssetFile": "ADvTECH_Logo_Circle.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"C9j6N3SkfBhoYx2QJU6Wa7x39F5KJqCX3XqoEJLYKUI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 08:02:51 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b08i7ir1m4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-C9j6N3SkfBhoYx2QJU6Wa7x39F5KJqCX3XqoEJLYKUI="
+        },
+        {
+          "Name": "label",
+          "Value": "ADvTECH_Logo_Circle.webp"
+        }
+      ]
+    },
+    {
+      "Route": "ADvTECH_Logo_Circle.png",
+      "AssetFile": "ADvTECH_Logo_Circle.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42842"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cr32h/BIaomOokwhsQ8xZewaxkR6do8dHBKDIUnEi6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 08:05:18 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cr32h/BIaomOokwhsQ8xZewaxkR6do8dHBKDIUnEi6w="
+        }
+      ]
+    },
+    {
+      "Route": "ADvTECH_Logo_Circle.ug3wpotq36.png",
+      "AssetFile": "ADvTECH_Logo_Circle.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42842"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cr32h/BIaomOokwhsQ8xZewaxkR6do8dHBKDIUnEi6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 08:05:18 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ug3wpotq36"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cr32h/BIaomOokwhsQ8xZewaxkR6do8dHBKDIUnEi6w="
+        },
+        {
+          "Name": "label",
+          "Value": "ADvTECH_Logo_Circle.png"
+        }
+      ]
+    },
+    {
+      "Route": "ADvTECH_Logo_Circle.webp",
+      "AssetFile": "ADvTECH_Logo_Circle.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"C9j6N3SkfBhoYx2QJU6Wa7x39F5KJqCX3XqoEJLYKUI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 08:02:51 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-C9j6N3SkfBhoYx2QJU6Wa7x39F5KJqCX3XqoEJLYKUI="
+        }
+      ]
+    },
+    {
       "Route": "ADvTECH_Logo_Grey.6aleqwpay5.svg",
       "AssetFile": "ADvTECH_Logo_Grey.svg",
       "Selectors": [],
@@ -193,7 +357,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 07:56:40 GMT"
+          "Value": "Wed, 26 Mar 2025 13:40:58 GMT"
         },
         {
           "Name": "Link",
@@ -242,7 +406,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 07:56:40 GMT"
+          "Value": "Wed, 26 Mar 2025 13:40:58 GMT"
         },
         {
           "Name": "Link",

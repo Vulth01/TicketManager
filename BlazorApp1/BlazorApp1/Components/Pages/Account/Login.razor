@@ -2,84 +2,122 @@
 @inject TicketContext ticketContext
 @inject NavigationManager navigationManager
 @inject HashPasswordService hashPasswordService
+@inject IConfiguration Configuration
+@using System.Net.Mail
+
 
 <div class="row">
-    <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
-        <EditForm Model="@Model" OnValidSubmit="Authenticate" FormName="LoginForm">
-            <DataAnnotationsValidator />
-            <div class="mb-3 text-center flex-column">
-                <img src="/images/avatar.png" style="max-height:5rem;" />
-                <h3>LOGIN</h3>
-            </div>
-            <div class="mb-3">
-                <label>User Name</label>
-                <InputText @bind-Value="Model.UserName" class="form-control" placeholder="Username" autofocus />
-                <ValidationMessage For="()=>Model.UserName" />
-            </div>
-            <div class="mb-3">
-                <label>Password</label>
-                <InputText @bind-Value="Model.Password" placeholder="Password" type="password" class="form-control" />
-                <ValidationMessage For="()=>Model.Password" />
-            </div>
-            <div class="mb-3 text-center">
-                <span class="text-danger">@errorMessage</span>
-            </div>
-            <div class="mb-3 d-grid gap-2">
-                <button type="submit" class="btn btn-primary">Login</button>
-            </div>
-        </EditForm>
-    </div>
+	<div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
+		<EditForm Model="@Model" OnValidSubmit="Authenticate" FormName="LoginForm">
+			<DataAnnotationsValidator />
+			@* LOGO *@
+			<div class="mb-3 text-center flex-column">
+				<img src="/ADvTECH_Logo_Circle.png" style="max-height:5rem; margin-bottom: 3%;" />
+				<h3>LOGIN</h3>
+			</div>
+			@* INPUT *@
+			<div class="mb-3">
+				<label>User Name</label>
+				<InputText @bind-Value="Model.UserName" class="form-control" placeholder="Username" autofocus />
+				<ValidationMessage For="()=>Model.UserName" />
+			</div>
+			<div class="mb-3">
+				<label>Password</label>
+				<InputText @bind-Value="Model.Password" placeholder="Password" type="password" class="form-control" />
+				<ValidationMessage For="()=>Model.Password" />
+			</div>
+			@* ERROR *@
+			<div class="mb-3 text-center">
+				<span class="text-danger">@errorMessage</span>
+			</div>
+			@* SUBMIT *@
+			<div class="mb-3 d-grid gap-2">
+				<button type="submit" class="btn btn-primary">Login</button>
+			</div>
+		</EditForm>
+	</div>
 </div>
 
 @code {
-    [CascadingParameter]
-    public HttpContext? HttpContext { get; set; }
 
-    [SupplyParameterFromForm]
-    public LoginViewModel Model { get; set; } = new();
+	[CascadingParameter]
+	public HttpContext? HttpContext { get; set; }
 
-    private string? errorMessage;
+	[SupplyParameterFromForm]
+	public LoginViewModel Model { get; set; } = new();
 
-    private async Task Authenticate()
-    {
-        // Retrieve the user account by username or email
-        var userAccount = ticketContext.UserAccounts
-            .Where(x => x.UserName == Model.UserName || x.Email == Model.UserName)
-            .FirstOrDefault();
+	private string? errorMessage;
 
-        // If user account is not found, show error and return early
-        if (userAccount is null)
-        {
-            errorMessage = "Incorrect username or password";
-            return;
-        }
+	private async Task Authenticate()
+	{
+		// USERNAME OR EMAIL
+		var userAccount = ticketContext.UserAccounts
+			.Where(x => x.UserName == Model.UserName || x.Email == Model.UserName)
+			.FirstOrDefault();
 
-        // Now that the user is found, retrieve the stored salt from the database
-        var storedSaltBase64FromDb = Convert.ToBase64String(userAccount.Salt);
+		if (userAccount is null)
+		{
+			errorMessage = "Incorrect username or password";
+			return;
+		}
 
-        // Verify the password entered by the user by comparing hashes
-        bool passwordMatches = hashPasswordService.VerifyPassword(Model.Password, userAccount.Password, storedSaltBase64FromDb);
+		// RETRIEVE SALT
+		var storedSaltBase64FromDb = Convert.ToBase64String(userAccount.Salt);
 
-        if (!passwordMatches)
-        {
-            errorMessage = "Incorrect username or password";
-            return;
-        }
+		// VERIFY PASSWORD
+		bool passwordMatches = hashPasswordService.VerifyPassword(Model.Password!, userAccount.Password, storedSaltBase64FromDb);
 
-        // Create authentication claims
-        var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.Name, userAccount.UserName),
-            new Claim(ClaimTypes.Role, userAccount.Role)
-        };
+		if (!passwordMatches)
+		{
+			errorMessage = "Incorrect username or password";
+			return;
+		}
 
-        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-        var principal = new ClaimsPrincipal(identity);
+		var claims = new List<Claim>
+		{
+			new Claim(ClaimTypes.Name, userAccount.UserName),
+			new Claim(ClaimTypes.Role, userAccount.Role)
+		};
 
-        // Sign in the user and navigate to the home page
-        await HttpContext.SignInAsync(principal);
-        navigationManager.NavigateTo("/");
-    }
+		var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+		var principal = new ClaimsPrincipal(identity);
+
+		// SIGN IN
+		await HttpContext!.SignInAsync(principal);
+		navigationManager.NavigateTo("/");
+	}
+
+
+	//NOT YET IMPLEMENTED
+	private void SendMail(string userAtRisk)
+	{
+		try
+		{
+			var emailAddress = Configuration["EmailSettings:EmailAddress"];
+			var password = Configuration["EmailSettings:Password"];
+
+			using (MailMessage mail = new MailMessage())
+			{
+				mail.From = new MailAddress(emailAddress!);
+				mail.To.Add("Damien.Harwood@ftechkzn.co.za");
+				mail.Subject = "Excessive User Password Attempt: " + userAtRisk;
+				mail.Body = "User has attempted to log into account '" + userAtRisk + "' too many times.<br>Please contact the user.";
+				mail.IsBodyHtml = true;
+
+				using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+				{
+					smtp.Credentials = new System.Net.NetworkCredential(emailAddress, password);
+					smtp.EnableSsl = true;
+					smtp.Send(mail);
+					Console.Write("Mail Sent");
+				}
+			}
+		}
+		catch (Exception ex)
+		{
+			Console.Write(ex.Message);
+		}
+	}
 }
 
 @* admin123 - admin123 *@

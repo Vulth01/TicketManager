@@ -1,6 +1,5 @@
 ﻿@page "/"
-
-@attribute [Authorize(Roles = "Administrator, User")]
+@attribute [Authorize(Roles = "Administrator, Technician, User")]
 
 <PageTitle>Home</PageTitle>
 
@@ -9,7 +8,7 @@
 	<div class="col-12">
 		<div class="card">
 			<div class="card-body" style="background-color: #ffffff; color: #000000">
-				@* USER LOGIN HEADER *@
+				@* LOGIN HEADER *@
 				<AuthorizeView>
 					<NotAuthorized>
 						<span>
@@ -29,19 +28,39 @@
 
 
 
-<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; 
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;
 			text-align: center; background-color: #ffffff">
 
-	@* BODY HEADER *@
-	@* <h1 style="font-weight:600; background-color: #ffffff; color:#22428b; margin-bottom: 100px">ADvTECH<br />TICKET MANAGEMENT</h1> *@
+	@* ADMIN *@
+	<AuthorizeView Roles="Administrator">
+		<Authorized>
+			<div style="width: 100%; overflow-x: auto;">
+				<TicketOverview />
+			</div>
+		</Authorized>
+	</AuthorizeView>
 
-	<UserTicketOverview/>
+	
+	@* TECHNICIAN *@
+	<AuthorizeView Roles="Technician">
+		<Authorized>
+			<div style="width: 100%; overflow-x: auto;">
+				<TicketOverview />
+			</div>
+		</Authorized>
+	</AuthorizeView>
 
-	@* COUNTER COMPONENT *@
-    @* <Counter IncrementAmount="5" /> *@
-    <div style="margin-bottom: 100px;"></div>
 
-	@* WEATHER COMPONENT *@
-    @* <Weather /> *@
+	@* ALL USERS *@
+	<AuthorizeView Roles=", User">
+		<Authorized>
+			<div style="width: 100%; overflow-x: auto;">
+				<UserTicketOverview />
+			</div>
+		</Authorized>
+	</AuthorizeView>
+
+
+	<div style="margin-bottom: 100px;"></div>
 
 </div>

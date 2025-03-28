@@ -1,12 +1,22 @@
 ﻿@page "/ticketOverview"
 @inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
 @inject NavigationManager NavigationManager
-@attribute [Authorize(Roles = "Administrator")]
+@attribute [Authorize(Roles = "Administrator, Technician")]
 
 <style>
-    th {
-        white-space: nowrap;
-    }
+	th {
+		white-space: nowrap;
+	}
+
+	.table-container {
+		overflow-x: auto; /* Horizontal scrolling */
+		-webkit-overflow-scrolling: touch;
+		margin-bottom: 15px;
+	}
+
+	table {
+		min-width: 1200px;
+	}
 </style>
 
 <PageTitle>Ticket Overview</PageTitle>
@@ -14,134 +24,129 @@
 
 @if (tickets is null)
 {
-    <p><em>Loading...</em></p>
+	<p><em>Loading...</em></p>
 }
 else
 {
-    @* TABLE OVERVIEW *@
-    <table class="table table-striped table-bordered table-hover mt-4">
-        @* TABLE FIELD HEADERS *@
-        <thead class="table-dark">
-            @* COMMON *@
-            <th>Guid</th>
-            <th>Id</th>
-            <th>Ticket Type</th>
-            <th>Username</th>
-            <th>User Contact No</th>
-            <th>User Email</th>
-            <th>Site Address</th>
-            <th>Description</th>
-            @* LAPTOP TEMPLATE *@
-            <th>Laptop Serial</th>
-            <th>Laptop Make</th>
-            <th>Laptop Model</th>
-            @* PRINTER TEMPLATE *@
-            <th>Printer Serial</th>
-            <th>Printer Make</th>
-            <th>Printer Model</th>
-            @* TEMPLATE 3 *@
-            <th>Template3Field1</th>
-            <th>Template3Field2</th>
-            <th>Template3Field3</th>
-            <th></th>
-        </thead>
+	<div class="table-container">
+		<table class="table table-striped table-bordered table-hover mt-4">
+			@* TABLE FIELD HEADERS *@
+			<thead class="table-dark">
+				@* COMMON *@
+			<th>Guid</th>
+			<th>Id</th>
+			<th>Ticket Type</th>
+			<th>Username</th>
+			<th>User Contact No</th>
+			<th>User Email</th>
+			<th>Site Address</th>
+			<th>Description</th>
+				@* LAPTOP TEMPLATE *@
+			<th>Laptop Serial</th>
+			<th>Laptop Make</th>
+			<th>Laptop Model</th>
+				@* PRINTER TEMPLATE *@
+			<th>Printer Serial</th>
+			<th>Printer Make</th>
+			<th>Printer Model</th>
+				@* TEMPLATE 3 *@
+			<th>Template3Field1</th>
+			<th>Template3Field2</th>
+			<th>Template3Field3</th>
+			<th></th>
+			</thead>
 
+			@* DISPLAY ALL TICKETS IN TABLE *@
+			<tbody>
+				@foreach (var ticket in tickets)
+				{
+					<tr>
+						@* COMMON *@
+						<td style="background-color: #9999bb">@ticket.TicketGuid</td>
+						<td style="background-color: #bbbbdd">@ticket.Id</td>
+						<td style="background-color: #9999bb">@ticket.TicketType</td>
+						<td style="background-color: #bbbbdd">@ticket.Username</td>
+						<td style="background-color: #9999bb">@ticket.UserContactNo</td>
+						<td style="background-color: #bbbbdd">@ticket.UserEmail</td>
+						<td style="background-color: #9999bb">@ticket.SiteAddress</td>
+						<td style="background-color: #bbbbdd">@ticket.Description</td>
+						@* TEMPLATE 1 *@
+						<td style="background-color: #9999bb">@ticket.LaptopSerial</td>
+						<td style="background-color: #bbbbdd">@ticket.LaptopMake</td>
+						<td style="background-color: #9999bb">@ticket.LaptopModel</td>
+						@* TEMPLATE 2 *@
+						<td style="background-color: #bbbbdd">@ticket.PrinterSerial</td>
+						<td style="background-color: #9999bb">@ticket.PrinterMake</td>
+						<td style="background-color: #bbbbdd">@ticket.PrinterModel</td>
+						@* "TEMPLATE 3 *@
+						<td style="background-color: #9999bb">@ticket.Template3Field1</td>
+						<td style="background-color: #bbbbdd">@ticket.Template3Field2</td>
+						<td style="background-color: #9999bb">@ticket.Template3Field3</td>
 
-        @* DISPLAY ALL TICKETS IN TABLE *@
-        <tbody>
-            @foreach (var ticket in tickets)
-            {
-                <tr>
-                    @* COMMON *@
-                    <td style="background-color: #9999bb">@ticket.TicketGuid</td>
-                    <td style="background-color: #bbbbdd">@ticket.Id</td>
-                    <td style="background-color: #9999bb">@ticket.TicketType</td>
-                    <td style="background-color: #bbbbdd">@ticket.Username</td>
-                    <td style="background-color: #9999bb">@ticket.UserContactNo</td>
-                    <td style="background-color: #bbbbdd">@ticket.UserEmail</td>
-                    <td style="background-color: #9999bb">@ticket.SiteAddress</td>
-                    <td style="background-color: #bbbbdd">@ticket.Description</td>
-                    @* TEMPLATE 1 *@
-                    <td style="background-color: #9999bb">@ticket.LaptopSerial</td>
-                    <td style="background-color: #bbbbdd">@ticket.LaptopMake</td>
-                    <td style="background-color: #9999bb">@ticket.LaptopModel</td>
-                    @* TEMPLATE 2 *@
-                    <td style="background-color: #bbbbdd">@ticket.PrinterSerial</td>
-                    <td style="background-color: #9999bb">@ticket.PrinterMake</td>
-                    <td style="background-color: #bbbbdd">@ticket.PrinterModel</td>
-                    @* "TEMPLATE 3 *@
-                    <td style="background-color: #9999bb">@ticket.Template3Field1</td>
-                    <td style="background-color: #bbbbdd">@ticket.Template3Field2</td>
-                    <td style="background-color: #9999bb">@ticket.Template3Field3</td>
-
-                    @* MODIFY TICKET *@
-                    <td style="background-color: #bbbbdd">
-                        <div class="d-flex">
-                            @* EDIT *@
-                            <a class="btn btn-secondary me-2" role="button" 
-                                href="@TicketUrl(ticket.Id)">
-                                <i class="bi bi-pencil"></i>
-                            </a>
-                            @* DELETE *@
-                            <button class="btn btn-danger" style="background-color:#FF6565; border-color: #FF5050"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="@GetDeleteModalId(ticket)">
-                                <i class="bi bi-trash3"></i>
-                            </button>
-                        </div>
-                        <DeleteTicket Ticket="@ConvertToSummary(ticket)" />
-
-
-
-
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+						@* MODIFY TICKET *@
+						<td style="background-color: #bbbbdd">
+							<div class="d-flex">
+								@* EDIT *@
+								<a class="btn btn-secondary me-2" role="button"
+								   href="@TicketUrl(ticket.Id)">
+									<i class="bi bi-pencil"></i>
+								</a>
+								@* DELETE *@
+								<button class="btn btn-danger" style="background-color:#FF6565; border-color: #FF5050"
+										data-bs-toggle="modal"
+										data-bs-target="@GetDeleteModalId(ticket)">
+									<i class="bi bi-trash3"></i>
+								</button>
+							</div>
+							<DeleteTicket Ticket="@ConvertToSummary(ticket)" />
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
 }
 
 @code {
-    private List<Ticket>? tickets;
+	private List<Ticket>? tickets;
 
-    protected override async Task OnInitializedAsync()
-    {
-        using var context = DbFactory.CreateDbContext();
-        tickets = await context.Tickets.ToListAsync();
-    }
+	protected override async Task OnInitializedAsync()
+	{
+		using var context = DbFactory.CreateDbContext();
+		tickets = await context.Tickets.ToListAsync();
+	}
 
-    private static string TicketUrl(int id) => $"/ticket/{id}";
-    private string GetDeleteModalId(Ticket ticket) => $"#{DeleteTicket.GetModalId(ConvertToSummary(ticket))}";
+	private static string TicketUrl(int id) => $"/ticket/{id}";
+	private string GetDeleteModalId(Ticket ticket) => $"#{DeleteTicket.GetModalId(ConvertToSummary(ticket))}";
 
-    private TicketSummary ConvertToSummary(Ticket ticket)
-    {
-        return new TicketSummary
-            {
-                //COMMON FIELDS
-                Id = ticket.Id,
-                TicketGuid = ticket.TicketGuid,
-                TicketType = ticket.TicketType,
-                Username = ticket.Username,
-                UserEmail = ticket.UserEmail,
-                UserContactNo = ticket.UserContactNo,
-                SiteAddress = ticket.SiteAddress,
+	private TicketSummary ConvertToSummary(Ticket ticket)
+	{
+		// CONVERT TICKET TO SUMMARY
+		return new TicketSummary
+			{
+			//COMMON FIELDS
+				Id = ticket.Id,
+				TicketGuid = ticket.TicketGuid,
+				TicketType = ticket.TicketType,
+				Username = ticket.Username!,
+				UserEmail = ticket.UserEmail!,
+				UserContactNo = ticket.UserContactNo!,
+				SiteAddress = ticket.SiteAddress!,
 
-                //LAPTOP REPAIR
-                LaptopSerial = ticket.LaptopSerial,
-                LaptopMake = ticket.LaptopMake,
-                LaptopModel = ticket.LaptopModel,
+			//LAPTOP REPAIR
+				LaptopSerial = ticket.LaptopSerial!,
+				LaptopMake = ticket.LaptopMake!,
+				LaptopModel = ticket.LaptopModel!,
 
-                //PRINTER REPAIR
-                PrinterSerial = ticket.PrinterSerial,
-				PrinterMake = ticket.PrinterMake,
-                PrinterModel = ticket.PrinterModel,
+			//PRINTER REPAIR
+				PrinterSerial = ticket.PrinterSerial!,
+				PrinterMake = ticket.PrinterMake!,
+				PrinterModel = ticket.PrinterModel!,
 
-                //TEMPLATE 3
-				Template3Field1 = ticket.Template3Field1,
-				Template3Field2 = ticket.Template3Field2,
-				Template3Field3 = ticket.Template3Field3
-
-
-            };
-    }
+			//TEMPLATE 3
+				Template3Field1 = ticket.Template3Field1!,
+				Template3Field2 = ticket.Template3Field2!,
+				Template3Field3 = ticket.Template3Field3!
+			};
+	}
 }

@@ -1,7 +1,6 @@
 ﻿@page "/weather"
 @attribute [StreamRendering]
-@attribute [Authorize(Roles = "Administrator, User")]
-
+@attribute [Authorize(Roles = "Administrator, Technician, User")]
 
 
 
@@ -38,8 +37,6 @@ else
         </tbody>
     </table>
 }
-
-
 
 
 

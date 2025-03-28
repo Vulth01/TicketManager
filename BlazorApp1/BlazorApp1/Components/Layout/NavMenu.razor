@@ -5,81 +5,102 @@
 
 @* NAVIGATION BAR *@
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()" style="background-color: #22428b; height: 100%">
-    <nav class="flex-column">
+	<nav class="flex-column">
 
-        @* HOME *@
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu home-icon" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-
-
-        @* ADMIN ONLY *@
-        <AuthorizeView Roles="Administrator">
-            <Authorized>
-
-                @* UserOverview *@
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="userOverview">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> User Overview
-                    </NavLink>
-                </div>
-
-                @* AddUser *@
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="add-user">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Add New User
-                    </NavLink>
-                </div>
-
-                @* TicketOverview *@
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="ticketOverview">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> All Ticket Overview 
-                    </NavLink>
-                </div>
-
-            </Authorized>
-        </AuthorizeView>
+		@* HOME *@
+		<div class="nav-item px-3">
+			<NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+				<span class="bi bi-house-door-fill-nav-menu home-icon" aria-hidden="true"></span> Home
+			</NavLink>
+		</div>
 
 
-        @* ALL USERS *@
-        <AuthorizeView Roles="Administrator,User">
-            <Authorized>
-                
-                
-                @* OLD SYSTEM *@
-                @* DocumentOverview *@
-                @* <div class="nav-item px-3"> *@
-                @*     <NavLink class="nav-link" href="documentOverview"> *@
-                @*         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Old Tickets Overview *@
-                @*     </NavLink> *@
-                @* </div> *@
+		@* ADMIN ONLY *@
+		<AuthorizeView Roles="Administrator">
+			<Authorized>
 
-                @* AddDocument *@
-                @* <div class="nav-item px-3"> *@
-                @*     <NavLink class="nav-link" href="document"> *@
-                @*         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Old Log New Ticket *@
-                @*     </NavLink> *@
-                @* </div> *@
-                
-                @* TicketOverview *@
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="userTicketOverview">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Ticket Overview
-                    </NavLink>
-                </div>
-                @* AddTicket *@
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="select-template">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Add Ticket
-                    </NavLink>
-                </div>
+				@* UserOverview *@
+				<div class="nav-item px-3">
+					<NavLink class="nav-link" href="userOverview">
+						<span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> User Overview
+					</NavLink>
+				</div>
 
-            </Authorized>
-        </AuthorizeView>
-    </nav>
+				@* AddUser *@
+				<div class="nav-item px-3">
+					<NavLink class="nav-link" href="add-user">
+						<span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Add New User
+					</NavLink>
+				</div>
+
+				@* AllTicketOverview *@
+				<div class="nav-item px-3">
+					<NavLink class="nav-link" href="ticketOverview">
+						<span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> All Ticket Overview
+					</NavLink>
+				</div>
+
+			</Authorized>
+		</AuthorizeView>
+
+		@* TECHNICIAN *@
+
+		<AuthorizeView Roles="Technician">
+			<Authorized>
+
+				@* UserOverview *@
+				<div class="nav-item px-3">
+					<NavLink class="nav-link" href="userOverview">
+						<span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> User Overview
+					</NavLink>
+				</div>
+
+				@* AllTicketOverview *@
+				<div class="nav-item px-3">
+					<NavLink class="nav-link" href="ticketOverview">
+						<span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Ticket Overview
+					</NavLink>
+				</div>
+
+			</Authorized>
+		</AuthorizeView>
+
+		@* ALL USERS *@
+		<AuthorizeView Roles="Administrator, User">
+			<Authorized>
+
+
+				@* OLD SYSTEM *@
+				@* DocumentOverview *@
+				@* <div class="nav-item px-3"> *@
+				@*     <NavLink class="nav-link" href="documentOverview"> *@
+				@*         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Old Tickets Overview *@
+				@*     </NavLink> *@
+				@* </div> *@
+
+				@* AddDocument *@
+				@* <div class="nav-item px-3"> *@
+				@*     <NavLink class="nav-link" href="document"> *@
+				@*         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Old Log New Ticket *@
+				@*     </NavLink> *@
+				@* </div> *@
+
+				@* UserTicketOverview *@
+				<div class="nav-item px-3">
+					<NavLink class="nav-link" href="userTicketOverview">
+						<span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Ticket Overview
+					</NavLink>
+				</div>
+				@* AddTicket *@
+				<div class="nav-item px-3">
+					<NavLink class="nav-link" href="add-ticket">
+						<span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Add Ticket
+					</NavLink>
+				</div>
+
+			</Authorized>
+		</AuthorizeView>
+	</nav>
 </div>
 
 
@@ -88,34 +109,34 @@
 @* ===================== STYLES ===================== *@
 
 <style>
-    .nav-scrollable {
-        min-width: max-content;
-    }
+	.nav-scrollable {
+		min-width: max-content;
+	}
 
-        .nav-scrollable .nav-item {
-            white-space: nowrap;
-        }
+		.nav-scrollable .nav-item {
+			white-space: nowrap;
+		}
 
-    .home-icon {
-        color: red !important;
-    }
+	.home-icon {
+		color: red !important;
+	}
 
-        .home-icon:hover {
-            color: #f5454d !important;
-        }
+		.home-icon:hover {
+			color: #f5454d !important;
+		}
 
-    .nav-link {
-        padding-left: 5px;
-        color: #ffffff !important;
-    }
+	.nav-link {
+		padding-left: 5px;
+		color: #ffffff !important;
+	}
 
-        .nav-link:hover {
-            background-color: #c32d32bb !important;
-        }
+		.nav-link:hover {
+			background-color: #c32d32bb !important;
+		}
 
 
-    .nav-link{
-        width: 220px !important;
-    }
+	.nav-link {
+		width: 220px !important;
+	}
 
 </style>

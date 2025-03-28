@@ -1,77 +1,70 @@
-﻿@page "/select-template"
+﻿@page "/add-ticket"
 @inject NavigationManager NavigationManager
 @attribute [Authorize(Roles = "Administrator, User")]
 
+
 <PageTitle>ADvTECH Group | Select Template</PageTitle>
+
 
 <h3 style="margin-bottom: 1%">Select Ticket Template</h3>
 
 @* NAVIGATION BAR *@
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="d-flex flex-column">
+	<nav class="d-flex flex-column">
 
         @* ALL USERS *@
-        <AuthorizeView Roles="Administrator,User">
-            <Authorized>
-                @* Spacer between buttons *@
-                <div style="background-color: #ffffff; height: 20px;"></div>
+		<AuthorizeView Roles="Administrator,User">
+			<Authorized>
+				<div style="background-color: #ffffff; height: 20px;"></div>
 
-                @* TEMPLATE 1 BUTTON *@
-                <div class="mb-3">
-                    <a class="btn btn-primary template-button" href="add-ticket/LaptopRepair">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Laptop
-                    </a>
-                </div>
+                @* LAPTOP *@
+				<div class="mb-3">
+					<a class="btn btn-primary template-button" href="add-ticket/LaptopRepair">
+						<span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Laptop
+					</a>
+				</div>
 
-                @* Spacer between buttons *@
-                <div style="background-color: #ffffff; height: 10px;"></div>
+				<div style="background-color: #ffffff; height: 10px;"></div>
 
-                @* TEMPLATE 2 BUTTON *@
-                <div class="mb-3">
-                    <a class="btn btn-primary template-button" href="add-ticket/PrinterRepair">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Printer
-                    </a>
-                </div>
+                @* PRINTER *@
+				<div class="mb-3">
+					<a class="btn btn-primary template-button" href="add-ticket/PrinterRepair">
+						<span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Printer
+					</a>
+				</div>
 
-                @* Spacer between buttons *@
-                <div style="background-color: #ffffff; height: 10px;"></div>
+				<div style="background-color: #ffffff; height: 10px;"></div>
 
-                @* TEMPLATE 3 BUTTON *@
-                <div class="mb-3">
-                    <a class="btn btn-primary template-button" href="add-ticket/Template3">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Template 3
-                    </a>
-                </div>
+                @* TEMPLATE 3 *@
+				<div class="mb-3">
+					<a class="btn btn-primary template-button" href="add-ticket/Template3">
+						<span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Template 3
+					</a>
+				</div>
 
-                @* Spacer between buttons *@
-                <div style="background-color: #ffffff; height: 10px;"></div>
+				<div style="background-color: #ffffff; height: 10px;"></div>
 
-            </Authorized>
-        </AuthorizeView>
+			</Authorized>
+		</AuthorizeView>
 
-        @* ADMIN ONLY *@
-        <AuthorizeView Roles="Administrator">
-            <Authorized>
-                @* NONE YET *@
-            </Authorized>
-        </AuthorizeView>
-
-    </nav>
+	</nav>
 </div>
 
-<style>
-    .template-button {
-        background-color: #334049;
-        border-color: #334049;
-    }
-
-        .template-button:hover {
-            background-color: #263030;
-            border-color: #263030; 
-        }
-</style>
 
 @code
 {
 
 }
+
+
+<style>
+	.template-button {
+		background-color: #334049;
+		border-color: #334049;
+	}
+
+		.template-button:hover {
+			background-color: #263030;
+			border-color: #263030;
+		}
+</style>

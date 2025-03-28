@@ -8,19 +8,24 @@ namespace BlazorApp1.Models
         public int Id { get; set; }                                                                 // Primary Key
         public string TicketType { get; set; }
 
-        [Required(ErrorMessage = "Username is required")][StringLength(50, ErrorMessage = "Username cannot exceed 50 characters")] 
+        [Required(ErrorMessage = "Username is required")]
+        [StringLength(50, ErrorMessage = "Username cannot exceed 50 characters")]
         public string? Username { get; set; }                                                       //USERNAME
 
-        [Required(ErrorMessage = "User contact number is required")][StringLength(50)] 
+        [Required(ErrorMessage = "User contact number is required")]
+        [StringLength(50)]
         public string? UserContactNo { get; set; }                                                  //CONTACT NO.
 
-        [Required(ErrorMessage = "Email address is required")][EmailAddress(ErrorMessage = "Invalid email address format")][StringLength(100)] 
+        [Required(ErrorMessage = "Email address is required")]
+        [EmailAddress(ErrorMessage = "Invalid email address format")]
+        [StringLength(100)]
         public string? UserEmail { get; set; }                                                      //EMAIL
 
-        [Required(ErrorMessage = "Site address is required")][StringLength(200)] 
+        [Required(ErrorMessage = "Site address is required")]
+        [StringLength(200)]
         public string? SiteAddress { get; set; }                                                    //ADDRESS
-        
-        [StringLength(200)] 
+
+        [StringLength(200)]
         public string? Description { get; set; }                                                    //DESCRIPTION
 
 
