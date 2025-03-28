@@ -2,65 +2,70 @@
 @inject NavigationManager NavigationManager
 @rendermode InteractiveServer
 
+@* POPUP *@
 <div class="modal fade" id="@GetModalId(Ticket)" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">@title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-footer">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			@* HEADER *@
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">@title</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-footer">
+				@* CANCEL *@
+				<button type="button"
+						class="btn btn-secondary"
+						data-bs-dismiss="modal">
+					Cancel
+				</button>
 
-                <button type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal">
-                    Cancel
-                </button>
-
-                <button type="button"
-                        class="btn btn-primary"
-                        data-bs-dismiss="modal"
-                        @onclick="Confirm">
-                    Delete
-                </button>
-            </div>
-        </div>
-    </div>
+				@* CONFIRM *@
+				<button type="button"
+						class="btn btn-primary"
+						data-bs-dismiss="modal"
+						@onclick="Confirm">
+					Delete
+				</button>
+			</div>
+		</div>
+	</div>
 </div>
 
 @code {
-    [Parameter]
-    public TicketSummary? Ticket { get; set; }
+	[Parameter]
+	public TicketSummary? Ticket { get; set; }
 
-    private string title = string.Empty;
+	private string title = string.Empty;
 
-    protected override void OnParametersSet()
-    {
-        if (Ticket is null)
-            title = "ADvTECH Group | No ticket to delete";
-        else
-            title = $"ADvTECH Group | Delete Ticket {Ticket?.Id}";
-    }
+	// SET CONFIRMATION POPUP TITLE
+	protected override void OnParametersSet()
+	{
+		if (Ticket is null)
+			title = "ADvTECH Group | No ticket to delete";
+		else
+			title = $"ADvTECH Group | Delete Ticket {Ticket?.Id}";
+	}
 
-    public static string GetModalId(TicketSummary? ticket)
-    {
-        ArgumentNullException.ThrowIfNull(ticket);
-        return $"deleteTicketModal-{ticket.Id}";
-    }
+	public static string GetModalId(TicketSummary? ticket)
+	{
+		ArgumentNullException.ThrowIfNull(ticket);
+		return $"deleteTicketModal-{ticket.Id}";
+	}
 
-    private async Task Confirm()
-    {
-        if (Ticket is null) return;
+	// DELETE TICKET
+	private async Task Confirm()
+	{
+		if (Ticket is null) return;
 
-        using var context = DbFactory.CreateDbContext();
+		using var context = DbFactory.CreateDbContext();
 
-        var ticketToDelete = await context.Tickets.FindAsync(Ticket.Id);
-        if (ticketToDelete != null)
-        {
-            context.Tickets.Remove(ticketToDelete);
-            await context.SaveChangesAsync();
-        }
+		var ticketToDelete = await context.Tickets.FindAsync(Ticket.Id);
+		if (ticketToDelete != null)
+		{
+			context.Tickets.Remove(ticketToDelete);
+			await context.SaveChangesAsync();
+		}
 
-        NavigationManager.NavigateTo("/userTicketOverview", true);
-    }
+		NavigationManager.NavigateTo("/userTicketOverview", true);
+	}
 }

@@ -20,9 +20,9 @@ namespace BlazorApp1.Services
                 System.Buffer.BlockCopy(passwordBytes, 0, saltedPassword, 0, passwordBytes.Length);
                 System.Buffer.BlockCopy(salt, 0, saltedPassword, passwordBytes.Length, salt.Length);
 
-                byte[] hash = sha256.ComputeHash(saltedPassword); 
-                saltBase64 = Convert.ToBase64String(salt); 
-                return Convert.ToBase64String(hash); 
+                byte[] hash = sha256.ComputeHash(saltedPassword);
+                saltBase64 = Convert.ToBase64String(salt);
+                return Convert.ToBase64String(hash);
             }
         }
 
@@ -39,8 +39,8 @@ namespace BlazorApp1.Services
                 System.Buffer.BlockCopy(passwordBytes, 0, saltedPassword, 0, passwordBytes.Length);
                 System.Buffer.BlockCopy(storedSalt, 0, saltedPassword, passwordBytes.Length, storedSalt.Length);
 
-                byte[] hashToCompare = sha256.ComputeHash(saltedPassword); 
-                return storedHash.SequenceEqual(hashToCompare); 
+                byte[] hashToCompare = sha256.ComputeHash(saltedPassword);
+                return storedHash.SequenceEqual(hashToCompare);
             }
         }
     }

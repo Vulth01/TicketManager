@@ -1,8 +1,7 @@
 ﻿@page "/add-ticket/{template}"
-@using System.Net.Mail
+@page "/ticket/{id:int}"
 @attribute [Authorize(Roles = "Administrator, User")]
 @rendermode InteractiveServer
-
 @inject IDbContextFactory<BlazorApp1.Data.TicketContext> DbFactory
 @inject NavigationManager NavigationManager
 @inject IConfiguration Configuration
@@ -16,220 +15,218 @@
 
 @if (ticket == null)
 {
-    <p><em>Loading...</em></p>
+	<p><em>Loading...</em></p>
 }
 else
 {
-    <div class="row">
-        <div class="col-md-4">
-            <EditForm Model="@ticket" FormName="editTicket" OnValidSubmit="HandleSubmitAsync">
-                <DataAnnotationsValidator />
-                <ValidationSummary />
+	<div class="row">
+		<div class="col-md-4">
+			<EditForm Model="@ticket" FormName="editTicket" OnValidSubmit="HandleSubmitAsync">
+				<DataAnnotationsValidator />
+				<ValidationSummary />
 
-                @* COMMON FIELDS *@
-                <div class="mb-3">
-                    <label for="userContactNo" class="form-label">User Contact Number:</label>
-                    <InputText id="userContactNo" @bind-Value="ticket.UserContactNo" class="form-control" />
-                    <ValidationMessage For="() => ticket.UserContactNo" />
-                </div>
+				@* COMMON FIELDS *@
+				<div class="mb-3">
+					<label for="userContactNo" class="form-label">User Contact Number:</label>
+					<InputText id="userContactNo" @bind-Value="ticket.UserContactNo" class="form-control" />
+					<ValidationMessage For="() => ticket.UserContactNo" />
+				</div>
 
-                <div class="mb-3">
-                    <label for="userEmail" class="form-label">User Email:</label>
-                    <InputText id="userEmail" @bind-Value="ticket.UserEmail" class="form-control" />
-                    <ValidationMessage For="() => ticket.UserEmail" />
-                </div>
+				<div class="mb-3">
+					<label for="userEmail" class="form-label">User Email:</label>
+					<InputText id="userEmail" @bind-Value="ticket.UserEmail" class="form-control" />
+					<ValidationMessage For="() => ticket.UserEmail" />
+				</div>
 
-                <div class="mb-3">
-                    <label for="siteAddress" class="form-label">Site Address:</label>
-                    <InputText id="siteAddress" @bind-Value="ticket.SiteAddress" class="form-control" />
-                    <ValidationMessage For="() => ticket.SiteAddress" />
-                </div>
+				<div class="mb-3">
+					<label for="siteAddress" class="form-label">Site Address:</label>
+					<InputText id="siteAddress" @bind-Value="ticket.SiteAddress" class="form-control" />
+					<ValidationMessage For="() => ticket.SiteAddress" />
+				</div>
 
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description of the Issue:</label>
-                    <InputText id="description" @bind-Value="ticket.Description" class="form-control" />
-                    <ValidationMessage For="() => ticket.Description" />
-                </div>
+				<div class="mb-3">
+					<label for="description" class="form-label">Description of the Issue:</label>
+					<InputText id="description" @bind-Value="ticket.Description" class="form-control" />
+					<ValidationMessage For="() => ticket.Description" />
+				</div>
 
 
-                @* LAPTOP REPAIR *@
-                @if (Template == "LaptopRepair")
-                {
-                    <div class="mb-3">
-                        <label for="laptopSerial" class="form-label">Laptop Serial:</label>
-                        <InputText id="laptopSerial" @bind-Value="ticket.LaptopSerial" class="form-control" />
-                        <ValidationMessage For="() => ticket.LaptopSerial" />
-                    </div>
+				@* LAPTOP REPAIR *@
+				@if (Template == "LaptopRepair")
+				{
+					<div class="mb-3">
+						<label for="laptopSerial" class="form-label">Laptop Serial:</label>
+						<InputText id="laptopSerial" @bind-Value="ticket.LaptopSerial" class="form-control" />
+						<ValidationMessage For="() => ticket.LaptopSerial" />
+					</div>
 
-                    <div class="mb-3">
-                        <label for="laptopMake" class="form-label">Laptop Make:</label>
-                        <InputText id="laptopMake" @bind-Value="ticket.LaptopMake" class="form-control" />
-                        <ValidationMessage For="() => ticket.LaptopMake" />
-                    </div>
-                    @* User email *@
-                    <div class="mb-3">
-                        <label for="laptopModel" class="form-label">Laptop Model:</label>
-                        <InputText id="laptopModel" @bind-Value="ticket.LaptopModel" class="form-control" />
-                        <ValidationMessage For="() => ticket.LaptopModel" />
-                    </div>
-                }
-                @* PRINTER REPAIR *@
-                else if (Template == "PrinterRepair")
-                {
+					<div class="mb-3">
+						<label for="laptopMake" class="form-label">Laptop Make:</label>
+						<InputText id="laptopMake" @bind-Value="ticket.LaptopMake" class="form-control" />
+						<ValidationMessage For="() => ticket.LaptopMake" />
+					</div>
+					@* User email *@
+					<div class="mb-3">
+						<label for="laptopModel" class="form-label">Laptop Model:</label>
+						<InputText id="laptopModel" @bind-Value="ticket.LaptopModel" class="form-control" />
+						<ValidationMessage For="() => ticket.LaptopModel" />
+					</div>
+				}
 
-                    <div class="mb-3">
-                        <label for="printerSerial" class="form-label">Printer Serial Number:</label>
-                        <InputText id="printerSerial" @bind-Value="ticket.PrinterSerial" class="form-control" />
-                        <ValidationMessage For="() => ticket.PrinterSerial" />
-                    </div>
+				@* PRINTER REPAIR *@
+				else if (Template == "PrinterRepair")
+				{
 
-                    <div class="mb-3">
-                        <label for="printerModel" class="form-label">Printer Make:</label>
-                        <InputText id="printerModel" @bind-Value="ticket.PrinterMake" class="form-control" />
-                        <ValidationMessage For="() => ticket.PrinterMake" />
-                    </div>
+					<div class="mb-3">
+						<label for="printerSerial" class="form-label">Printer Serial Number:</label>
+						<InputText id="printerSerial" @bind-Value="ticket.PrinterSerial" class="form-control" />
+						<ValidationMessage For="() => ticket.PrinterSerial" />
+					</div>
 
-                    <div class="mb-3">
-                        <label for="printerMake" class="form-label">Printer Model:</label>
-                        <InputText id="printerMake" @bind-Value="ticket.PrinterModel" class="form-control" />
-                        <ValidationMessage For="() => ticket.PrinterModel" />
-                    </div>
-                }
-                @* TEMPLATE 3 *@
-                else if (Template == "Template3")
-                {
-                    <div class="mb-3">
-                        <label for="Template3Field1" class="form-label">Template3Field1:</label>
-                        <InputText id="Template3Field1" @bind-Value="ticket.Template3Field1" class="form-control" />
-                        <ValidationMessage For="() => ticket.Template3Field1" />
-                    </div>
+					<div class="mb-3">
+						<label for="printerModel" class="form-label">Printer Make:</label>
+						<InputText id="printerModel" @bind-Value="ticket.PrinterMake" class="form-control" />
+						<ValidationMessage For="() => ticket.PrinterMake" />
+					</div>
 
-                    <div class="mb-3">
-                        <label for="Template3Field2" class="form-label">Template3Field2:</label>
-                        <InputText id="Template3Field2" @bind-Value="ticket.Template3Field2" class="form-control" />
-                        <ValidationMessage For="() => ticket.Template3Field2" />
-                    </div>
+					<div class="mb-3">
+						<label for="printerMake" class="form-label">Printer Model:</label>
+						<InputText id="printerMake" @bind-Value="ticket.PrinterModel" class="form-control" />
+						<ValidationMessage For="() => ticket.PrinterModel" />
+					</div>
+				}
 
-                    <div class="mb-3">
-                        <label for="Template3Field3" class="form-label">Template3Field3:</label>
-                        <InputText id="Template3Field3" @bind-Value="ticket.Template3Field3" class="form-control" />
-                        <ValidationMessage For="() => ticket.Template3Field3" />
-                    </div>
-                }
+				@* TEMPLATE 3 *@
+				else if (Template == "Template3")
+				{
+					<div class="mb-3">
+						<label for="Template3Field1" class="form-label">Template3Field1:</label>
+						<InputText id="Template3Field1" @bind-Value="ticket.Template3Field1" class="form-control" />
+						<ValidationMessage For="() => ticket.Template3Field1" />
+					</div>
 
-                <button style="margin-bottom: 10%" type="submit" class="btn btn-primary">Save</button>
-                <a style="margin-bottom: 10%" role="button" href="/select-template" class="btn btn-secondary">Cancel</a>
-            </EditForm>
-        </div>
-    </div>
+					<div class="mb-3">
+						<label for="Template3Field2" class="form-label">Template3Field2:</label>
+						<InputText id="Template3Field2" @bind-Value="ticket.Template3Field2" class="form-control" />
+						<ValidationMessage For="() => ticket.Template3Field2" />
+					</div>
+
+					<div class="mb-3">
+						<label for="Template3Field3" class="form-label">Template3Field3:</label>
+						<InputText id="Template3Field3" @bind-Value="ticket.Template3Field3" class="form-control" />
+						<ValidationMessage For="() => ticket.Template3Field3" />
+					</div>
+				}
+
+				<button style="margin-bottom: 10%" type="submit" class="btn btn-primary">Save</button>
+				<a style="margin-bottom: 10%" role="button" href="/userTicketOverview" class="btn btn-secondary">Cancel</a>
+			</EditForm>
+		</div>
+	</div>
 }
-
-
-
-
-
-
-
 
 
 
 
 @code {
-    [Parameter]
-    public string Template { get; set; }
+	[Parameter]
+	public string? Template { get; set; }
 
-    [Parameter]
-    public int? Id { get; set; }
+	[Parameter]
+	public int? Id { get; set; }
 
-    [SupplyParameterFromForm]
-    private Ticket? ticket { get; set; }
-    private string title = "ADvTECH Group | New Ticket";
+	[SupplyParameterFromForm]
+	private Ticket? ticket { get; set; }
+	private string title = "ADvTECH Group | New Ticket";
 
 
+	private async Task SetUsernameFromAuthenticationStateAsync()
+	{
+		var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+		var user = authState.User;
+		ticket!.Username = user.Identity?.Name;
+	}
 
-    private async Task SetUsernameFromAuthenticationStateAsync()
-    {
-        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        var user = authState.User;
-        ticket!.Username = user.Identity?.Name;
-    }
+	protected override async Task OnParametersSetAsync()
+	{
+		// SET TITLE
+		if (ticket is not null)
+		{
+			return;
+		}
 
-    protected override async Task OnParametersSetAsync()
-    {
-        if (ticket is not null)
-        {
-            return;
-        }
+		if (Id is not null)
+		{
+			using var context = DbFactory.CreateDbContext();
+			ticket = context.Tickets.FirstOrDefault(d => d.Id == Id.Value);
+			title = $"ADvTECH Group | Edit Document: {ticket!.Id}";
+		}
+		else
+		{
+			ticket = new Ticket();
+			ticket.TicketType = Template!;
+			await SetUsernameFromAuthenticationStateAsync();
+		}
+		title = "ADvTECH Group | New ticket (" + Template + ")";
+	}
 
-        if (Id is not null)
-        {
-            using var context = DbFactory.CreateDbContext();
-            ticket = context.Tickets.FirstOrDefault(d => d.Id == Id.Value);
-            title = $"ADvTECH Group | Edit Document: {ticket!.Id}";
-        }
-        else
-        {
-            ticket = new Ticket();
-            ticket.TicketType = Template;
-            await SetUsernameFromAuthenticationStateAsync();
-        }
-        title = "ADvTECH Group | New ticket (" + Template + ")";
-    }
+	private async Task HandleSubmitAsync()
+	{
+		// ADD OR UPDATE TICKET
+		ArgumentNullException.ThrowIfNull(ticket);
 
-    private async Task HandleSubmitAsync()
-    {
+		using var context = DbFactory.CreateDbContext();
 
-        ArgumentNullException.ThrowIfNull(ticket);
+		if (ticket.Id == 0)
+		{
+			context.Tickets.Add(ticket);
+		}
+		else
+		{
+			context.Tickets.Update(ticket);
+		}
 
-        using var context = DbFactory.CreateDbContext();
+		await context.SaveChangesAsync();
 
-        if (ticket.Id == 0)                                                                             // New ticket
-        {
-            context.Tickets.Add(ticket);
-        }
-        else                                                                                            // Update ticket
-        {
-            context.Tickets.Update(ticket);
-        }
+		SendMail();
+		NavigationManager.NavigateTo("/userTicketOverview");
+	}
 
-        await context.SaveChangesAsync();
+	private string Message { get; set; } = "-";
 
-        SendMail();
-        NavigationManager.NavigateTo("/userTicketOverview");
-    }
+	private void SendMail()
+	{
+		try
+		{
+			//GET EMAIL CONFIG
+			var emailAddress = Configuration["EmailSettings:EmailAddress"];
+			var password = Configuration["EmailSettings:Password"];
 
-    private string Message { get; set; } = "-";
 
-    private void SendMail()
-    {
-        try
-        {
-            var emailAddress = Configuration["EmailSettings:EmailAddress"];
-            var password = Configuration["EmailSettings:Password"];
+			//SEND EMAIL
+			using (MailMessage mail = new MailMessage())
+			{
+				mail.From = new MailAddress(emailAddress!);
+				mail.To.Add("Damien.Harwood@ftechkzn.co.za");
+				mail.Subject = "New Ticket ID: " + ticket!.Id;
+				mail.Body = "Ticket Description: " + ticket.Description +
+							"<br>User's Name: " + ticket.Username +
+							"<br>Site: " + ticket.SiteAddress +
+							"<br><br> This ticket is brought to you.";
+				mail.IsBodyHtml = true;
 
-            using (MailMessage mail = new MailMessage())
-            {
-                mail.From = new MailAddress(emailAddress);
-                mail.To.Add("Damien.Harwood@ftechkzn.co.za");
-                mail.Subject = "New Ticket ID: " + ticket.Id;
-                mail.Body = "Ticket Description: " + ticket.Description + 
-                            "<br>User's Name: " + ticket.Username + 
-                            "<br>Site: " + ticket.SiteAddress + 
-                            "<br><br> This ticket is brought to you.";
-                mail.IsBodyHtml = true;
-
-                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
-                {
-                    smtp.Credentials = new System.Net.NetworkCredential(emailAddress, password);
-                    smtp.EnableSsl = true;
-                    smtp.Send(mail);
-                    Message = "Mail Sent";
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Message = ex.Message;
-        }
-    }
+				using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+				{
+					smtp.Credentials = new System.Net.NetworkCredential(emailAddress, password);
+					smtp.EnableSsl = true;
+					smtp.Send(mail);
+					Message = "Mail Sent";
+				}
+			}
+		}
+		catch (Exception ex)
+		{
+			Message = ex.Message;
+		}
+	}
 }

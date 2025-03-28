@@ -8,37 +8,37 @@
 
 
 <div class="modal fade" id="@GetModalId(User)" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            @* PROMPT *@
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">@title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			@* PROMPT *@
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">@title</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
 
-            @* CONFIRMATION *@
-            <div class="modal-body">
-                <p>Are you sure you want to delete the user account for <strong>@User?.UserName</strong>?</p>
-            </div>
+			@* CONFIRMATION *@
+			<div class="modal-body">
+				<p>Are you sure you want to delete the user account for <strong>@User?.UserName</strong>?</p>
+			</div>
 
-            <div class="modal-footer">
-                @* CANCEL *@
-                <button type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal">
-                    Cancel
-                </button>
-                @* DELETE *@
-                <button type="button"
-                        class="btn btn-danger"
-                        data-bs-dismiss="modal"
-                        @onclick="Confirm">
-                    Delete
-                </button>
-            </div>
+			<div class="modal-footer">
+				@* CANCEL *@
+				<button type="button"
+						class="btn btn-secondary"
+						data-bs-dismiss="modal">
+					Cancel
+				</button>
+				@* DELETE *@
+				<button type="button"
+						class="btn btn-danger"
+						data-bs-dismiss="modal"
+						@onclick="Confirm">
+					Delete
+				</button>
+			</div>
 
-        </div>
-    </div>
+		</div>
+	</div>
 </div>
 
 
@@ -47,43 +47,43 @@
 
 
 @code {
-    [Parameter]
-    public UserSummary? User { get; set; }
+	[Parameter]
+	public UserSummary? User { get; set; }
 
-    private string title = string.Empty;
+	private string title = string.Empty;
 
-    // TITLE
-    protected override void OnParametersSet()
-    {
-        if (User is null)
-            title = "ADvTECH Group | Nothing to delete";
-        else
-            title = $"ADvTECH Group | Delete {User?.Id}";
-    }
+	// SET TITLE
+	protected override void OnParametersSet()
+	{
+		if (User is null)
+			title = "ADvTECH Group | Nothing to delete";
+		else
+			title = $"ADvTECH Group | Delete {User?.Id}";
+	}
 
 
-    // USER MODAL ID
-    public static string GetModalId(UserSummary? user)
-    {
-        ArgumentNullException.ThrowIfNull(user);
-        return $"deleteUserModal-{user.Id}";
-    }
+	// USER MODAL ID
+	public static string GetModalId(UserSummary? user)
+	{
+		ArgumentNullException.ThrowIfNull(user);
+		return $"deleteUserModal-{user.Id}";
+	}
 
-    // PROCEED WITH DELETION
-    private async Task Confirm()
-    {
-        if (User is null) return;
+	// PROCEED WITH DELETION
+	private async Task Confirm()
+	{
+		if (User is null) return;
 
-        using var context = DbFactory.CreateDbContext();
+		using var context = DbFactory.CreateDbContext();
 
-        var userToDelete = await context.UserAccounts.FindAsync(User.Id);
-        if (userToDelete != null)
-        {
-            context.UserAccounts.Remove(userToDelete);
-            await context.SaveChangesAsync();
-        }
+		var userToDelete = await context.UserAccounts.FindAsync(User.Id);
+		if (userToDelete != null)
+		{
+			context.UserAccounts.Remove(userToDelete);
+			await context.SaveChangesAsync();
+		}
 
-        NavigationManager.NavigateTo("/userOverview", true);
-    }
+		NavigationManager.NavigateTo("/userOverview", true);
+	}
 
 }

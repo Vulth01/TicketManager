@@ -1,0 +1,8 @@
+wwwroot\ADvTECH_Logo.png
+wwwroot\ADvTECH_Logo_Circle.png
+wwwroot\ADvTECH_Logo_Circle.webp
+wwwroot\ADvTECH_Logo_Grey.svg
+wwwroot\app.css
+wwwroot\bootstrap\bootstrap.min.css
+wwwroot\bootstrap\bootstrap.min.css.map
+wwwroot\favicon.png
